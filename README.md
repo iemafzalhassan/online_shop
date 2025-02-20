@@ -1,4 +1,3 @@
-<img width="1470" alt="Project ss" src="https://github.com/user-attachments/assets/11350cf1-a03c-4021-8dad-3149f2947b09" />
 
 
 # 🛍️ Online Shop – Vite + React + Node + Docker 🐳
@@ -44,8 +43,8 @@ online-shop/
 ### 1️⃣ **Clone the Repository**
 
 ```bash
-git clone https://github.com/amitsingh790634/Ecommare_Online_Shop.git
-cd Ecommare_Online_Shop
+git clone https://github.com/amrita122/online_shop.git
+cd online_Shop
 ```
 
 ---
@@ -136,50 +135,12 @@ EXPOSE 5173
 CMD ["npm", "run", "dev"]
 ```
 
-## Check Docker File code by 
-``` 
-cat Dockerfile
 ```
-<img width="571" alt="Create Docker File" src="https://github.com/user-attachments/assets/f631dc3e-96d1-470c-a04e-cdc4b9dad4c8" />
-
-## Check Docker File code by 
-```
-ls 
-```
-
-## Check List Docker File
-``` 
-ls
-```
-<img width="1361" alt="Second Check Doker File" src="https://github.com/user-attachments/assets/9ce9f28c-1c82-46ff-b186-f5ea4aa8d143" />
-
-## Check List Docker File
-``` 
-docker build -t online_shop:v1 .
-```
-
-<img width="1449" alt="Third Create docker build" src="https://github.com/user-attachments/assets/277585e3-48b3-44fb-be49-742edcb741f2" />
-
-## Check List Docker File
-``` 
-docker run -p 3000:5173 online_shop:v1 
-```
-
-<img width="926" alt="4 Docker run images" src="https://github.com/user-attachments/assets/a5f155bd-94fd-4706-9cbb-bed20a7a1bea" />
-
-
----
-
-# OUTPUT
-
-<img width="1470" alt="Project ss" src="https://github.com/user-attachments/assets/80952808-54bf-44a9-943a-f396ed00d920" />
-
-
 
 ## 📋 **Docker Multi-Stage Build Explanation**
 
 ```dockerfile
-# Stage 1: Install dependencies using Alpine for minimal size
+# Stage 1: Install dependencies using slim for minimal size
 FROM node:20-slim AS builder
 
 # Set working directory
@@ -209,17 +170,6 @@ EXPOSE 5173
 # Run the app
 CMD ["npm", "run", "dev"]
 ```
-
-## docker image size
-<img width="496" alt="Image Size reduce" src="https://github.com/user-attachments/assets/e997a8a0-3ed7-4a2e-8e47-e132cc42914f" />
-
-## docker multi-stage file
-<img width="922" alt="Check Docker Multi-stage file" src="https://github.com/user-attachments/assets/0e96208d-2d67-411a-8d48-5155cabf2b1b" />
-
-## docker image size reduce 
-<img width="748" alt="Image Size" src="https://github.com/user-attachments/assets/398a4241-d62b-4695-926a-f672883b11ea" />
-
-
 
 ---
 
@@ -263,24 +213,13 @@ services:
 
 ---
 
-# Docker Compose file
-<img width="1470" alt="Docker Compose File" src="https://github.com/user-attachments/assets/732bf536-0d00-423f-97f9-3d2a538137ba" />
-
-
-# Docker UP Compose file
-<img width="1470" alt="Docker up" src="https://github.com/user-attachments/assets/555d5d97-f855-4368-97ec-49e87da29a2c" />
-
-# Docker Compose Video
-## https://go.screenpal.com/watch/cTnYlenhJHj
-
-
 
 ## ⚡ **Common Issues & Solutions**
 
 1. **Vite Running on Wrong Port?**
    - By default, Vite uses **5173**. Ensure you're mapping ports correctly when running Docker:
      ```bash
-     docker run -p 3000:5173 online-shop:v1
+     docker run -p 3000:5173 online-shop:latest
      ```
 
 2. **Sass Deprecation Warnings?**
@@ -298,16 +237,6 @@ services:
 
 ---
 
-## 🎬 **Demo Video 📽️**
-
-🔗 [Link to Demo Video](https://go.screenpal.com/watch/cTnYXNnhJGz)
-🔗 [Link to Demo Video](https://go.screenpal.com/watch/cTnYlenhJHj)
-🔗 [Link to Demo Video](https://go.screenpal.com/watch/cTnYlenhJHQ)
-
-
-
-*The demo explains the project setup, Docker integration, and running the app.*
-
 ---
 
 ## 📤 **Submission Details**
@@ -315,23 +244,21 @@ services:
 - **Full Name:** Amrita Kumari
 - **Email Address:** amitasuri493@gmail.com
 - **GitHub Repo:** [GitHub Repository Link](https://github.com/amrita122/online_shop.git)
-- **Demo Video:** [Watch Here](https://go.screenpal.com/watch/cTnYlenhJHQ)
 
 ---
 
 ## 📣 **Sharing for Extra Points 🚀**
 
-- **LinkedIn Post:** [My LinkedIn Share]([https://linkedin.com/in/your-profile](https://www.linkedin.com/pulse/building-online-shop-using-vite-react-docker-amit-singh-pbydc))
-
+- **LinkedIn Post:** [My LinkedIn Share]([https://linkedin.com/in/your-profile](https://www.linkedin.com/feed/update/urn:li:activity:7298377010966315009/))
 
 ---
 
 ## 📑 **License**
 
-MIT License © Amit Singh
+MIT License © Amrita Kumari
 
 ---
 
-💡 *Made with 💖 using React, Vite, and Docker.*
+💡 *Made with 💖 using React, Vite, Node and Docker.*
 
 
