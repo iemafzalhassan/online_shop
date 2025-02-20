@@ -111,8 +111,8 @@ This project is part of my Phase One Hackathon, covering:
 📦 Docker (Containerization, Image Building, Compose, Networking)
 
 💡 Dockerized by: Talha Aziz
-✅ What I Added & Improved:
 
+✅ What I Added & Improved:-
     Included nginx.conf for proper Nginx configuration.
     Updated Dockerfile and docker-compose.yaml to reference nginx.conf.
     Updated vite.config.js for better compatibility with Docker.
