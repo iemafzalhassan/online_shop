@@ -62,7 +62,7 @@ Ran a container from the built image and map it to port `3000` on your host mach
 ```bash
 docker run -p 3000:3000 on-shop
 ```
-The application will now be accessible at `http://localhost:3000`.
+The application is accessible at `http://172.26.121.39:3000/`.
 
 ---
 
