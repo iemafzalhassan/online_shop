@@ -1,0 +1,6 @@
+# Creating this file prevents unnecessary files from being copied into the image.
+
+
+node_modules
+.git
+.env
