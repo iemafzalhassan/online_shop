@@ -1,3 +1,5 @@
+/* Adding this comment ass part of Hackathon Phase1*/
+
 import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import App from './App.jsx'
