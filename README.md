@@ -1,48 +1,65 @@
-# "Online Shop – Hackathon Phase 1 "
+# Online Shop – Hackathon Phase 1
 
 ## Implementations
 
-    ### Step 1
+    ### Step 1: Project Setup on Local System
 
-    ** Project SetUp Local System **
+        - First, fork the Hackathon repository into my Git account.
 
-        - First foke Hackathon repository into my git account
-        - Project setup into my local system.
+        - Set up the project on my local system:
+        
             git clone https://github.com/shrikantdhanvijay/online_shop.git
-        - Create new branch from Hackathon branch 
+
+        - Create a new branch from the Hackathon branch:
             git checkout -b shrikant
-        - Install project depedencies 
+
+        - Install project dependencies:
             npm install
-        - Check project is working fine or not 
+
+        - Check if the project is working fine:
             npm run dev
-        - Hit below url on browser 
-            http://localhost:5173/ 
+
+        - Open the following URL in a browser:
+            http://localhost:5173/
+        
 
 
-    ### Step 2
+    ### Step 2: AWS Setup
 
-    ** AWS **
-        - Create instance on Ec2
-            - Name : online shop
-            - Application and OS Images : ubuntu
-            - Instance type : t2 micro
-            - Key pair : use exiting key 
-            - Network settings : Select existing security group
-            - Configure storage : 10gb
-            - launch instance
+        - Create an EC2 instance:
 
-    ### Step 3
-    
-    ** Connect Ec2  **
-        - Connect Ec2 instance using SSH Client
-        - Create Folder 
+            - Name: online-shop
+
+            - Application and OS Image: Ubuntu
+
+            - Instance Type: t2.micro
+
+            - Key Pair: Use an existing key
+
+            - Network Settings: Select an existing security group
+
+            - Configure Storage: 10GB
+
+            - Launch the instance
+
+
+    ### Step 3: Connect to EC2
+  
+        - Connect to the EC2 instance using an SSH client
+
+        - Create a folder:
             mkdir online-shop
-        - Project clone
+
+        - Clone the project:
             git clone https://github.com/shrikantdhanvijay/online_shop.git
-        - Create docker file
+
+        - Create a Dockerfile:
             vim Dockerfile
-        - Build Docker Image
+
+        - Build the Docker image:
             docker build -t image-name:version .
-        - Run Container
-            docker run -d --name online-shop -p 80:80 build-image-name
+
+        - Run the Docker container:
+            docker run -d --name online-shop -p 80:80 image-name:version
+
         
