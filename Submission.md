@@ -95,6 +95,5 @@ This document outlines the planned development roadmap for the Online Shop proje
 
 [watch out my recorded video here](https://drive.google.com/file/d/1DP7BrAlvu0wiXHrJnJH7_HQy2z2vc_1p/view?usp=sharing)
 
-### *** =========================================End of Docker Hackathon========================================= **
+### *** =========================End of Docker Hackathon========================= **
 
--
