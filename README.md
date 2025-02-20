@@ -249,7 +249,7 @@ services:
 
 ## 📣 **Sharing for Extra Points 🚀**
 
-- **LinkedIn Post:** [My LinkedIn Share]([https://linkedin.com/in/your-profile](https://www.linkedin.com/feed/update/urn:li:activity:7298377010966315009/))
+- **LinkedIn Post:** [My LinkedIn Share](https://www.linkedin.com/posts/amrita-kumari-504a39347_devops-docker-reactjs-activity-7298377010966315009-mVdv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFbUGpQB9RgHY_DDQ3qKYwkJ4r8liMNTNtE)
 
 ---
 
