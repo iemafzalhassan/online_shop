@@ -25,7 +25,7 @@ WORKDIR /app
 
 COPY --from=builder /app .
 
-# Port 5173 is commonly used by Vite, a modern frontend build tool. By default, Vite serves development builds on port 5173
+# By default, Vite serves development builds on port 5173
 EXPOSE 5173
 
 
