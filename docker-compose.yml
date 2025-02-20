@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      target: runtime # use the runtime stage from a docker file not build stage 
+    container_name: node_app
+    ports:
+      - "7000:5173"
+    volumes:
+      - ./my-data:/app/data #Persist volume data
+    environment:
+      - PORT=5173
+    command: ["npm", "run", "preview", "--", "--port", "5173", "--host"] 
+
+# in CMD need to put port and host b/c withou them it automaticaally run on 4173 rahter on 5173 maybe due to some default value
