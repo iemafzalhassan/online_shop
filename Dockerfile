@@ -1,11 +1,20 @@
-# pulling the base image for node js
-FROM node:18-slim
+# Stage 1
+FROM node:18-slim AS build
 
 WORKDIR /app
 
 COPY . .
 
 RUN npm install 
+
+# Stage 2
+FROM  gcr.io/distroless/nodejs18-debian12
+
+WORKDIR /app
+
+COPY --from=build /app/node_modules /app/node_modules
+
+COPY --from=build /app/package.json /app/package.json
 
 EXPOSE 3000
 
