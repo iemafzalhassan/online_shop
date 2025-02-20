@@ -7,9 +7,6 @@ The repository contains a fully functional e-commerce application built to demon
 - **Linux**
 - **Docker**
 
-## Git & GitHub Workflow
-I started by forking the repository to obtain a copy in my GitHub home page. Then, I created a feature branch named `featurebranch_online_shop_hackathon` from the source branch `Hackathon`. This branch was used to implement changes and create the Dockerfile.
-
 ## Setting Up the Linux Environment
 Linux commands:
 
