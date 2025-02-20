@@ -171,6 +171,10 @@ Welcome to the **Online Shop** project, this guide will help you set up and run 
   NODE_ENV: development # Set environment variable
   command: npm run start
   ```
+### 🔢 Run Docker compose file ✅
+```bash
+docker-compose up
+```
 
 ### OUTPUT 
 
