@@ -1,0 +1,37 @@
+#lp Build Stage
+FROM node:18-alpine AS builder
+WORKDIR /app
+
+
+COPY package*.json ./
+
+RUN npm install
+
+
+COPY . .
+
+RUN npm run build
+
+
+# Production Stage (Distroless)
+FROM gcr.io/distroless/nodejs18
+
+
+WORKDIR /app
+
+# Copy only the built files (no need for node_modules in frontend apps)
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+EXPOSE 3000
+
+CMD ["npm","run","dev"]
+
+#CMD ["npm", "start"]
+
+
+
+
+
+
