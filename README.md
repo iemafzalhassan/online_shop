@@ -1,40 +1,4 @@
-# Online Shop 🛍️ for Hackathon Phase 1
-[![Stars](https://img.shields.io/github/stars/iemafzalhassan/online_shop)](https://github.com/iemafzalhassan/online_shop)
-![Forks](https://img.shields.io/github/forks/iemafzalhassan/online_shop)
-![GitHub last commit](https://img.shields.io/github/last-commit/iemafzalhassan/easyshop?color=red)
-[![GitHub Profile](https://img.shields.io/badge/GitHub-iemafzalhassan-blue?logo=github&style=flat)](https://github.com/iemafzalhassan)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-<p align="center">
-
-Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This repository contains a fully functional e-commerce application built to demonstrate foundational DevOps skills in three key areas:
-- **Git & GitHub**
-- **Linux**
-- **Docker**
-
-In this phase, your focus is on understanding the provided developer code, reviewing how these core topics are implemented, and making any necessary enhancements. When you're ready, you'll submit your work via our designated Google Form.
-
----
-
-## Important Dates
-
-- **Hackathon Start Date:** 20th Feb, 9:00 AM
-- **Hackathon End Date:** 21st Feb, 9:00 AM
-- **Submission Deadline:** 24 hours after the repository link is shared
-
----
-
-## Table of Contents
-- [Important Dates](#important-dates)
-- [Overview](#overview)
-- [Guidelines & Resources](#guidelines--resources)
-- [Tasks](#tasks)
-- [Submission Instructions](#submission-instructions)
-- [Submission Details for Your Repo README](#submission-details-for-your-repo-readme)
-- [Evaluation Criteria](#evaluation-criteria)
-- [License](#license)
-- [Contact](#contact)
-
-
+# Online Shop - Hackathon Phase 1 Solution
 
 ---
 
@@ -50,19 +14,7 @@ Your task is to familiarize yourself with the code, make enhancements if necessa
 
 ---
 
-## Guidelines & Resources
-
-Before diving into the tasks, please review the following key resources:
-
-- [CONTRIBUTING.md](CONTRIBUTING.md): Guidelines for code contributions, commit messages, and overall coding standards.
-- [ROADMAP.md](ROADMAP.md): Insights into the project vision, future enhancements, and milestones.
-- **Repository Documentation:** Explore the repository to understand how the application is built. Pay special attention to the `src` directory where the main application logic resides, as well as configuration files such as `vite.config.js` and styling in `index.css`.
-
-These documents provide the context needed to understand the project requirements and the best practices expected for your contributions.
-
----
-
-## Tasks
+## Task Descriptions & Implementations
 
 For this hackathon phase, your work will center around the following tasks:
 
@@ -83,32 +35,6 @@ For this hackathon phase, your work will center around the following tasks:
 - **Containerization Principles:** Even though a Dockerfile is not provided in this repository, consider how you would package and deploy this application using Docker. Reflect on the design decisions that would facilitate containerization.
 - **Conceptual Improvements:** Propose any modifications or improvements that could make future Docker integration smoother. Document your suggestions clearly in your pull request.
 - **Code Readiness:** Ensure the codebase is structured in a way that aligns with Docker best practices, preparing it for eventual containerized deployment on AWS EC2 / Azure VM / Google Compute Engine (Your Choice of Cloud).
-
----
-> [!IMPORTANT]
-> ## Submission Instructions
-> 
-> When you have completed your work, please follow these steps for submission:
->
-> 1. **Review & Test Your Work:**
->    
->    - Make sure all changes are committed and pushed to your GitHub repository (or branch). Test the application thoroughly to confirm that your enhancements do not break existing functionality.
->    
-> 2. **Prepare Your Submission:**
->    
->    -  Gather your full name, email address, and the URL to your GitHub repository (or the specific branch/commit that contains your work).
->    -  Make sure to add Demo video(which should be publically accessible) explaining your implementations for the project. This is the important aspect for evaluation. The Videos / Articles / Submissions should be submitted to the google form as well as shared on your LinkedIn/ twitter for extra points.
->    
-> 3. **Submit via Google Form:**
->    
->    - Complete the submission form here:
->    
->    [Submit Your Work](https://docs.google.com/forms/d/e/1FAIpQLSdtOttzC9M__5ysJ_prVT1MtmV0qh1_PXrI5aYfd3zQNCF-CA/viewform?usp=header)
->    
-> 4. **Timely Submission:**
->    
->    - Ensure that your submission is completed before the hackathon deadline. Late submissions will not be eligible for prizes.
->    
 
 ---
 
@@ -145,56 +71,3 @@ Make sure this information is visible in your repository's README so that evalua
 
 ---
 
-## Evaluation Criteria
-
-Submissions will be evaluated based on the following criteria:
-
-- **Adherence to Guidelines:**
-    
-    Your work should comply with the project’s coding standards, documentation, and contribution guidelines as described in this README and the [CONTRIBUTING.md](http://contributing.md/) file.
-    
-- **Git & GitHub Proficiency:**
-    
-    Evaluation of your version control practices, including branching strategy, commit quality, and pull request process.
-    
-- **Linux Competence:**
-    
-    Demonstrated ability to effectively use Linux for system administration tasks, scripting, and command-line operations within the project.
-    
-- **Docker Readiness:**
-    
-    Although a Dockerfile is not provided, your documentation and code structure should reflect an understanding of containerization best practices and readiness for future Docker integration.
-    
-- **Quality of Enhancements:**
-    
-    The significance and quality of your improvements, refactoring, and overall impact on the project’s functionality.
-    
-- **Documentation & Clarity:**
-    
-    Clear and concise documentation that explains your work, including details in your repository README about your tasks and changes.
-    
-- **Timeliness:**
-    
-    Your submission must be completed and submitted before the hackathon deadline.
-    
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [MIT](LICENSE) file for details.
-
----
-
-## Contact
-
-For any questions or further information, please contact:
-
-- **Email:** [iemafzalhassan@gmail.com](mailto:iemafzalhassan@gmail.com) , [amitabhdevops2024@gmail.com](mailto:iemafzalhassan@gmail.com) , [deveshagent@gmail.com](mailto:deveshagent@gmail.com)
-- [Join Discord Server](https://discord.gg/4JtuMhMcjn)
-
----
-
-Good luck for the hackathon
-
-Happy Learning :)
