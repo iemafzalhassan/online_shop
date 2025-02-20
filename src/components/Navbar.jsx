@@ -3,9 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { ThemeToggle } from "./ThemeToggle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 export function Navbar() {
     const { openCart, cartQuantity } = useShoppingCart();
@@ -14,8 +13,8 @@ export function Navbar() {
         <nav className="navbar sticky-top">
             <Container className="d-flex justify-content-between align-items-center">
                 <NavLink to="/" className="navbar-brand">
-                    <img src="/imgs/logo.svg" alt="Logo" width="30" height="30" />Online
-                    <span className="text-primary text-color">Shop</span>
+                    <img src="/imgs/logo.svg" alt="Logo" width="30" height="30" />
+                    Online <span className="text-primary text-color">Shop</span>
                 </NavLink>
 
                 <div className="d-flex align-items-center gap-3">
@@ -26,6 +25,9 @@ export function Navbar() {
                         <NavLink to="/admin" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
                             Admin
                         </NavLink>
+                        <NavLink to="/login" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                            Login
+                        </NavLink> {/* Added Login Button */}
                     </Nav>
 
                     <div className="d-flex align-items-center gap-2">
@@ -60,3 +62,4 @@ export function Navbar() {
         </nav>
     );
 }
+

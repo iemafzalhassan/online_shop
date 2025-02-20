@@ -16,6 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.7",
     "react": "^18.0.0",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.0.0",
