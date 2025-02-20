@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  socialapp:
+    image: onlineapp:latest
+    container_name: "ecomercesite"
+    ports:
+      - "5173:5173"

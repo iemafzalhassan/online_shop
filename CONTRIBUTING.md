@@ -23,7 +23,7 @@ By participating in this project, you are expected to uphold our Code of Conduct
 
 ### Setting Up Development Environment
 ```bash
-Port: 3000
+Port: 5173
 ```
 
 
