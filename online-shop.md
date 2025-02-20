@@ -27,3 +27,6 @@ This is an e-commerce platform that allows customers to browse products, add the
 
 - .dockerignore
 it will help not copying all unncessary files, modules to the docker image so docker image will be light.
+
+### Retrospective
+![App Screenshot](https://github.com/jkabirqa/online_shop/blob/feature/dockerize-online-shop-app/portMismatch.png?raw=true)
