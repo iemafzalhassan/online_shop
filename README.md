@@ -42,7 +42,7 @@ newgrp docker
 ### 7. Cloneed the Hackathon Repository Locally
 Cloned the forked repository to my local machine using a personal access token (PAT) for authentication:
 ```bash
-git clone https://github.com//hackathon.git](https://github.com/surya-edict/online_shop.git
+git clone https://github.com/surya-edict/online_shop.git
 ```
 
 ### 8. Analyzing Source Code and Created a Dockerfile
