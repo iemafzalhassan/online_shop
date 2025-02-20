@@ -1,4 +1,4 @@
-nline Shop - Hackathon** 🌟  
+Online Shop - Hackathon** 🌟  
 **Phase 1 Submission**  
 
 ## 📚 **Project Overview**  
@@ -7,7 +7,7 @@ This project is a part of the **Online Shop Hackathon**, where I successfully de
 ## 🔧 **Project Details**  
 
 1. **📂 Repository Setup**  
-   - Forked the **Online Shop** repository.  
+   - Forked the **Online_Shop** repository.  
    - Cloned the repository into my **AWS EC2 instance**.  
 
 2. **🐳 Dockerization**  
@@ -43,5 +43,9 @@ This project is a part of the **Online Shop Hackathon**, where I successfully de
 
 6. **🚀 Deployment**  
    - Followed **DevOps best practices** to deploy the application on an **AWS EC2 instance**.  
-   - The application is successfully running on **port 3000**.  
+   - The application is successfully running on **port 3000**.
+  
+   - Below is my Deployed Web App Snapshot:-
+     ![image](https://github.com/user-attachments/assets/038c100c-0b20-4b6e-9a18-0b030f83179e)
+
 
