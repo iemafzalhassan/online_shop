@@ -1,0 +1,8 @@
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile_milti_stage
+    ports:
+      - "3000:5173"
+    
