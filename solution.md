@@ -103,9 +103,3 @@ vim .dockerignore
  Dockerfile
 
 ```
-# Let's Push Git Process
-## Move Untracted to Staged 
-
-```bash 
-git add .
-```
