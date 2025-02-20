@@ -1,200 +1,335 @@
-# Online Shop 🛍️ for Hackathon Phase 1
-[![Stars](https://img.shields.io/github/stars/iemafzalhassan/online_shop)](https://github.com/iemafzalhassan/online_shop)
-![Forks](https://img.shields.io/github/forks/iemafzalhassan/online_shop)
-![GitHub last commit](https://img.shields.io/github/last-commit/iemafzalhassan/easyshop?color=red)
-[![GitHub Profile](https://img.shields.io/badge/GitHub-iemafzalhassan-blue?logo=github&style=flat)](https://github.com/iemafzalhassan)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-<p align="center">
+# Online Shop – Hackathon Phase 1 Submission
 
-Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This repository contains a fully functional e-commerce application built to demonstrate foundational DevOps skills in three key areas:
-- **Git & GitHub**
-- **Linux**
-- **Docker**
+## Overview:
+This project is a React-based online shopping platform designed to demonstrate proficiency in Git & GitHub, Linux, and Docker. The solution ensures efficient version control, deployment, and containerization, leveraging these technologies to create a scalable and maintainable application.
 
-In this phase, your focus is on understanding the provided developer code, reviewing how these core topics are implemented, and making any necessary enhancements. When you're ready, you'll submit your work via our designated Google Form.
 
----
+## Prerequisites
 
-## Important Dates
-
-- **Hackathon Start Date:** 20th Feb, 9:00 AM
-- **Hackathon End Date:** 21st Feb, 9:00 AM
-- **Submission Deadline:** 24 hours after the repository link is shared
-
----
-
-## Table of Contents
-- [Important Dates](#important-dates)
-- [Overview](#overview)
-- [Guidelines & Resources](#guidelines--resources)
-- [Tasks](#tasks)
-- [Submission Instructions](#submission-instructions)
-- [Submission Details for Your Repo README](#submission-details-for-your-repo-readme)
-- [Evaluation Criteria](#evaluation-criteria)
-- [License](#license)
-- [Contact](#contact)
+- Git
+- Node.js (v16 or higher)
+- npm or yarn
+- Docker
+- sudo privileges on my Linux system
 
 
 
----
+# Task -1: Setup Instructions
+
+### 1. Fork the Repository
+
+Start by forking the repository to my GitHub account.
+
+### 2. Create a User and Grant Permissions
+
+Create a new user named 'Mahesh' on my local server and grant sudo permissions:
+
+```bash
+sudo useradd -m Mahesh -s /bin/bash
+sudo usermod -aG sudo $USER
+```
+
+### 3. Clone the Repository
+
+Generate an SSH key and clone the repository using the SSH method:
+
+```bash
+sudo su Mahesh
+ssh-keygen 
+# Follow the prompts to complete key generation
+# Add the SSH key public key to my GitHub account
+git clone git@github.com:<your-username>/<repository-name>.git
+```
+
+### 4. Create a Branch for the Hackathon
+
+Switch to the cloned directory and create a new branch from the Hackathon branch:
+
+```bash
+cd <repository-name>
+git checkout -b Phase-1-Docker origin/Hackathon
+```
+
+### 5. Configure Docker Permissions
+
+Add the current user to the Docker group to manage Docker as a non-root user:
+
+```bash
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+### 6. Build the Application
+
+Navigate to the project directory and install dependencies:
+
+```bash
+cd path/to/project
+npm install
+```
+
+Check if all dependencies are installed correctly:
+
+```bash
+npm run build
+```
+
+If there are missing dependencies, particularly for Vite, install them:
+
+```bash
+npm install --save-dev vite
+npm run build
+```
+
+# Task-2: Running the Application
+
+After successfully building the application, you can run it locally:
+
+```bash
+npm run dev
+```
+
+
+
+
+# Task-3: Dockerfile for single stage Node.js 
+
+After checking on the local device that the app successfully run on the local host. I have created a Dockerfile that includes the follwing steps :
+
+1. **Base Image**:
+   ```Dockerfile
+   FROM node:20-alpine
+   ```
+   This line sets the base image for the Docker container. `node:20-alpine` is a lightweight version of the Node.js runtime based on Alpine Linux, which is ideal for keeping the image size small.
+
+2. **Working Directory**:
+   ```Dockerfile
+   WORKDIR /app
+   ```
+   This command sets the working directory inside the container to `/app`. All subsequent commands will be run from this directory.
+
+3. **Copy Package Files**:
+   ```Dockerfile
+   COPY package*.json ./
+   ```
+   This copies both `package.json` and `package-lock.json` (if present) to the working directory in the container. These files define the project dependencies.
+
+4. **Install Dependencies**:
+   ```Dockerfile
+   RUN npm install
+   ```
+   Executes `npm install` to install the dependencies defined in `package.json`. This is done in a separate step to take advantage of Docker's layer caching, which can speed up builds if the dependencies don't change.
+
+5. **Copy Application Files**:
+   ```Dockerfile
+   COPY . .
+   ```
+   Copies the rest of my application's files into the working directory in the container.
+
+6. **Build Application**:
+   ```Dockerfile
+   RUN npm run build
+   ```
+   Runs the build script defined in `package.json`, which should compile or prepare the application for production.
+
+7. **Expose Port**:
+   ```Dockerfile
+   EXPOSE 3000
+   ```
+   This informs Docker that the container will listen on port 3000. This does not actually publish the port; it functions as a form of documentation between the person who builds the image and the person who runs the container.
+
+8. **Command to Run Application**:
+   ```Dockerfile
+   CMD ["npm", "run", "preview", "--", "--port", "3000", "--host"]
+   ```
+   Sets the default command to run when the container starts. Here, it runs `npm run preview`, which should start my application in a mode suitable for previewing or testing, listening on port 3000 and accessible from outside the container.
+
+### Building and Running the Docker Container
+
+To build and run the Docker container based on this Dockerfile, you can use the following commands:
+
+1. **Build the Docker Image**:
+   ```bash
+   docker build -t my-node-app .
+   ```
+   This command builds a Docker image from the Dockerfile in the current directory and tags it as `my-node-app`.
+
+2. **Run the Docker Container**:
+   ```bash
+   docker run -p 3000:3000 my-node-app
+   ```
+   This command runs the Docker container, mapping port 3000 of the container to port 3000 on the host. This allows you to access the application via `http://localhost:3000` on my local machine.
+
+These steps should help you successfully containerize and run my Node.js application using Docker.
+
+
+# Task-4: Multi-Stage Dockerfile
 
 ## Overview
+This Dockerfile builds a Node.js application using a multi-stage approach. The first stage compiles the application, while the second stage sets up an optimized runtime environment using Nginx.
 
-The **Online Shop** project is a demo e-commerce application designed for Hackathon Phase 1. It serves as a platform to showcase best practices in code quality, development workflows, and system design with a focus on:
+## Dockerfile Explanation
 
-- **Git & GitHub:** Effective version control, branching strategies, and collaborative workflows.
-- **Linux:** Command-line operations, system administration, and file management.
-- **Docker:** Principles of containerization and preparing code for deployment in a containerized environment.
+### **Stage 1: Build the Application**
 
-Your task is to familiarize yourself with the code, make enhancements if necessary, and ensure your final submission reflects your understanding of these topics.
+```dockerfile
+FROM node:20-alpine AS build
+```
+- Uses the official Node.js 20 Alpine-based image as the base image for the build stage.
+- `AS build` names this stage `build`, allowing later reference.
 
----
+```dockerfile
+WORKDIR /app
+```
+- Sets the working directory inside the container to `/app`.
+- All subsequent commands will be executed in this directory.
 
-## Guidelines & Resources
+```dockerfile
+COPY package*.json ./
+```
+- Copies `package.json` and `package-lock.json` to the container.
+- This helps leverage Docker layer caching for dependencies.
 
-Before diving into the tasks, please review the following key resources:
+```dockerfile
+RUN npm ci
+```
+- Installs dependencies using `npm ci` to ensure a clean and consistent install based on `package-lock.json`.
 
-- [CONTRIBUTING.md](CONTRIBUTING.md): Guidelines for code contributions, commit messages, and overall coding standards.
-- [ROADMAP.md](ROADMAP.md): Insights into the project vision, future enhancements, and milestones.
-- **Repository Documentation:** Explore the repository to understand how the application is built. Pay special attention to the `src` directory where the main application logic resides, as well as configuration files such as `vite.config.js` and styling in `index.css`.
+```dockerfile
+COPY . .
+```
+- Copies all source files from the project directory to the container.
 
-These documents provide the context needed to understand the project requirements and the best practices expected for your contributions.
+```dockerfile
+RUN npm run build
+```
+- Runs the `build` script defined in `package.json`.
+- Typically, this compiles TypeScript, bundles frontend assets, or generates production files.
 
----
-
-## Tasks
-
-For this hackathon phase, your work will center around the following tasks:
-
-### Git & GitHub
-
-- **Repository Management:** Fork and clone the repository, then create a new branch for your work. Ensure your commit history is clean and well-documented.
-- **Collaboration Practices:** Follow best practices for version control by making descriptive commits, creating pull requests, and engaging in code reviews.
-- **Workflow Optimization:** Identify any areas where the Git workflow can be improved and document your suggestions for future enhancements.
-
-### Linux
-
-- **Command Line Proficiency:** Review the code for examples of Linux command usage. Test and verify that file operations, system scripts, and environment configurations are functioning as expected.
-- **System Administration:** Examine how the application handles Linux-based operations such as permissions, file management, and process monitoring. If you see room for improvement, implement those changes and document them.
-- **Documentation:** Clearly document any Linux-related enhancements you make, explaining how they optimize the project’s performance or usability.
-
-### Docker
-
-- **Containerization Principles:** Even though a Dockerfile is not provided in this repository, consider how you would package and deploy this application using Docker. Reflect on the design decisions that would facilitate containerization.
-- **Conceptual Improvements:** Propose any modifications or improvements that could make future Docker integration smoother. Document your suggestions clearly in your pull request.
-- **Code Readiness:** Ensure the codebase is structured in a way that aligns with Docker best practices, preparing it for eventual containerized deployment on AWS EC2 / Azure VM / Google Compute Engine (Your Choice of Cloud).
-
----
-> [!IMPORTANT]
-> ## Submission Instructions
-> 
-> When you have completed your work, please follow these steps for submission:
->
-> 1. **Review & Test Your Work:**
->    
->    - Make sure all changes are committed and pushed to your GitHub repository (or branch). Test the application thoroughly to confirm that your enhancements do not break existing functionality.
->    
-> 2. **Prepare Your Submission:**
->    
->    -  Gather your full name, email address, and the URL to your GitHub repository (or the specific branch/commit that contains your work).
->    -  Make sure to add Demo video(which should be publically accessible) explaining your implementations for the project. This is the important aspect for evaluation. The Videos / Articles / Submissions should be submitted to the google form as well as shared on your LinkedIn/ twitter for extra points.
->    
-> 3. **Submit via Google Form:**
->    
->    - Complete the submission form here:
->    
->    [Submit Your Work](https://docs.google.com/forms/d/e/1FAIpQLSdtOttzC9M__5ysJ_prVT1MtmV0qh1_PXrI5aYfd3zQNCF-CA/viewform?usp=header)
->    
-> 4. **Timely Submission:**
->    
->    - Ensure that your submission is completed before the hackathon deadline. Late submissions will not be eligible for prizes.
->    
+```dockerfile
+RUN ls -l dist || (echo "Build failed: dist/ not found" && exit 1)
+```
+- Verifies that the `dist/` directory exists after the build.
+- If not, it prints an error message and exits with a non-zero status.
 
 ---
 
-## Submission Details for Your Repo README
+### **Stage 2: Runtime Environment**
 
-When submitting your repository link, your README must include:
+```dockerfile
+FROM nginx:alpine
+```
+- Uses the official Nginx Alpine-based image for the final production container.
+- This keeps the image lightweight and optimized for serving static files.
 
-- **Project Title & Overview:**
-    
-    Clearly state the project name (e.g., "Online Shop – Hackathon Phase 1 Submission") and provide a brief overview of your solution, emphasizing how it addresses Git & GitHub, Linux, and Docker.
-    
-- **Task Descriptions & Implementations:**
-    
-  -  Describe the tasks you worked on. Detail how you managed your repository, the Linux commands or scripts you used, and any improvements or suggestions regarding Docker integration.
+```dockerfile
+WORKDIR /app
+```
+- Sets the working directory to `/app` (not strictly necessary, but useful for consistency).
 
-> [!NOTE]
->
->  -  Provide video demo link (3-5 minutes only, not more than 5 minutes)
+```dockerfile
+COPY --from=build /app/dist /usr/share/nginx/html
+```
+- Copies the built application (`dist/` folder) from the `build` stage into the Nginx web root (`/usr/share/nginx/html`).
 
-- **Key Changes & Enhancements:**
-    
-    Highlight the major changes or enhancements you made, including any refactoring, feature additions, or optimizations, along with documentation updates.
-    
-- **Final Submission Statement:**
-    
-    Include a clear declaration that this repository (or branch) represents your final submission for Hackathon Phase 1.
-    
-- **Version or Branch Information:**
-    
-    Specify which branch or commit should be reviewed (e.g., "Final submission branch: `final-phase1`").
-    
+```dockerfile
+COPY --from=build /app/package*.json ./
+```
+- Copies `package.json` and `package-lock.json` (not strictly required for runtime but may be useful for debugging or future needs).
 
-Make sure this information is visible in your repository's README so that evaluators can easily review your work.
+```dockerfile
+EXPOSE 80
+```
+- Informs Docker that the container listens on port 80 (default Nginx port).
 
----
+```dockerfile
+CMD ["nginx", "-g", "daemon off;"]
+```
+- Starts Nginx in the foreground to keep the container running.
 
-## Evaluation Criteria
+## Building and Running the Docker Image
 
-Submissions will be evaluated based on the following criteria:
+### **Build the Docker Image**
+```sh
+docker build -t my-node-app .
+```
 
-- **Adherence to Guidelines:**
-    
-    Your work should comply with the project’s coding standards, documentation, and contribution guidelines as described in this README and the [CONTRIBUTING.md](http://contributing.md/) file.
-    
-- **Git & GitHub Proficiency:**
-    
-    Evaluation of your version control practices, including branching strategy, commit quality, and pull request process.
-    
-- **Linux Competence:**
-    
-    Demonstrated ability to effectively use Linux for system administration tasks, scripting, and command-line operations within the project.
-    
-- **Docker Readiness:**
-    
-    Although a Dockerfile is not provided, your documentation and code structure should reflect an understanding of containerization best practices and readiness for future Docker integration.
-    
-- **Quality of Enhancements:**
-    
-    The significance and quality of your improvements, refactoring, and overall impact on the project’s functionality.
-    
-- **Documentation & Clarity:**
-    
-    Clear and concise documentation that explains your work, including details in your repository README about your tasks and changes.
-    
-- **Timeliness:**
-    
-    Your submission must be completed and submitted before the hackathon deadline.
-    
+### **Run the Container**
+```sh
+docker run -p 3000:80 my-node-app
+```
+- Maps port 80 inside the container to port 3000 on the host.
+- The application will be accessible at `http://localhost:3000`.
 
----
+### **Run Build Manually**
+```sh
+docker build -t my-node-app:latest .
+```
+- Builds the image without using cached layers to ensure a fresh build.
 
-## License
+### **Run Container in Detached Mode**
+```sh
+docker run -d -p 3000:80 my-node-app:latest
+```
+- Runs the container in the background (detached mode).
 
-This project is licensed under the MIT License. See the [MIT](LICENSE) file for details.
+## Conclusion
+This multi-stage Dockerfile optimizes the image by separating the build and runtime environments, reducing final image size and ensuring efficient dependency management.
 
----
 
-## Contact
+# Task-5: GitHub Actions Performed
 
-For any questions or further information, please contact:
+GitHub Actions are commands executed to manage and push my project to a GitHub repository. Below is a breakdown of the Git commands I performed:
 
-- **Email:** [iemafzalhassan@gmail.com](mailto:iemafzalhassan@gmail.com) , [amitabhdevops2024@gmail.com](mailto:iemafzalhassan@gmail.com) , [deveshagent@gmail.com](mailto:deveshagent@gmail.com)
-- [Join Discord Server](https://discord.gg/4JtuMhMcjn)
+1. Configure Git User Information (First-Time Setup)
 
----
+Before making any commits, ensure that Git is configured with your user name and email:
+```
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+```
+		•	user.name sets your Git username (used in commit history).
+    	•	user.email sets your email (must match your GitHub account for verification).
+    	•	--global applies the settings system-wide; omit it to set config only for the current repository
 
-Good luck for the hackathon
+2. Add all files to the staging area
+```
+git add .
+```
+	•	This command stages all changes (new, modified, and deleted files) in the working directory.
+	•	. means “all files in the current directory.”
 
-Happy Learning :)
+3. Commit the changes with a message
+```
+git commit -m "Final submission for Hackathon Phase 1"
+```
+	•	Creates a commit with all the staged changes.
+	•	-m specifies a commit message, describing what this commit contains.
+	•	The message "Final submission for Hackathon Phase 1" makes it clear that this is the final version.
+
+4. Switch to the Hackathon branch
+```
+git checkout -b hackathon
+```
+	•	checkout -b creates a new branch named hackathon and switches to it.
+	•	This ensures that my final submission is kept separate from other ongoing work.
+
+5. Push the branch to GitHub
+```
+git push origin hackathon
+```
+
+	•	Pushes the hackathon branch to the remote repository (GitHub).
+	•	origin refers to the default remote repository where my code is stored.
+	•	This makes the final submission available for review.
+
+These GitHub Actions help:
+
+1. Track and manage code changes efficiently.
+
+2. Create a separate submission branch for clarity.
+
+3. Ensure that only final, reviewed code is submitted.
+
+
+

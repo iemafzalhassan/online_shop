@@ -1,0 +1,36 @@
+# Stage 1: Build
+# Base image node:20
+FROM node:20-alpine AS build
+
+#Setting Work Directory 
+WORKDIR /app
+
+# Copy package.json and package-lock.json first to leverage caching
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy source files
+COPY . .
+
+# Build the application
+RUN npm run build
+
+# Debug: Ensure dist/ is created
+RUN ls -l dist || (echo "Build failed: dist/ not found" && exit 1)
+
+# Stage 2: Runtime
+FROM nginx:alpine
+
+WORKDIR /app
+
+# Copy only the built application and necessary files
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/package*.json ./
+
+# Expose the port that is used ny Ngnix Server 
+EXPOSE 80
+
+# Start the application
+CMD ["nginx","-g","daemon off;"]
