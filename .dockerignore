@@ -1,4 +1,0 @@
-.dockerignore
- package-lock.json
- Dockerfile
- 
