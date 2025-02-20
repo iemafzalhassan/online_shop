@@ -1,0 +1,7 @@
+services:
+  online-shop:
+    build:
+      context: .
+    container_name: online-shop
+    ports:
+      - "3000:5173"
