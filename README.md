@@ -42,6 +42,7 @@ docker compose up -d --build
 3️⃣ Access the Application
 
 Once running, open your browser and go to:
+
 👉 http://localhost
 
 
@@ -65,6 +66,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 
+---------------
 
 docker-compose.yaml:-
 
@@ -78,6 +80,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
 
+----------------
 
 nginx.conf:
 
@@ -97,6 +100,7 @@ server {
     }
 }
 
+-----------------
 
 🔥 Phase One Hackathon Participation
 
