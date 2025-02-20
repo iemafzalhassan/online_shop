@@ -61,15 +61,38 @@ Welcome to the **Online Shop** project, this guide will help you set up and run 
   ```
 
 ### 🔟 Cloned the Hackathon Repository Locally 🛠️
-- Cloned my forked repository using a Personal Access Token (PAT):
+- Cloned the forked repository to my instance generated a personal access token (PAT) from Settings > Developer Settings > PAT > Tokens for authentication:
   ```bash
-  git clone https://:@github.com//online_shop.git
+  git clone https://username:PAT@github.com//online_shop.git
   ```
 
 ### 🔢 Reviewed Source Code and Created a Dockerfile 📂
 - Analyzed the source code and created a `Dockerfile` using `vim`:
   ```bash
   vim Dockerfile
+  ```
+
+  ```bash
+  # Alpine is chosen for its lightweight nature, which helps reduce the image size
+  FROM node:18-alpine
+
+  # Setting the working directory inside the container
+  WORKDIR /app
+
+  # Copy package.json and package-lock.json to the working directory
+  COPY package*.json ./
+  
+  # Install dependencies specified in package.json
+  RUN npm install
+
+  # Copy the rest of the application code into the working directory
+  COPY . .
+
+  # Exposing port 3000 to allow external access to the application
+  EXPOSE 3000
+
+  # Here, it starts a development server using npm's "dev" script
+  CMD ["npm", "run", "start"]
   ```
 
 ### 🔢 Built the Docker Image 🏗️
@@ -83,7 +106,76 @@ Welcome to the **Online Shop** project, this guide will help you set up and run 
   ```bash
   docker run -p 3000:3000 on-shop
   ```
-- The application is accessible at: `http://:3000/`.
+
+  ![image](https://github.com/user-attachments/assets/8ac81875-b794-4d5f-bb1a-49febeff7442)
+
+- The application is accessible at: `http://IP:3000/`.
+
+### 🔢 Multi-stage Docker file 🏗
+  ```bash
+  # Stage 1: Build Stage
+  FROM node:18-alpine AS builder
+
+  # Set working directory inside the container
+  WORKDIR /app
+
+  # Copy package.json and package-lock.json to install dependencies
+  COPY package*.json ./
+
+  # Install dependencies
+  RUN npm install
+
+  # Copy the rest of the application code into the working directory
+  COPY . .
+
+  # Build the application
+  RUN npm run build
+
+
+
+  # Stage 2: Production Stage
+  FROM node:18-alpine
+
+  # Set working directory inside the container
+  WORKDIR /app
+
+  # Copy only necessary files from the build stage
+  COPY --from=builder /app /app
+  
+  # Expose port 3000 for external access
+  EXPOSE 3000
+
+  # Start the application in production mode
+  CMD ["npm", "run", "start"]
+  ```
+
+### 🔢 Docker compose file ✅
+- Created a new branch named `final-phase1`:
+  ```bash
+  vim docker-compose.yml
+  ```
+  ```bash
+  version: "3.8"
+
+  services:
+  app:
+  build:
+  context: .
+  dockerfile: Dockerfile
+  ports:
+  - "3000:3000"
+  volumes:
+  - .:/app # Mount the current directory to /app in the container for development
+  - /app/node_modules # Prevent overwriting node_modules in the container
+  environment:
+  NODE_ENV: development # Set environment variable
+  command: npm run start
+  ```
+
+### OUTPUT 
+
+![Screenshot 2025-02-20 202007](https://github.com/user-attachments/assets/66a32e96-0c5b-4860-969a-29268a40a2e6)
+
 
 ### 🔢 Created a New Branch 🌿
 - Created a new branch named `final-phase1`:
