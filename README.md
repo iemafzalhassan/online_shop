@@ -112,6 +112,7 @@ Welcome to the **Online Shop** project, this guide will help you set up and run 
 - The application is accessible at: `http://IP:3000/`.
 
 ### 🔢 Multi-stage Docker file 🏗
+- To reduce size of image
   ```bash
   # Stage 1: Build Stage
   FROM node:18-alpine AS builder
