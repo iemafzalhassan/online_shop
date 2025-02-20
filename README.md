@@ -39,13 +39,13 @@ Applied the changes to user group:
 newgrp docker
 ```
 
-### 7. Clone the Hackathon Repository Locally
-Clone your forked repository to your local machine using a personal access token (PAT) for authentication:
+### 7. Cloneed the Hackathon Repository Locally
+Cloned the forked repository to my local machine using a personal access token (PAT) for authentication:
 ```bash
 git clone https://github.com//hackathon.git](https://github.com/surya-edict/online_shop.git
 ```
 
-### 8. Analyze Source Code and Created a Dockerfile
+### 8. Analyzing Source Code and Created a Dockerfile
 After reviewing and analyzing the source code, created a `Dockerfile` to containerize the application. Using `vim`:
 ```bash
 vim Dockerfile
