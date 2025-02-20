@@ -19,7 +19,7 @@ RUN npm run build
 # Stage 2: Serve the application using Nginx
 FROM nginx:alpine
 
-# Set working directory
+# Sets the working directory to Nginx's
 WORKDIR /usr/share/nginx/html
 
 # Deleting default Nginx files to prepare for deployment

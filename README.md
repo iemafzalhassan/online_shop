@@ -16,7 +16,7 @@
         - Install project dependencies:
             npm install
 
-        - Check if the project is working fine:
+        - Run the project in local system:
             npm run dev
 
         - Open the following URL in a browser:
@@ -47,13 +47,12 @@
   
         - Connect to the EC2 instance using an SSH client
 
-        - Create a folder:
-            mkdir online-shop
-
         - Clone the project:
+            
             git clone https://github.com/shrikantdhanvijay/online_shop.git
 
         - Create a Dockerfile:
+            cd online_shop
             vim Dockerfile 
             Note: Please check Dockerfile
 
