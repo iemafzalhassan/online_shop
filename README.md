@@ -8,9 +8,13 @@ Welcome to the **Online Shop** project, this guide will help you set up and run 
 
 ## 👇FOR AWS USERS and LOCAL USERS
 
-### 1️⃣ Logged in on AWS Console
+### 0️⃣ Logged in on AWS Console
 - Logged into the AWS Console and started an instance with **Ubuntu**.
 - Saved the key pair for secure access.
+
+### 1️⃣ Allow port
+- Allow 3000 port which will be used in this project
+- click on instance and navigate to security group then edit inbound rules then add rule then add 3000 port then set it to all ipv4 then save
 
 ### 2️⃣ Connected with Local Machine
 - Ensured the key is not publicly viewable using:
