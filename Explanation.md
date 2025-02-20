@@ -79,3 +79,7 @@ onlineshop nginx 193MB
 onlineshop multistage 228MB
 onlineshop singlestage 321MB
 ```
+
+video explanation =>  https://www.loom.com/share/c8dc9ff008b14c2395b3a06b10ef9fb9?sid=429458ef-9c4f-4f42-939f-834fc3519d46
+
+
