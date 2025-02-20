@@ -1,5 +1,5 @@
 Project Title & Overview:
-his project is a **React.js** application bundled with **Vite** and containerized using **Docker**. It showcases an online shop built with modern web technologies, optimized for development and deployment.
+this project is a **React.js** application bundled with **Vite** and containerized using **Docker**. It showcases an online shop built with modern web technologies, optimized for development and deployment.
 
 Deploy Online web page for shoping category 
 
