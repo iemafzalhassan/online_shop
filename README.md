@@ -1,8 +1,5 @@
 # Online Shop 🛍️ for Hackathon Phase 1
 
-Here’s a detailed and professional `README.md` file :
-
----
 
 ## Steps to Set Up and Run the Project
 
