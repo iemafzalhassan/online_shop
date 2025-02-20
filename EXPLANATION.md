@@ -1,4 +1,4 @@
-#I have created a Dockerfile for Node Application using multistage build steps. It consists of two stages : 
+# I have created a Dockerfile for Node Application using multistage build steps. It consists of two stages : 
 ## 1. Build Stage 
 ## 2. Deployment Stage
 
