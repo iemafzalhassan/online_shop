@@ -93,8 +93,8 @@ This document outlines the planned development roadmap for the Online Shop proje
   5. To pull the image you need to run this command `docker pull ujkumar11/devops_online_shop:latest`
 
 
-### ** Video Recording **
+###  Video Recording 
 - [watch out my recorded video here](https://drive.google.com/file/d/1DP7BrAlvu0wiXHrJnJH7_HQy2z2vc_1p/view?usp=sharing)
 
-### *** =========================End of Docker Hackathon========================= **
+###  =========================End of Docker Hackathon========================= 
 
