@@ -13,7 +13,7 @@ Welcome to the **Online Shop** project, this guide will help you set up and run 
 ### 2️⃣ Connected with Local Machine
 - Ensured the key is not publicly viewable using:
   ```bash
-  chmod 400 (file name)
+  chmod 400 (downloaded key name)
   ```
 - Connected the instance with the local machine using **SSH**.
 
