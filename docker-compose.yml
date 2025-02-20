@@ -1,0 +1,17 @@
+version: '3'  # Specify the Docker Compose version
+
+services:
+  node-online-shop-root-less:  # Define the service name
+    build:
+      context: .  # Use the current directory as the build context
+    container_name: node-online-shop-root-less  # Assign a custom name to the container
+    user: appuser  # Run the container as the 'appuser' (non-root user for better security)
+    ports:
+      - "3000:5173"  # Map port 5173 inside the container to port 3000 on the host
+    restart: unless-stopped  # Restart the container unless it is manually stopped
+    networks:
+       - node-online-shop-root-less  # Connect the container to the custom network
+
+# Define a custom network for the service
+networks:
+  node-online-shop-root-less:
