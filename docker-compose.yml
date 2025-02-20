@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  online_shop:
+    build: .
+    ports:
+      - "8080:80"  # Map container's Nginx port 80 to local 8080
+    volumes:
+      - .:/app  # Mounts the local project directory
+      - /app/node_modules  # Anonymous volume for dependencies
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=mysql  # Hostname of MySQL service (matches service name)
+      - DB_USER=root
+      - DB_PASSWORD=rootpassword
+      - DB_NAME=ecommerce_db
+    depends_on:
+      - mysql  # Ensures MySQL starts before the app
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: ecommerce_db
+      MYSQL_USER: shopuser
+      MYSQL_PASSWORD: shoppass
+    ports:
+      - "3306:3306"  # Exposes MySQL port
+    volumes:
+      - mysql_data:/var/lib/mysql  # Persistent MySQL data storage
+
+volumes:
+  mysql_data:
