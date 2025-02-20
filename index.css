@@ -35,7 +35,7 @@ body {
 
 .navbar {
     background-color: var(--dark-bg) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(179, 31, 31, 0.1);
 }
 
 .btn-primary {

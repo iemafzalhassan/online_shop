@@ -1,32 +1,109 @@
-:root[data-theme="dark"] {
-  --primary: #8a2be2;
-  --primary-dark: #7126b5;
-  --primary-hover: #9d4de6;
-  --background-main: #1a1a1a;
-  --background-secondary: #242424;
-  --background-elevated: #2d2d2d;
-  --text-primary: #f5f5f5;
-  --text-secondary: #e0e0e0;
-  --text-muted: #a0a0a0;
-  --border-color: rgba(138, 43, 226, 0.2);
-  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --hover-overlay: rgba(138, 43, 226, 0.1);
+:root[data-theme="dark"] { 
+  --primary: #ffb86c; /* Warm Sunset Orange */
+  --primary-dark: #ff9f43; /* Deep Amber */
+  --primary-hover: #ffc98b; /* Soft Gold */
+  
+  --background-main: #0a0a0a; /* Ultra Dark */
+  --background-secondary: #141414; /* Deep Black */
+  --background-elevated: #1c1c1c; /* Smooth Dark Gray */
+  
+  --text-primary: #f8f8f8; /* Soft White */
+  --text-secondary: #c7c7c7; /* Muted Silver */
+  --text-muted: #949494; /* Gentle Gray */
+  
+  --border-color: rgba(255, 184, 108, 0.2); /* Golden Hue */
+  --card-shadow: 0 4px 14px rgba(255, 184, 108, 0.3); /* Warm Glow */
+  --hover-overlay: rgba(255, 184, 108, 0.1); /* Subtle Highlight */
+  
+  --glow: 0 0 12px rgba(255, 184, 108, 0.4); /* Soft Amber Glow */
+  --transition: all 0.4s ease-in-out; /* Smooth Transitions */
 }
 
-:root[data-theme="light"] {
-  --primary: #8a2be2;
-  --primary-dark: #7126b5;
-  --primary-hover: #9d4de6;
-  --background-main: #ffffff;
-  --background-secondary: #f8f9fa;
-  --background-elevated: #ffffff;
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #717171;
-  --border-color: rgba(138, 43, 226, 0.15);
-  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --hover-overlay: rgba(138, 43, 226, 0.05);
+
+:root[data-theme="light"] { 
+  --primary: #6c5ce7; /* Elegant Royal Purple */
+  --primary-dark: #5a4ab5; /* Deep Velvet */
+  --primary-hover: #8d7cff; /* Soft Lavender */
+  
+  --background-main: #fefaf6; /* Warm White */
+  --background-secondary: #f5f2ef; /* Soft Almond */
+  --background-elevated: #ffffff; /* Pure White */
+  
+  --text-primary: #1f1f1f; /* Soft Black */
+  --text-secondary: #444; /* Deep Gray */
+  --text-muted: #777; /* Muted Tone */
+  
+  --border-color: rgba(108, 92, 231, 0.2); /* Soft Purple Tint */
+  --card-shadow: 0 4px 14px rgba(108, 92, 231, 0.3); /* Elegant Glow */
+  --hover-overlay: rgba(108, 92, 231, 0.1); /* Smooth Overlay */
+  
+  --glow: 0 0 12px rgba(108, 92, 231, 0.4); /* Subtle Luxe Glow */
+  --transition: all 0.4s ease-in-out; /* Fluid Motion */
 }
+
+
+/* 🔘 Buttons */
+button { 
+  transition: var(--transition); 
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  color: var(--text-primary);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: var(--glow);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Button Hover Effect */
+button:hover { 
+  transform: scale(1.07); 
+  box-shadow: 0 0 20px var(--primary-hover); 
+  filter: brightness(1.1);
+}
+
+/* 🃏 Card Components */
+.card { 
+  transition: var(--transition); 
+  background: var(--background-elevated);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Card Hover Effect */
+.card:hover { 
+  transform: translateY(-8px) scale(1.03); 
+  box-shadow: 0 8px 20px var(--primary-hover); 
+}
+
+/* ✨ Glowing Hover Links */
+a {
+  position: relative;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+a:hover::before {
+  transform: scaleX(1);
+}
+
+
+
 
 body {
   background-color: var(--background-main) !important;

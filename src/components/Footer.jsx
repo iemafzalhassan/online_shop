@@ -23,11 +23,11 @@ export function Footer() {
                         <div className="contact-info">
                             <div className="contact-item mb-2">
                                 <FontAwesomeIcon icon={faMapMarkerAlt} className="contact-icon me-2" />
-                                <span><strong>Address:</strong> Bihar, India</span>
+                                <span><strong>Address:</strong> Bhubaneswar,Odisha,India</span>
                             </div>
                             <div className="contact-item">
                                 <FontAwesomeIcon icon={faPhone} className="contact-icon me-2" />
-                                <span><strong>Helpline:</strong> +91 9999999999</span>
+                                <span><strong>Helpline:</strong> +91 7008463071</span>
                             </div>
                         </div>
                     </Col>
@@ -37,15 +37,15 @@ export function Footer() {
                         <div className="quick-links-group">
                             <div className="quick-link-item">
                                 <FontAwesomeIcon icon={faLink} className="contact-icon me-2" />
-                                <a href="https://iemafzalhassan.tech" className="footer-link">Privacy Policy</a>
+                                <a href="https://www.linkedin.com/in/baniprasad-mangaraj-b94aab20b/" className="footer-link">Privacy Policy</a>
                             </div>
                             <div className="quick-link-item">
                                 <FontAwesomeIcon icon={faLink} className="contact-icon me-2" />
-                                <a href="https://iemafzalhassan.tech" className="footer-link">Terms & Conditions</a>
+                                <a href="https://www.linkedin.com/in/baniprasad-mangaraj-b94aab20b/" className="footer-link">Terms & Conditions</a>
                             </div>
                             <div className="quick-link-item">
                                 <FontAwesomeIcon icon={faLink} className="contact-icon me-2" />
-                                <a href="https://iemafzalhassan.tech" className="footer-link">Return Policy</a>
+                                <a href="https://www.linkedin.com/in/baniprasad-mangaraj-b94aab20b/" className="footer-link">Return Policy</a>
                             </div>
                         </div>
                     </Col>
@@ -55,15 +55,15 @@ export function Footer() {
                         <div className="quick-links-group">
                             <div className="quick-link-item">
                                 <FontAwesomeIcon icon={faLink} className="contact-icon me-2" />
-                                <a href="https://iemafzalhassan.tech" className="footer-link">Shipping Info</a>
+                                <a href="https://www.linkedin.com/in/baniprasad-mangaraj-b94aab20b/" className="footer-link">Shipping Info</a>
                             </div>
                             <div className="quick-link-item">
                                 <FontAwesomeIcon icon={faLink} className="contact-icon me-2" />
-                                <a href="https://iemafzalhassan.tech" className="footer-link">FAQ</a>
+                                <a href="https://www.linkedin.com/in/baniprasad-mangaraj-b94aab20b/" className="footer-link">FAQ</a>
                             </div>
                             <div className="quick-link-item">
                                 <FontAwesomeIcon icon={faLink} className="contact-icon me-2" />
-                                <a href="https://iemafzalhassan.tech" className="footer-link">Support</a>
+                                <a href="https://www.linkedin.com/in/baniprasad-mangaraj-b94aab20b/" className="footer-link">Support</a>
                             </div>
                         </div>
                     </Col>
@@ -76,7 +76,7 @@ export function Footer() {
                             </h5>
                             <div className="social-links-horizontal">
                                 <a 
-                                    href="https://github.com/iemafzalhassan" 
+                                    href="https://github.com/BaniprasadMangaraj/online_shop" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
                                     className="social-link"
@@ -84,7 +84,7 @@ export function Footer() {
                                     <FontAwesomeIcon icon={faGithub} />
                                 </a>
                                 <a 
-                                    href="https://linkedin.com/in/iemafzalhassan" 
+                                    href="https://www.linkedin.com/in/baniprasad-mangaraj-b94aab20b/" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
                                     className="social-link"
@@ -92,7 +92,7 @@ export function Footer() {
                                     <FontAwesomeIcon icon={faLinkedin} />
                                 </a>
                                 <a 
-                                    href="https://twitter.com/iemafzalhassan" 
+                                    href="https://x.com/mbaniprasad" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
                                     className="social-link"
