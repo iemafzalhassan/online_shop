@@ -1,6 +1,6 @@
-# 🛍️ Online Shop - Hackathon Phase 1
+# 🛍️ Online Shop - Docker | Vite | React 
 
-Welcome to the **Online Shop** project, developed as part of Hackathon Phase 1! This guide will help you set up and run the project seamlessly. 🚀
+Welcome to the **Online Shop** project, this guide will help you set up and run the project. 🚀
 
 ---
 
