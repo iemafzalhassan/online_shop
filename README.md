@@ -44,11 +44,10 @@ docker compose up -d --build
 Once running, open your browser and go to:
 👉 http://localhost
 
-'''
-# 📦 Docker Configuration
+
 
 ### Dockerfile
-```dockerfile
+
 # Stage 1: Build the React app
 FROM node:18 AS build
 WORKDIR /app
@@ -62,9 +61,8 @@ FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"] 
 
-'''
 docker-compose.yaml:-
 
 version: '3.8'
@@ -76,8 +74,8 @@ services:
     restart: always
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
-'''
-'''
+
+
 nginx.conf:
 
 server {
@@ -95,7 +93,7 @@ server {
         root /usr/share/nginx/html;
     }
 }
-'''
+
 
 🔥 Phase One Hackathon Participation
 
