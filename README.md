@@ -19,6 +19,43 @@ This project is a web-based **Online Shop application**.
 
 ---
 
+🛠 Task Descriptions & Implementations:-
+
+1️⃣ Repository Management (Git & GitHub)
+
+    Forked the given repository to my GitHub account.
+    Created a new branch (fix/docker-build) for modifications and feature enhancements.
+    Used Git commands for proper version control:
+
+git clone https://github.com/talhaaziz8/online_shop.git  
+git checkout -b fix/docker-build  
+git add .  
+git commit -m "Added Docker support and Nginx configuration"  
+git push origin fix/docker-build  
+
+    Created a pull request (PR) for merging changes back to the main repository.
+
+2️⃣ Linux Commands & Scripts Used
+
+    File and Directory Management:
+
+ls  
+cd  
+mkdir  
+rm -rf  
+
+Permissions & Execution:-
+
+chmod +x script.sh  
+
+Networking & System Commands:
+
+    curl -I http://localhost  
+    ps aux | grep node  
+    docker ps -a  
+
+
+
 ## 📦 Docker Image on Docker Hub :-
 
 You can pull and run the Docker image directly from **Docker Hub**:  
