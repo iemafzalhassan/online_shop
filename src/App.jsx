@@ -1,4 +1,4 @@
-/*adding this comment as part of Hackathon Phase 1 */
+/*adding this comment as part of Hackathon Phase 1*/
 
 import { Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
