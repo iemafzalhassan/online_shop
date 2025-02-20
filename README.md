@@ -83,6 +83,7 @@ COPY --from=builder /app/package.json ./package.json
 EXPOSE 5173
 CMD ["npx", "serve", "-s", "dist"]
 ```
+![Screenshot](https://github.com/suryansh639/online_shop/blob/hackathon/multistage.png)
 
 #### **Docker Commands Used:**
 ```sh
