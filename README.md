@@ -1,200 +1,94 @@
-# Online Shop 🛍️ for Hackathon Phase 1
-[![Stars](https://img.shields.io/github/stars/iemafzalhassan/online_shop)](https://github.com/iemafzalhassan/online_shop)
-![Forks](https://img.shields.io/github/forks/iemafzalhassan/online_shop)
-![GitHub last commit](https://img.shields.io/github/last-commit/iemafzalhassan/easyshop?color=red)
-[![GitHub Profile](https://img.shields.io/badge/GitHub-iemafzalhassan-blue?logo=github&style=flat)](https://github.com/iemafzalhassan)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-<p align="center">
+ONLINE SHOP - HAKATHON PHASE 1 SUBMISSION
 
-Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This repository contains a fully functional e-commerce application built to demonstrate foundational DevOps skills in three key areas:
-- **Git & GitHub**
-- **Linux**
-- **Docker**
+Hello,my self mirza nikhath sultana ,this is my first readme repository .
 
-In this phase, your focus is on understanding the provided developer code, reviewing how these core topics are implemented, and making any necessary enhancements. When you're ready, you'll submit your work via our designated Google Form.
+Welcome to my online shop project - hakathon phase 1 submission!this repository contains how I used devops skills in three key areas:
 
----
+   Git &GitHub
+   Linux
+   Docker
 
-## Important Dates
+#online shop app
+this is a simple e-commerce web application built with node.js and react.
 
-- **Hackathon Start Date:** 20th Feb, 9:00 AM
-- **Hackathon End Date:** 21st Feb, 9:00 AM
-- **Submission Deadline:** 24 hours after the repository link is shared
+OVERVIEW 
 
----
+In this repository i am sharing how i used the commands of git and git hub then some linux and docker commands.This is online shop project which is demo of e- commerce application designed hackathon phase 1.This repository show cases the practices in code quality , development workflow and system designs which focus on the following:
+->git and git hub commands
+->linux based commands 
+->docker best practices 
 
-## Table of Contents
-- [Important Dates](#important-dates)
-- [Overview](#overview)
-- [Guidelines & Resources](#guidelines--resources)
-- [Tasks](#tasks)
-- [Submission Instructions](#submission-instructions)
-- [Submission Details for Your Repo README](#submission-details-for-your-repo-readme)
-- [Evaluation Criteria](#evaluation-criteria)
-- [License](#license)
-- [Contact](#contact)
+Firstly, starting from git commands 
+* To clone the repository 
+     command:git clone <https://github.com/mirzanikhath/online_shop.git>
+* I made a new git branch 
+     command : git checkout -b nida-final-phase1
+Then I made a new multistage docker file in which the image size which I have taken is slim.By using docker commands i did the remaining process
+Command to create the docker file :
+   command: vim dockerfile-mini
+After succesfully creating multistage docker file i created an image from that docker file by using the following command
+    command : docker build -f ./dockerfile-mini -t node-app-mini:latest .
+After successfully creating the image if that docker file I created container from that image
+    command : docker run -d -p 3000:5173 node-app-mini:latest
+while running this application I faced some problems regarding ports.if I explain the error deeply it was saying this porst is already occupied by another service .
+To  resolve this issue I took help from google and came across google saying that we have to check which service is running on that particular port then i need to kill that service processed on that particular port.Here the commands i used to resolve this issue 
+
+# To check which service is being processed on particular port         
+        command : sudo lsof -i :<port number>
+# To kill the service which is processed 
+        command : sudo kill -9 <PID>(prcessed ID of that server )
+Then i used some docker commands like to check how many stopped containers are present 
+    command : docker ps -a
+There i saw many stopped conatiners were present .Then i deleted all the stopped containers by using
+     command : docker system prune
+
+There is a new command which i came across during comoletion of my project 
+       command : netstat -ano |grepstr:3000
+for running this commands i had to install net tools then i installed net tools by using
+
+     command : sudo apt install net-tools
+
+and finally after clearing all these errors i was able to access my application on given port number.
 
 
+Then finally by using git commands I pushed my repository to git hub 
+ #To add repository to git folder 
+   commands : git add <repository name>
+ #To commit that repository 
+    command : git commit -m "added the repository"
+ #To push that particular repository 
+    command : git push origin nida-final-phase1
 
----
+GUIDELINES AND RESOURCES
 
-## Overview
+please review the following key resources which i used in my project:
 
-The **Online Shop** project is a demo e-commerce application designed for Hackathon Phase 1. It serves as a platform to showcase best practices in code quality, development workflows, and system design with a focus on:
+* CONTRUBUTING.md :-this file guided me for code contribution, commit messages and overall coding standard
 
-- **Git & GitHub:** Effective version control, branching strategies, and collaborative workflows.
-- **Linux:** Command-line operations, system administration, and file management.
-- **Docker:** Principles of containerization and preparing code for deployment in a containerized environment.
+* google:-For finding the commands to solve the port issue 
 
-Your task is to familiarize yourself with the code, make enhancements if necessary, and ensure your final submission reflects your understanding of these topics.
+* stackoverflow:- To solve the errors occured during completion of project.
 
----
+TASK DESCRIPTION:-
 
-## Guidelines & Resources
+Today i worked on building online shopping app by using devops skills till where i have studied so far.
 
-Before diving into the tasks, please review the following key resources:
+*GIT &GIT HUB:-I used my knowledge on git by cloning the repository in local terminal then modified it and adding the modified file the after commiting it i push it in my git hub profile from local terminal.
 
-- [CONTRIBUTING.md](CONTRIBUTING.md): Guidelines for code contributions, commit messages, and overall coding standards.
-- [ROADMAP.md](ROADMAP.md): Insights into the project vision, future enhancements, and milestones.
-- **Repository Documentation:** Explore the repository to understand how the application is built. Pay special attention to the `src` directory where the main application logic resides, as well as configuration files such as `vite.config.js` and styling in `index.css`.
 
-These documents provide the context needed to understand the project requirements and the best practices expected for your contributions.
+*LINUX:-I used linux commands to give permissions to ports and to kill unwanted server running on that particular port .Then i used linux commands to check the files and folders and edit them as required and save them.
 
----
+*DOCKER:-I used docker commands to create a new docker file and then to create and image of that docker file for containariezation and lastly to run the application.
 
-## Tasks
 
-For this hackathon phase, your work will center around the following tasks:
+CONCLUSION :
+ 
+I am very thankfull to shubham sir to giving me this opprtunity to try myself as i am a fresher in this world of devops  and i want to learn devops from basic to advanced . I am working on my learning skills 
 
-### Git & GitHub
+This repository declares my final submission for hackathon phase 1.
 
-- **Repository Management:** Fork and clone the repository, then create a new branch for your work. Ensure your commit history is clean and well-documented.
-- **Collaboration Practices:** Follow best practices for version control by making descriptive commits, creating pull requests, and engaging in code reviews.
-- **Workflow Optimization:** Identify any areas where the Git workflow can be improved and document your suggestions for future enhancements.
+BRANCH INFORMATION :
 
-### Linux
+nida-final-phase1 
 
-- **Command Line Proficiency:** Review the code for examples of Linux command usage. Test and verify that file operations, system scripts, and environment configurations are functioning as expected.
-- **System Administration:** Examine how the application handles Linux-based operations such as permissions, file management, and process monitoring. If you see room for improvement, implement those changes and document them.
-- **Documentation:** Clearly document any Linux-related enhancements you make, explaining how they optimize the project’s performance or usability.
 
-### Docker
-
-- **Containerization Principles:** Even though a Dockerfile is not provided in this repository, consider how you would package and deploy this application using Docker. Reflect on the design decisions that would facilitate containerization.
-- **Conceptual Improvements:** Propose any modifications or improvements that could make future Docker integration smoother. Document your suggestions clearly in your pull request.
-- **Code Readiness:** Ensure the codebase is structured in a way that aligns with Docker best practices, preparing it for eventual containerized deployment on AWS EC2 / Azure VM / Google Compute Engine (Your Choice of Cloud).
-
----
-> [!IMPORTANT]
-> ## Submission Instructions
-> 
-> When you have completed your work, please follow these steps for submission:
->
-> 1. **Review & Test Your Work:**
->    
->    - Make sure all changes are committed and pushed to your GitHub repository (or branch). Test the application thoroughly to confirm that your enhancements do not break existing functionality.
->    
-> 2. **Prepare Your Submission:**
->    
->    -  Gather your full name, email address, and the URL to your GitHub repository (or the specific branch/commit that contains your work).
->    -  Make sure to add Demo video(which should be publically accessible) explaining your implementations for the project. This is the important aspect for evaluation. The Videos / Articles / Submissions should be submitted to the google form as well as shared on your LinkedIn/ twitter for extra points.
->    
-> 3. **Submit via Google Form:**
->    
->    - Complete the submission form here:
->    
->    [Submit Your Work](https://docs.google.com/forms/d/e/1FAIpQLSdtOttzC9M__5ysJ_prVT1MtmV0qh1_PXrI5aYfd3zQNCF-CA/viewform?usp=header)
->    
-> 4. **Timely Submission:**
->    
->    - Ensure that your submission is completed before the hackathon deadline. Late submissions will not be eligible for prizes.
->    
-
----
-
-## Submission Details for Your Repo README
-
-When submitting your repository link, your README must include:
-
-- **Project Title & Overview:**
-    
-    Clearly state the project name (e.g., "Online Shop – Hackathon Phase 1 Submission") and provide a brief overview of your solution, emphasizing how it addresses Git & GitHub, Linux, and Docker.
-    
-- **Task Descriptions & Implementations:**
-    
-  -  Describe the tasks you worked on. Detail how you managed your repository, the Linux commands or scripts you used, and any improvements or suggestions regarding Docker integration.
-
-> [!NOTE]
->
->  -  Provide video demo link (3-5 minutes only, not more than 5 minutes)
-
-- **Key Changes & Enhancements:**
-    
-    Highlight the major changes or enhancements you made, including any refactoring, feature additions, or optimizations, along with documentation updates.
-    
-- **Final Submission Statement:**
-    
-    Include a clear declaration that this repository (or branch) represents your final submission for Hackathon Phase 1.
-    
-- **Version or Branch Information:**
-    
-    Specify which branch or commit should be reviewed (e.g., "Final submission branch: `final-phase1`").
-    
-
-Make sure this information is visible in your repository's README so that evaluators can easily review your work.
-
----
-
-## Evaluation Criteria
-
-Submissions will be evaluated based on the following criteria:
-
-- **Adherence to Guidelines:**
-    
-    Your work should comply with the project’s coding standards, documentation, and contribution guidelines as described in this README and the [CONTRIBUTING.md](http://contributing.md/) file.
-    
-- **Git & GitHub Proficiency:**
-    
-    Evaluation of your version control practices, including branching strategy, commit quality, and pull request process.
-    
-- **Linux Competence:**
-    
-    Demonstrated ability to effectively use Linux for system administration tasks, scripting, and command-line operations within the project.
-    
-- **Docker Readiness:**
-    
-    Although a Dockerfile is not provided, your documentation and code structure should reflect an understanding of containerization best practices and readiness for future Docker integration.
-    
-- **Quality of Enhancements:**
-    
-    The significance and quality of your improvements, refactoring, and overall impact on the project’s functionality.
-    
-- **Documentation & Clarity:**
-    
-    Clear and concise documentation that explains your work, including details in your repository README about your tasks and changes.
-    
-- **Timeliness:**
-    
-    Your submission must be completed and submitted before the hackathon deadline.
-    
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [MIT](LICENSE) file for details.
-
----
-
-## Contact
-
-For any questions or further information, please contact:
-
-- **Email:** [iemafzalhassan@gmail.com](mailto:iemafzalhassan@gmail.com) , [amitabhdevops2024@gmail.com](mailto:iemafzalhassan@gmail.com) , [deveshagent@gmail.com](mailto:deveshagent@gmail.com)
-- [Join Discord Server](https://discord.gg/4JtuMhMcjn)
-
----
-
-Good luck for the hackathon
-
-Happy Learning :)

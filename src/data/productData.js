@@ -9,7 +9,7 @@ const categories = {
 };
 
 const brands = {
-    smartphones: ['Apple', 'Samsung', 'Google', 'OnePlus', 'Xiaomi', 'OPPO', 'Vivo', 'Huawei'],
+    smartphones: ['Apple', 'Samsung', 'Google', 'OnePlus', 'Xiaomi', 'OPPO', 'Vivo', 'Huawei','poco'],
     laptops: ['Apple', 'Dell', 'HP', 'Lenovo', 'ASUS', 'Acer', 'MSI', 'Razer'],
     accessories: ['Anker', 'Belkin', 'Logitech', 'UGREEN', 'Spigen', 'AUKEY', 'RAVPower', 'Baseus'],
     audio: ['Sony', 'Bose', 'JBL', 'Sennheiser', 'Apple', 'Samsung', 'Jabra', 'Audio-Technica'],
