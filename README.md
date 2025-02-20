@@ -54,10 +54,10 @@ Applied the changes to user group:
 newgrp docker
 ```
 
-### 10. Cloneed the Hackathon Repository Locally
-Cloned the forked repository to my local machine using a personal access token (PAT) for authentication:
+### 10. Cloned the Hackathon Repository Locally
+Cloned the forked repository to my instance generated a personal access token (PAT) for authentication:
 ```bash
-git clone https://github.com/surya-edict/online_shop.git
+git clone https://surya-editct:PAT@github.com/surya-edict/online_shop.git
 ```
 
 ### 11. Analyzing Source Code and Created a Dockerfile
@@ -78,6 +78,24 @@ Ran a container from the built image and map it to port `3000` on your host mach
 docker run -p 3000:3000 on-shop
 ```
 The application is accessible at `http://IP:3000/`.
+
+### 14. Made new branch :
+Made new branch final-phase1 using 
+```bash
+git checkout -b final-phase1
+```
+
+### 15. Pushing to github repo :
+By adding, commiting and pushing
+```bash
+git add .
+```
+```bash
+git commit -m "added dockerfile and changes in vite.config.js "
+```
+```bash
+git push origin final-phase1
+```
 
 ---
 
