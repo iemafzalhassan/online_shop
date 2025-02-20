@@ -39,10 +39,26 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "sass": "^1.83.4",
-    "vite": "^5.4.0"
+    "vite": "^5.4.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
   },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
-  }
+  },
+  "description": "[![Stars](https://img.shields.io/github/stars/iemafzalhassan/online_shop)](https://github.com/iemafzalhassan/online_shop) ![Forks](https://img.shields.io/github/forks/iemafzalhassan/online_shop) ![GitHub last commit](https://img.shields.io/github/last-commit/iemafzalhassan/easyshop?color=red) [![GitHub Profile](https://img.shields.io/badge/GitHub-iemafzalhassan-blue?logo=github&style=flat)](https://github.com/iemafzalhassan) [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) <p align=\"center\">",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://pawanlande135/online_shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawanlande135/online_shop/issues"
+  },
+  "homepage": "https://github.com/pawanlande135/online_shop#readme"
 }
