@@ -156,11 +156,11 @@ docker login -u julkar9  # Logs into Docker Hub
 ```
 Tag the Image Properly:
 ```sh
-docker tag yoga1809/online_shop:latest yoga1809/online_shop_hackathon:v1.0  # Tags the image 
+docker tag 789a36f18b14 julkar9/online-shopping:v1.0 # Tags the image 
 ```
 Push the Image to Docker Hub:
 ```sh
-docker push yoga1809/online_shop_hackathon:v1.0  # Pushes the tagged image to Docker Hub
+push julkar9/online-shopping:v1.0  # Pushes the tagged image to Docker Hub
 ```
 ### Verifying the Image on Docker Hub
 
