@@ -1,0 +1,27 @@
+# Ignore dependencies folder (should be installed inside the container)
+node_modules
+
+# Ignore package manager logs
+npm-debug.log
+
+# Ignore environment variables and secrets (if any)
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Ignore dist or build artifacts
+dist
+build
+
+# Ignore Git-related files and directories
+.git
+.gitignore
+
+# Ignore macOS-specific metadata files
+.DS_Store
+
+# Ignore editor and IDE-specific files
+.vscode/
+.idea/
+*.swp
