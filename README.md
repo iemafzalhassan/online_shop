@@ -225,6 +225,8 @@ export default defineConfig({
 ---
 
 ## 🎉 Congratulations!
-You’ve successfully set up and run the **Online Shop** project. Feel free to explore and contribute further! 😊
+You’ve successfully set up and run the **Online Shop** project. 
+Here is the video : https://photos.app.goo.gl/tAcVCthP1NnUMmP27
+Feel free to explore and contribute further! 😊
 
 --- 
