@@ -198,3 +198,44 @@ For any questions or further information, please contact:
 Good luck for the hackathon
 
 Happy Learning :)
+
+---
+
+## Docker installation on EC-2
+sudo apt-get update
+sudo apt-get install docker.io
+docker --version
+sudo usermod -aG docker ubuntu
+newgrp docker
+docker ps
+
+## clone repository
+mkdir hackathontest
+cd hackathontest
+git clone https://github.com/iemafzalhassan/online_shop.git
+cd online_shop
+
+## Edit Docker file 
+vim Dockerfile
+=============================================================
+ FROM node:18-alpine
+
+ WORKDIR /app
+
+ COPY . .
+
+ RUN npm install && npm run build
+
+ EXPOSE 3000
+
+ CMD ["npm","run","dev"]
+==============================================================
+
+
+## Build and Run Docker Container
+docker build -t test-app .
+docker run -d -p 3000:3000 test-app
+
+## update vite.config.js file 
+add the port no 3000 because that is expose in docker file
+rebuild the docker image and run the container
