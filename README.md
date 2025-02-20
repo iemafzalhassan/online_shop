@@ -99,19 +99,47 @@ docker ps
 
 ---
 
+#### **Running the application using nginx server**
+```sh
+# Installing nginx server
+sudo apt update
+sudo apt install nginx -y
+
+
+# Making nginx.conf file
+server {
+    listen 80;
+    server_name 4.240.76.10;
+
+    location / {
+        proxy_pass http://127.0.0.1:5173;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+
+# Testing and restart NGINX
+sudo nginx -t  # Test configuration
+sudo systemctl restart nginx  # Restart Nginx
+sudo systemctl enable nginx  # Enable Nginx to start on boot
+
+```
+
+
 ## **Final Submission Statement**
 This repository represents my final submission for **Hackathon Phase 1**. The implemented solutions ensure:
 - ✅ **Clean and structured Git workflow**
 - ✅ **Optimized Linux operations and debugging techniques**
 - ✅ **Best practices in Docker containerization**
 
-🔗 **Demo Video:** [Insert Link Here]
+🔗 **Demo Video:** https://youtu.be/VEU4MSIhYHc
 
 ### **Branch for Evaluation**
 ```
 Final submission branch: hackathon
 ```
-
-This submission reflects my understanding and enhancements of GitHub workflows, Linux system administration, and Docker containerization. 🚀
-
-
+![Screenshot](https://github.com/suryansh639/online_shop/blob/hackathon/apprunning.png)

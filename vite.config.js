@@ -8,4 +8,10 @@ export default defineConfig({
     css: {
       devSourcemap: false
     }
+server: {
+    host: '0.0.0.0', // Allows access from any IP
+    port: 5173,
+    strictPort: true,
+    allowedHosts: ['twshackathon.blogcompany.in'], // Add your domain here
+  }
 })
