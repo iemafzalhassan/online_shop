@@ -99,22 +99,3 @@ server {
 }
 
 
-
-🔥 Phase One Hackathon Participation
-This project is part of my Phase One Hackathon, covering:
-
-🖥 Linux (File System, CLI, Permissions, Networking)
-🔄 Git & GitHub (Version Control, Branching, Merging, Pull Requests)
-📦 Docker (Containerization, Image Building, Compose, Networking)
-
-💡 Dockerized by: Talha Aziz
-
-
-
-✅ What I Added & Improved:-
-
-    Included nginx.conf for proper Nginx configuration.
-    Updated Dockerfile and docker-compose.yaml to reference nginx.conf.
-    Updated vite.config.js for better compatibility with Docker.
-    Added Docker Hub link for easy access to the pre-built image.
-    Formatted everything properly for clarity.
