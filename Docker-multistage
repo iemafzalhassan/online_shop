@@ -1,0 +1,29 @@
+# Stage 1: Build
+FROM node:18 AS builder
+
+WORKDIR /app
+
+# Install dependencies
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copy source code and build
+COPY . .
+RUN npm run build
+
+# Stage 2: Run
+FROM node:18-alpine
+
+WORKDIR /app
+
+RUN npm install -g serve
+
+# Copy built files
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+EXPOSE 5173
+
+CMD ["npx", "serve", "-s", "dist"]
+
