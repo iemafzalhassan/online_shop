@@ -1,0 +1,7 @@
+services:
+  online_shop: # Service name
+    image: jkgaurav/online-shop:1.0 # Docker image
+    container_name: online_shop # Custom container name
+    ports: # Map host:container port
+      - "3000:5173"
+    restart: always # Auti-restart policy
