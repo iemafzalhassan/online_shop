@@ -27,7 +27,7 @@
     "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.5",
     "react-tooltip": "^5.28.0",
-    "vite-plugin-node-polyfills": "^0.23.0"
+    "vite-plugin-node-polyfills": "^0.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
