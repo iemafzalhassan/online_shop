@@ -1,11 +1,11 @@
 ##  Project Title & Overview: 
 
 
--  **project name:** Online Shop – Hackathon Phase 1 Submission
+-  **Project name:** Online Shop – Hackathon Phase 1 Submission
        
 -  **Description:** The application code for this app is written in Node.js. Its code & dependant libraries are available in my online GitHub repository.
 
--  **Deployment strategy used:**
+-  **Deployment strategies used:**
    1.	I first make a Dockerfile to build the image of this application. Later I used this image to deploy the application by creating its container.
 
    2.	Created a docker-compose.yml and used command docker-compose up command to run container.
@@ -38,7 +38,7 @@ To verify task, please go through my below mentioned remote repo
 
 -	**GitHub repository link:**  https://github.com/pawanlande135/online_shop.git 
 -	**Branch name:** feature/your-feature-pawan   
--	**commit:** 
+-	**commit:** test: created & tested the application using Dockerfile & docker-compose 
     
 ---
 ##  Version or Branch Information: 
