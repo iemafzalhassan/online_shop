@@ -5,6 +5,8 @@
 [![GitHub Profile](https://img.shields.io/badge/GitHub-iemafzalhassan-blue?logo=github&style=flat)](https://github.com/iemafzalhassan)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 <p align="center">
+"My Online Shop Project: Hackathon Phase 1"
+
 
 Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This repository contains a fully functional e-commerce application built to demonstrate foundational DevOps skills in three key areas:
 - **Git & GitHub**
@@ -40,14 +42,17 @@ In this phase, your focus is on understanding the provided developer code, revie
 
 ## Overview
 
-The **Online Shop** project is a demo e-commerce application designed for Hackathon Phase 1. It serves as a platform to showcase best practices in code quality, development workflows, and system design with a focus on:
+Welcome to the Online Shop project, a demo e-commerce application crafted for Hackathon Phase 1. This project aims to demonstrate best practices in code quality, development workflows, and system design. Your focus will be on mastering the following key areas:
 
-- **Git & GitHub:** Effective version control, branching strategies, and collaborative workflows.
-- **Linux:** Command-line operations, system administration, and file management.
-- **Docker:** Principles of containerization and preparing code for deployment in a containerized environment.
+Git & GitHub: Emphasizing effective version control, branching strategies, and collaborative workflows.
+
+Linux: Highlighting command-line operations, system administration, and file management.
+
+Docker: Showcasing the principles of containerization and preparing code for deployment in a containerized environment.
 
 Your task is to familiarize yourself with the code, make enhancements if necessary, and ensure your final submission reflects your understanding of these topics.
 
+Docker: Showcasing the principles of containerization and preparing code for deployment in a containerized environment.
 ---
 
 ## Guidelines & Resources
@@ -198,3 +203,4 @@ For any questions or further information, please contact:
 Good luck for the hackathon
 
 Happy Learning :)
+Priyanka Varshney
