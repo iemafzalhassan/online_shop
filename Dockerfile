@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies with Integration Mode from package-lock.json file
-RUN npm ci
+RUN npm install
 
 # Copy all files
 COPY . .
@@ -22,15 +22,12 @@ FROM node:18.18-alpine
 # Set working directory
 WORKDIR /app
 
-# Install dependencies
-RUN npm install -g serve
-
 # Copy the built app from the builder stage
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app .
 
 # Expose the port
-EXPOSE 3000
+EXPOSE 5173
 
 # Start Application
-CMD ["serve", "-s", "dist", "-l", "3000"]
+CMD ["npm","run","dev"]
 

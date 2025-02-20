@@ -8,8 +8,5 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    restart: always
-    environment:
-      - NODE_ENV=production
+      - "5173:5173"
 
