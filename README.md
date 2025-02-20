@@ -54,7 +54,8 @@
             git clone https://github.com/shrikantdhanvijay/online_shop.git
 
         - Create a Dockerfile:
-            vim Dockerfile
+            vim Dockerfile 
+            Note: Please check Dockerfile
 
         - Build the Docker image:
             docker build -t image-name:version .
