@@ -9,7 +9,7 @@ export default defineConfig({
       devSourcemap: false
     },
     server: {
-      port: 3000,
+      port: 5173,
       host: true
     }
 });
