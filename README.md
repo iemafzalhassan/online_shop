@@ -45,6 +45,10 @@ This project is a part of the **Online Shop Hackathon**, where I successfully de
    - Followed **DevOps best practices** to deploy the application on an **AWS EC2 instance**.  
    - The application is successfully running on **port 3000**.
   
+7. DockerHub Image Push
+   - I pushed the created image to my dockerhub account.
+   - Anyone can pull this using the command:- docker pull atiqrhce/online-shop
+  
    - Below is my Deployed Web App Snapshot:-
      ![image](https://github.com/user-attachments/assets/038c100c-0b20-4b6e-9a18-0b030f83179e)
 
