@@ -26,7 +26,8 @@
     "react-search-autocomplete": "^8.5.2",
     "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.5",
-    "react-tooltip": "^5.28.0"
+    "react-tooltip": "^5.28.0",
+    "serve": "^14.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
