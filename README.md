@@ -6,6 +6,8 @@ Welcome to the **Online Shop** project, this guide will help you set up and run 
 
 ## 📋 Steps to Set Up and Run the Project
 
+## 👇FOR AWS USERS and LOCAL USERS
+
 ### 1️⃣ Logged in on AWS Console
 - Logged into the AWS Console and started an instance with **Ubuntu**.
 - Saved the key pair for secure access.
