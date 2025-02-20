@@ -55,7 +55,7 @@ newgrp docker
 ```
 
 ### 10. Cloned the Hackathon Repository Locally
-Cloned the forked repository to my instance generated a personal access token (PAT) for authentication:
+Cloned the forked repository to my instance generated a personal access token (PAT) from Settings > Developer Settings > PAT > Tokens for authentication:
 ```bash
 git clone https://surya-editct:PAT@github.com/surya-edict/online_shop.git
 ```
@@ -64,6 +64,29 @@ git clone https://surya-editct:PAT@github.com/surya-edict/online_shop.git
 After reviewing and analyzing the source code, created a `Dockerfile` to containerize the application. Using `vim`:
 ```bash
 vim Dockerfile
+```
+
+```bash
+# Alpine is chosen for its lightweight nature, which helps reduce the image size
+FROM node:18-alpine
+
+# Setting the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install dependencies specified in package.json
+RUN npm install
+
+# Copy the rest of the application code into the working directory
+COPY . .
+
+# Exposing port 3000 to allow external access to the application
+EXPOSE 3000
+
+# Here, it starts a development server using npm's "dev" script
+CMD ["npm", "run", "start"]
 ```
 
 ### 12. Build the Docker Image
@@ -77,7 +100,73 @@ Ran a container from the built image and map it to port `3000` on your host mach
 ```bash
 docker run -p 3000:3000 on-shop
 ```
+![Screenshot 2025-02-20 201258](https://github.com/user-attachments/assets/62dc5f0f-5cdb-434d-b6e7-a7b1fd5074b3)
+
 The application is accessible at `http://IP:3000/`.
+
+### 13. Multi-stage Docker file 
+```bash
+# Stage 1: Build Stage
+FROM node:18-alpine AS builder
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json to install dependencies
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code into the working directory
+COPY . .
+
+# Build the application
+RUN npm run build
+
+
+
+# Stage 2: Production Stage
+FROM node:18-alpine
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy only necessary files from the build stage
+COPY --from=builder /app /app
+
+# Expose port 3000 for external access
+EXPOSE 3000
+
+# Start the application in production mode
+CMD ["npm", "run", "start"]
+```
+
+### 13. Docker compose file 
+```bash
+vim docker-compose.yml
+```
+```bash
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app # Mount the current directory to /app in the container for development
+      - /app/node_modules # Prevent overwriting node_modules in the container
+    environment:
+      NODE_ENV: development # Set environment variable
+    command: npm run start
+```
+
+OUTPUT:
+
+![image](https://github.com/user-attachments/assets/ca9340d9-59c1-49f5-a5bb-ee66a96c2d0d)
 
 ### 14. Made new branch :
 Made new branch final-phase1 using 
@@ -101,7 +190,7 @@ git push origin final-phase1
 
 ## Key changes I made
 
-Modified vite.config.js 
+- Modified vite.config.js 
 ```bash
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -119,5 +208,7 @@ export default defineConfig({
     }
 });
 ```
+
+- Replaced dev to start in package.json
 
 
