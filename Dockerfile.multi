@@ -1,36 +1,36 @@
-
-# Base OS image of node:20
+# Stage 1: Build
 FROM node:20-alpine AS build
 
-#working directory
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json 
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Installing dependencies
+# Install dependencies
 RUN npm ci
 
-# Copy source file
+# Copy the rest of the source code
 COPY . .
 
 # Build the application
 RUN npm run build
 
-# Debug
+# Debug: Verify build output
 RUN ls -l dist || (echo "Build failed: dist/ not found" && exit 1)
 
-# Stage 2: Runtime
+# Stage 2: Nginx for Serving Static Files
 FROM nginx:alpine
 
-WORKDIR /app
+# Remove default Nginx static files
+RUN rm -rf /usr/share/nginx/html/*
 
-# Copy only the built application and necessary files
+# Copy built files to Nginx directory
 COPY --from=build /app/dist /usr/share/nginx/html
-COPY --from=build /app/package*.json ./
 
-# Expose the port that is used by  Ngnix Server 
+# Expose port 80
 EXPOSE 80
 
-# Start the application
-CMD ["nginx","-g","daemon off;"]
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
+
