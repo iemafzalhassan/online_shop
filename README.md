@@ -1,12 +1,14 @@
 ##  Project Title & Overview: 
 
 
-**project name:** Online Shop – Hackathon Phase 1 Submission
+-  **project name:** Online Shop – Hackathon Phase 1 Submission
        
-**Description:** The application code for this app is written in Node.js. Its code & dependant libraries are available in my online GitHub repository.
-**Deployment strategy used:**
-1.	I first make a Dockerfile to build the image of this application. Later I used this image to deploy the application by creating its container.
-2.	Created a docker-compose.yml and used command docker-compose up command to run container.
+-  **Description:** The application code for this app is written in Node.js. Its code & dependant libraries are available in my online GitHub repository.
+
+-  **Deployment strategy used:**
+   1.	I first make a Dockerfile to build the image of this application. Later I used this image to deploy the application by creating its container.
+
+   2.	Created a docker-compose.yml and used command docker-compose up command to run container.
 
 ---
 ##  Task Descriptions & Implementations: 
