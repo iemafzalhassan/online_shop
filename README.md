@@ -14,7 +14,7 @@ This project is a part of the **Online Shop Hackathon**, where I successfully de
    - Created a **Dockerfile** to containerize the application.  
    - Built a Docker image named **"online-shop"** using:  
      ```bash
-     docker build -t online .
+     docker build -t online-shop .
      ```
    - Ran the Docker container using:  
      ```bash
