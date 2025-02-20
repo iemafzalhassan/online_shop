@@ -37,4 +37,5 @@ Please check the screenshot below:
 
 https://hub.docker.com/repository/docker/jkabirm/myonline-shop/general
 
-I have started distroless image building but can not finish it.
+### Video
+https://drive.google.com/file/d/1egUbir9eNx20JjbGki_FYEc6tj0BR__q/view?usp=drive_link
