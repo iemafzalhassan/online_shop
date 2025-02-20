@@ -2,7 +2,7 @@ services:
   app:
     build: 
       context: .
-      dockerfile: Dockerfile_milti_stage
+      dockerfile: Dockerfile_multi_stage
     ports:
       - "3000:5173"
     
