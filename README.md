@@ -64,7 +64,10 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"] "
 
 
+
+
 docker-compose.yaml:-
+
 version: '3.8'
 services:
   web:
@@ -74,6 +77,8 @@ services:
     restart: always
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
+
+
 
 nginx.conf:-
 
@@ -93,6 +98,8 @@ server {
     }
 }
 
+
+
 🔥 Phase One Hackathon Participation
 This project is part of my Phase One Hackathon, covering:
 
@@ -101,6 +108,8 @@ This project is part of my Phase One Hackathon, covering:
 📦 Docker (Containerization, Image Building, Compose, Networking)
 
 💡 Dockerized by: Talha Aziz
+
+
 
 ✅ What I Added & Improved:-
 
