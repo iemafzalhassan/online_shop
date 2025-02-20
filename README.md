@@ -24,12 +24,15 @@ This project is a web-based **Online Shop application**.
 You can pull and run the Docker image directly from **Docker Hub**:  
 
 docker pull talhaaziz/my-app:latest
+
 docker run -d -p 80:80 talhaaziz/my-app
+
 👉 Docker Hub Repository: https://hub.docker.com/r/talhaaziz/my-app
 
 🛠️ Installation & Setup (Docker)
 
 1️⃣ Clone the Repository
+
 git clone https://github.com/talhaaziz8/online_shop.git
 
 2️⃣ Build & Run with Docker
@@ -41,10 +44,10 @@ docker compose up -d --build
 Once running, open your browser and go to:
 👉 http://localhost
 
-📦 Docker Configuration:-
+## 📦 Docker Configuration
 
-Dockerfile:-
-
+### **Dockerfile**
+```dockerfile
 # Stage 1: Build the React app
 "FROM node:18 AS build
 WORKDIR /app
@@ -59,6 +62,7 @@ COPY --from=build /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"] "
+
 
 docker-compose.yaml:-
 version: '3.8'
