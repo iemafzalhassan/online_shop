@@ -11,3 +11,5 @@
   ` docker build -t online_shop_app:v1 . `
   
   ` docker run -d --name online_shop_app -p 80:4173 online_shop_app:v1 `
+- Container is running & application can be viewed at ` http://public-ip-address `.
+- Pushed the new branch with the Dockerfile to the original repo.
