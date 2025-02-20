@@ -1,6 +1,6 @@
 # Online Shop 🛍️ for Hackathon Phase 1
 
-Here’s a detailed and professional `README.md` file for your GitHub repository based on the steps and explanation :
+Here’s a detailed and professional `README.md` file :
 
 ---
 
