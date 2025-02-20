@@ -198,3 +198,27 @@ For any questions or further information, please contact:
 Good luck for the hackathon
 
 Happy Learning :)
+
+# Steps followed to make Dockerfile 
+
+- The Dockerfile is made keeping in mind both production and development setup.
+- For development setup I have used node:18-alpine as the image to install the dependencies.
+- Before installing dependencies I have only copied package.json and package-lock.json so that I can get the advantage of caching in docker layers. If I would copy the complete code and then would install the dependencies , then when some code changes are made and I build agin the image then also it will install dependencies. But this should not happen as the dependencies have not changed. Also
+```node 
+npm install 
+```
+command comsumes more cpu cycles so it can make the other proceeses slow.
+- For production purpose , I have used node:18-alpine as the base image to get the final html,css and js files to be served. I have used distroless nginx to serve these as it enhances security and reduces image size from 253MB to 17.2MB
+- I have made docker-compose file which provides an easy way to build the iamge and run the container.
+- Finally I have also made .dockerignore file to exclude unnecessary things from iamge while building it so as to reduce image size.
+
+
+# Instruction to run the application using docker 
+
+- For development purpose use the command 
+```Dockerfile
+docker build --target development  -t shop .
+```
+- For production use the command ```
+docker-compose up 
+```
