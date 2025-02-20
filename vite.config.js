@@ -7,5 +7,11 @@ export default defineConfig({
     base: './',
     css: {
       devSourcemap: false
-    }
+    },
+      server: {
+        host: '127.0.0.1'
+      }
+    
 })
+
+
