@@ -3,10 +3,25 @@
 
 ## Steps to Set Up and Run the Project
 
-### 1. Forked the Hackathon Repository
+### 1. Logged in on AWS console
+Logged in and started an instance with ubuntu and saved the key pair
+
+
+### 2. Connected with local
+Using chmod 400 I ensured my key is not publicly viewable then I connected instance with local using SSH
+
+
+### 3. System update
+updated system using command
+```bash
+sudo apt update
+```
+
+### 4. Forked the Hackathon Repository
 Started by forking the original Hackathon repository to GitHub account. This allowed me to work on my own copy of the project.
 
-### 2. Created a Directory for the Project
+
+### 5. Created a Directory for the Project
 Createed a directory named `hackathon` by running:
 ```bash
 mkdir hackathon
@@ -16,53 +31,53 @@ Navigating into this directory:
 cd hackathon
 ```
 
-### 3. Installing Docker
+### 6. Installing Docker
 Installing Docker on system using the following command:
 ```bash
 sudo apt-get install docker.io
 ```
 
-### 4. Verifying Docker Installation
+### 7. Verifying Docker Installation
 Checked if Docker is running by executing:
 ```bash
 sudo systemctl status docker
 ```
 
-### 5. Added Current User to Docker Group
+### 8. Added Current User to Docker Group
 ```bash
 sudo usermod -aG docker $USER
 ```
 
-### 6. Refresh User Groups
+### 9. Refresh User Groups
 Applied the changes to user group:
 ```bash
 newgrp docker
 ```
 
-### 7. Cloneed the Hackathon Repository Locally
+### 10. Cloneed the Hackathon Repository Locally
 Cloned the forked repository to my local machine using a personal access token (PAT) for authentication:
 ```bash
 git clone https://github.com/surya-edict/online_shop.git
 ```
 
-### 8. Analyzing Source Code and Created a Dockerfile
+### 11. Analyzing Source Code and Created a Dockerfile
 After reviewing and analyzing the source code, created a `Dockerfile` to containerize the application. Using `vim`:
 ```bash
 vim Dockerfile
 ```
 
-### 9. Build the Docker Image
+### 12. Build the Docker Image
 Built a Docker image of the project using the following command:
 ```bash
 docker build -t on-shop .
 ```
 
-### 10. Ran the Application in a Container
+### 13. Ran the Application in a Container
 Ran a container from the built image and map it to port `3000` on your host machine:
 ```bash
 docker run -p 3000:3000 on-shop
 ```
-The application is accessible at `http://172.26.121.39:3000/`.
+The application is accessible at `http://IP:3000/`.
 
 ---
 
