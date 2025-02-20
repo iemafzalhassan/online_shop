@@ -1,0 +1,14 @@
+# Ignore the .git dir and gitignore file
+.git/
+.gitignore
+
+# Ignore node mobules 
+node_modules/
+
+# Ignore readme files
+*.md
+
+# Ignore docker related files
+Dockerfile*
+docker-compose*
+.dockerignore
