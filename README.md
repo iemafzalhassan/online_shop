@@ -215,7 +215,8 @@ export default defineConfig({
     },
 });
 ```
-
+- Replaced dev to start in package.json
+  
 ---
 
 ## 🎉 Congratulations!
