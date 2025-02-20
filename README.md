@@ -1,200 +1,267 @@
-# Online Shop 🛍️ for Hackathon Phase 1
-[![Stars](https://img.shields.io/github/stars/iemafzalhassan/online_shop)](https://github.com/iemafzalhassan/online_shop)
-![Forks](https://img.shields.io/github/forks/iemafzalhassan/online_shop)
-![GitHub last commit](https://img.shields.io/github/last-commit/iemafzalhassan/easyshop?color=red)
-[![GitHub Profile](https://img.shields.io/badge/GitHub-iemafzalhassan-blue?logo=github&style=flat)](https://github.com/iemafzalhassan)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-<p align="center">
-
-Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This repository contains a fully functional e-commerce application built to demonstrate foundational DevOps skills in three key areas:
-- **Git & GitHub**
-- **Linux**
-- **Docker**
-
-In this phase, your focus is on understanding the provided developer code, reviewing how these core topics are implemented, and making any necessary enhancements. When you're ready, you'll submit your work via our designated Google Form.
+Here’s a complete and detailed `README.md` file for your project. You can copy and paste this into your repository:
 
 ---
 
-## Important Dates
+```markdown
+# Online Shop Project - Hackathon Phase 1
 
-- **Hackathon Start Date:** 20th Feb, 9:00 AM
-- **Hackathon End Date:** 21st Feb, 9:00 AM
-- **Submission Deadline:** 24 hours after the repository link is shared
+This project is part of a DevOps hackathon, focusing on setting up a basic online shop application using Git & GitHub, Linux, and Docker. Below is a detailed description of the steps taken to set up and deploy the project.
 
 ---
 
 ## Table of Contents
-- [Important Dates](#important-dates)
-- [Overview](#overview)
-- [Guidelines & Resources](#guidelines--resources)
-- [Tasks](#tasks)
-- [Submission Instructions](#submission-instructions)
-- [Submission Details for Your Repo README](#submission-details-for-your-repo-readme)
-- [Evaluation Criteria](#evaluation-criteria)
-- [License](#license)
-- [Contact](#contact)
-
-
+1. [Git & GitHub](#git--github)
+2. [Linux](#linux)
+3. [Docker](#docker)
+4. [Project Structure](#project-structure)
+5. [How to Run the Project](#how-to-run-the-project)
+6. [Access the Application](#access-the-application)
 
 ---
 
-## Overview
+## Git & GitHub
 
-The **Online Shop** project is a demo e-commerce application designed for Hackathon Phase 1. It serves as a platform to showcase best practices in code quality, development workflows, and system design with a focus on:
+### 1. Set Up Git Configuration
+Configure your Git username and email:
+```bash
+git config --global user.name "abc"
+git config --global user.email "email.com"
+```
 
-- **Git & GitHub:** Effective version control, branching strategies, and collaborative workflows.
-- **Linux:** Command-line operations, system administration, and file management.
-- **Docker:** Principles of containerization and preparing code for deployment in a containerized environment.
+### 2. Clone the Repository
+Clone the project repository from GitHub:
+```bash
+sudo git clone https://github.com/engrghulamali/online_shop.git
+```
 
-Your task is to familiarize yourself with the code, make enhancements if necessary, and ensure your final submission reflects your understanding of these topics.
+### 3. Create and Switch to a New Branch
+Create a new branch for your work and switch to it:
+```bash
+git checkout -b final-phase1
+```
 
----
+### 4. Pull Changes from the `Hackathon` Branch
+Ensure your branch is up-to-date with the latest changes from the `Hackathon` branch:
+```bash
+git pull origin Hackathon
+```
 
-## Guidelines & Resources
+### 5. Push Your Branch to GitHub
+Push your branch to the remote repository and set it as the upstream:
+```bash
+git push --set-upstream origin final-phase1
+```
 
-Before diving into the tasks, please review the following key resources:
-
-- [CONTRIBUTING.md](CONTRIBUTING.md): Guidelines for code contributions, commit messages, and overall coding standards.
-- [ROADMAP.md](ROADMAP.md): Insights into the project vision, future enhancements, and milestones.
-- **Repository Documentation:** Explore the repository to understand how the application is built. Pay special attention to the `src` directory where the main application logic resides, as well as configuration files such as `vite.config.js` and styling in `index.css`.
-
-These documents provide the context needed to understand the project requirements and the best practices expected for your contributions.
-
----
-
-## Tasks
-
-For this hackathon phase, your work will center around the following tasks:
-
-### Git & GitHub
-
-- **Repository Management:** Fork and clone the repository, then create a new branch for your work. Ensure your commit history is clean and well-documented.
-- **Collaboration Practices:** Follow best practices for version control by making descriptive commits, creating pull requests, and engaging in code reviews.
-- **Workflow Optimization:** Identify any areas where the Git workflow can be improved and document your suggestions for future enhancements.
-
-### Linux
-
-- **Command Line Proficiency:** Review the code for examples of Linux command usage. Test and verify that file operations, system scripts, and environment configurations are functioning as expected.
-- **System Administration:** Examine how the application handles Linux-based operations such as permissions, file management, and process monitoring. If you see room for improvement, implement those changes and document them.
-- **Documentation:** Clearly document any Linux-related enhancements you make, explaining how they optimize the project’s performance or usability.
-
-### Docker
-
-- **Containerization Principles:** Even though a Dockerfile is not provided in this repository, consider how you would package and deploy this application using Docker. Reflect on the design decisions that would facilitate containerization.
-- **Conceptual Improvements:** Propose any modifications or improvements that could make future Docker integration smoother. Document your suggestions clearly in your pull request.
-- **Code Readiness:** Ensure the codebase is structured in a way that aligns with Docker best practices, preparing it for eventual containerized deployment on AWS EC2 / Azure VM / Google Compute Engine (Your Choice of Cloud).
-
----
-> [!IMPORTANT]
-> ## Submission Instructions
-> 
-> When you have completed your work, please follow these steps for submission:
->
-> 1. **Review & Test Your Work:**
->    
->    - Make sure all changes are committed and pushed to your GitHub repository (or branch). Test the application thoroughly to confirm that your enhancements do not break existing functionality.
->    
-> 2. **Prepare Your Submission:**
->    
->    -  Gather your full name, email address, and the URL to your GitHub repository (or the specific branch/commit that contains your work).
->    -  Make sure to add Demo video(which should be publically accessible) explaining your implementations for the project. This is the important aspect for evaluation. The Videos / Articles / Submissions should be submitted to the google form as well as shared on your LinkedIn/ twitter for extra points.
->    
-> 3. **Submit via Google Form:**
->    
->    - Complete the submission form here:
->    
->    [Submit Your Work](https://docs.google.com/forms/d/e/1FAIpQLSdtOttzC9M__5ysJ_prVT1MtmV0qh1_PXrI5aYfd3zQNCF-CA/viewform?usp=header)
->    
-> 4. **Timely Submission:**
->    
->    - Ensure that your submission is completed before the hackathon deadline. Late submissions will not be eligible for prizes.
->    
+### 6. Add, Commit, and Push Changes
+Stage your changes, commit them, and push to GitHub:
+```bash
+git add .
+git commit -m "initial commit"
+git pull origin Hackathon
+git push
+```
 
 ---
 
-## Submission Details for Your Repo README
+## Linux
 
-When submitting your repository link, your README must include:
+### 1. Navigate to the Project Directory
+Change to the project directory:
+```bash
+cd online_shop/
+```
 
-- **Project Title & Overview:**
-    
-    Clearly state the project name (e.g., "Online Shop – Hackathon Phase 1 Submission") and provide a brief overview of your solution, emphasizing how it addresses Git & GitHub, Linux, and Docker.
-    
-- **Task Descriptions & Implementations:**
-    
-  -  Describe the tasks you worked on. Detail how you managed your repository, the Linux commands or scripts you used, and any improvements or suggestions regarding Docker integration.
+### 2. List Files and Directories
+List the contents of the directory:
+```bash
+ls
+ls -l
+ls -l -a
+```
 
-> [!NOTE]
->
->  -  Provide video demo link (3-5 minutes only, not more than 5 minutes)
+### 3. Change Permissions and Ownership
+Ensure proper permissions and ownership for the project files:
+```bash
+sudo chmod 755 -R .
+sudo chown $USER:$USER -R .
+```
 
-- **Key Changes & Enhancements:**
-    
-    Highlight the major changes or enhancements you made, including any refactoring, feature additions, or optimizations, along with documentation updates.
-    
-- **Final Submission Statement:**
-    
-    Include a clear declaration that this repository (or branch) represents your final submission for Hackathon Phase 1.
-    
-- **Version or Branch Information:**
-    
-    Specify which branch or commit should be reviewed (e.g., "Final submission branch: `final-phase1`").
-    
+### 4. Create and Edit `docker-compose.yml`
+Create a `docker-compose.yml` file and define your services:
+```bash
+touch docker-compose.yml
+vim docker-compose.yml
+```
 
-Make sure this information is visible in your repository's README so that evaluators can easily review your work.
+Example `docker-compose.yml`:
+```yaml
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+  app:
+    image: node:14
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: npm start
+```
 
----
+### 5. Create and Edit `nginx.conf`
+Create an `nginx.conf` file and configure Nginx:
+```bash
+touch nginx.conf
+vim nginx.conf
+```
 
-## Evaluation Criteria
+Example `nginx.conf`:
+```nginx
+events {}
+http {
+  server {
+    listen 80;
+    location / {
+      proxy_pass http://app:3000;
+    }
+  }
+}
+```
 
-Submissions will be evaluated based on the following criteria:
-
-- **Adherence to Guidelines:**
-    
-    Your work should comply with the project’s coding standards, documentation, and contribution guidelines as described in this README and the [CONTRIBUTING.md](http://contributing.md/) file.
-    
-- **Git & GitHub Proficiency:**
-    
-    Evaluation of your version control practices, including branching strategy, commit quality, and pull request process.
-    
-- **Linux Competence:**
-    
-    Demonstrated ability to effectively use Linux for system administration tasks, scripting, and command-line operations within the project.
-    
-- **Docker Readiness:**
-    
-    Although a Dockerfile is not provided, your documentation and code structure should reflect an understanding of containerization best practices and readiness for future Docker integration.
-    
-- **Quality of Enhancements:**
-    
-    The significance and quality of your improvements, refactoring, and overall impact on the project’s functionality.
-    
-- **Documentation & Clarity:**
-    
-    Clear and concise documentation that explains your work, including details in your repository README about your tasks and changes.
-    
-- **Timeliness:**
-    
-    Your submission must be completed and submitted before the hackathon deadline.
-    
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [MIT](LICENSE) file for details.
-
----
-
-## Contact
-
-For any questions or further information, please contact:
-
-- **Email:** [iemafzalhassan@gmail.com](mailto:iemafzalhassan@gmail.com) , [amitabhdevops2024@gmail.com](mailto:iemafzalhassan@gmail.com) , [deveshagent@gmail.com](mailto:deveshagent@gmail.com)
-- [Join Discord Server](https://discord.gg/4JtuMhMcjn)
+### 6. Install Dependencies
+Install the required dependencies using npm:
+```bash
+npm install
+```
 
 ---
 
-Good luck for the hackathon
+## Docker
 
-Happy Learning :)
+### 1. Install Docker
+Install Docker on your system:
+```bash
+sudo apt install docker.io
+```
+
+### 2. Check Docker Version
+Verify the Docker installation:
+```bash
+docker -v
+```
+
+### 3. Add User to the Docker Group
+Add your user to the Docker group to run Docker commands without `sudo`:
+```bash
+getent group docker
+sudo usermod -aG docker ubuntu
+```
+
+### 4. Manage Docker Containers
+Stop and remove running containers:
+```bash
+docker compose down
+docker-compose down
+```
+
+Remove unused Docker data:
+```bash
+docker system prune -a
+```
+
+### 5. Build and Run Docker Containers
+Build and start the containers in detached mode:
+```bash
+docker-compose up --build -d
+```
+
+### 6. Check Container Logs
+View the logs for the `nginx` container:
+```bash
+docker logs nginx-container
+```
+
+### 7. Restart the Nginx Container
+Restart the Nginx container if needed:
+```bash
+docker-compose restart nginx
+```
+
+### 8. Test the Application
+Test the application using `curl`:
+```bash
+curl -I http://localhost
+```
+
+---
+
+## Project Structure
+
+```
+online_shop/
+├── docker-compose.yml
+├── nginx.conf
+├── package.json
+├── src/
+│   └── (application source files)
+└── README.md
+```
+
+---
+
+## How to Run the Project
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/engrghulamali/online_shop.git
+   cd online_shop
+   ```
+
+2. Set up Docker:
+   ```bash
+   sudo apt install docker.io
+   sudo usermod -aG docker $USER
+   ```
+
+3. Build and run the containers:
+   ```bash
+   docker-compose up --build -d
+   ```
+
+4. Access the application at `http://localhost` or your server's IP address.
+
+---
+
+## Access the Application
+
+The application is accessible at:
+- **Localhost:** `http://localhost`
+- **Server IP:** `http://13.201.82.12`
+
+---
+
+## Notes
+- Ensure Docker and Docker Compose are installed and properly configured.
+- Replace placeholders (e.g., `abc`, `email.com`) with your actual details.
+- For any issues, check the container logs using `docker logs <container_name>`.
+
+---
+
+```
+
+---
+
+### How to Use This README
+1. Copy the entire content above.
+2. Paste it into a new `README.md` file in your project directory.
+3. Push the changes to GitHub:
+   ```bash
+   git add README.md
+   git commit -m "Added detailed README file"
+   git push origin final-phase1
+   ```
+
+This README provides a comprehensive guide for anyone looking to understand or run your project. Let me know if you need further assistance! 🚀
