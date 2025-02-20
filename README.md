@@ -5,6 +5,8 @@
 [![GitHub Profile](https://img.shields.io/badge/GitHub-iemafzalhassan-blue?logo=github&style=flat)](https://github.com/iemafzalhassan)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 <p align="center">
+"My Online Shop Project: Hackathon Phase 1"
+
 
 Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This repository contains a fully functional e-commerce application built to demonstrate foundational DevOps skills in three key areas:
 - **Git & GitHub**
@@ -40,14 +42,17 @@ In this phase, your focus is on understanding the provided developer code, revie
 
 ## Overview
 
-The **Online Shop** project is a demo e-commerce application designed for Hackathon Phase 1. It serves as a platform to showcase best practices in code quality, development workflows, and system design with a focus on:
+Welcome to the Online Shop project, a demo e-commerce application crafted for Hackathon Phase 1. This project aims to demonstrate best practices in code quality, development workflows, and system design. Your focus will be on mastering the following key areas:
 
-- **Git & GitHub:** Effective version control, branching strategies, and collaborative workflows.
-- **Linux:** Command-line operations, system administration, and file management.
-- **Docker:** Principles of containerization and preparing code for deployment in a containerized environment.
+Git & GitHub: Emphasizing effective version control, branching strategies, and collaborative workflows.
+
+Linux: Highlighting command-line operations, system administration, and file management.
+
+Docker: Showcasing the principles of containerization and preparing code for deployment in a containerized environment.
 
 Your task is to familiarize yourself with the code, make enhancements if necessary, and ensure your final submission reflects your understanding of these topics.
 
+Docker: Showcasing the principles of containerization and preparing code for deployment in a containerized environment.
 ---
 
 ## Guidelines & Resources
@@ -64,25 +69,23 @@ These documents provide the context needed to understand the project requirement
 
 ## Tasks
 
-For this hackathon phase, your work will center around the following tasks:
+For this hackathon phase, you need to focus on these main tasks:
 
-### Git & GitHub
+Git & GitHub
+Manage the Repository: Fork and clone the repository, create a new branch for your work, and keep your commits clear and well-documented.
+Collaborate Well: Use good practices for version control by making clear commits, creating pull requests, and reviewing code.
+Optimize Workflow: Look for ways to improve the Git workflow and write down your ideas for future enhancements.
 
-- **Repository Management:** Fork and clone the repository, then create a new branch for your work. Ensure your commit history is clean and well-documented.
-- **Collaboration Practices:** Follow best practices for version control by making descriptive commits, creating pull requests, and engaging in code reviews.
-- **Workflow Optimization:** Identify any areas where the Git workflow can be improved and document your suggestions for future enhancements.
+Linux
+Command Line Skills: Check the code for examples of Linux commands. Test them to ensure file operations, scripts, and settings work as expected.
+System Administration: See how the application handles Linux tasks like permissions, file management, and monitoring. Make improvements if needed and document them.
+Documentation: Clearly explain any Linux-related improvements you make and how they help the project.
 
-### Linux
+Docker
+Containerization: Think about how you would package and deploy the application using Docker, even though there's no Dockerfile provided.
+Suggest Improvements: Propose changes that could make it easier to integrate Docker in the future and document your ideas.
+Prepare the Codebase: Ensure the code is organized in a way that follows Docker best practices, ready for deployment on AWS, Azure, or Google Cloud.
 
-- **Command Line Proficiency:** Review the code for examples of Linux command usage. Test and verify that file operations, system scripts, and environment configurations are functioning as expected.
-- **System Administration:** Examine how the application handles Linux-based operations such as permissions, file management, and process monitoring. If you see room for improvement, implement those changes and document them.
-- **Documentation:** Clearly document any Linux-related enhancements you make, explaining how they optimize the project’s performance or usability.
-
-### Docker
-
-- **Containerization Principles:** Even though a Dockerfile is not provided in this repository, consider how you would package and deploy this application using Docker. Reflect on the design decisions that would facilitate containerization.
-- **Conceptual Improvements:** Propose any modifications or improvements that could make future Docker integration smoother. Document your suggestions clearly in your pull request.
-- **Code Readiness:** Ensure the codebase is structured in a way that aligns with Docker best practices, preparing it for eventual containerized deployment on AWS EC2 / Azure VM / Google Compute Engine (Your Choice of Cloud).
 
 ---
 > [!IMPORTANT]
@@ -198,3 +201,4 @@ For any questions or further information, please contact:
 Good luck for the hackathon
 
 Happy Learning :)
+Priyanka Varshney
