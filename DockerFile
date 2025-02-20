@@ -1,0 +1,36 @@
+# Stage 1: Build Stage
+# Base image for node
+FROM node:18-alpine AS builder
+
+# Setting the working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json (leveraging Docker cache)
+COPY package*.json ./
+
+# Installing dependencies
+RUN npm install --only=production
+
+# Copy the rest of the web application files from host to container
+COPY . .
+
+# Remove unnecessary files (cache, logs, etc.)
+RUN rm -rf /tmp/* && rm -rf /var/cache/* && rm -rf ~/.npm
+
+# Stage 2: Production Stage (Distroless)
+FROM gcr.io/distroless/nodejs:18
+
+# Set working directory inside distroless container
+WORKDIR /app
+
+# Copy built files and dependencies from the builder stage
+COPY --from=builder /app /app
+
+# Remove unnecessary files before running the app
+RUN rm -rf /app/node_modules/.cache /app/.git /app/.github /app/test
+
+# Expose the application port (change as per app config)
+EXPOSE 8000
+
+# Run the application with Distroless minimal runtime
+CMD ["node", "server.js"]
