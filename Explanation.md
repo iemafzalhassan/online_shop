@@ -56,11 +56,26 @@ The onlineshop:nginx image is built, and then a container named online-shop-ngin
 
 
 
+## Docker Images
 
+The `docker images` command lists the Docker images available on your system. Here's the output from the command:
+Use code with caution.
+```bash
+REPOSITORY TAG IMAGE ID CREATED SIZE
+onlineshop nginx 32805ee4de2c 47 minutes ago 193MB
+<none> <none> 406b98cca6ce 47 minutes ago 322MB
+<none> <none> a4d93b302622 48 minutes ago 321MB
+onlineshop singlestage 0c1b4a77ca3b 51 minutes ago 321MB
+onlineshop multistage 775af59860b9 52 minutes ago 228MB
+node 18-slim b4406da599d9 9 hours ago 192MB
+node 18-alpine 78649fe1a0d7 9 hours ago 127MB
+nginx latest 97662d24417b 2 weeks ago 192MB
+```
 
+From the image sizes listed, the onlineshop:nginx image has the smallest footprint, followed by onlineshop:multistage, and then onlineshop:singlestage.
 
-
-
-
-
-
+```bash
+onlineshop nginx 193MB
+onlineshop multistage 228MB
+onlineshop singlestage 321MB
+```
