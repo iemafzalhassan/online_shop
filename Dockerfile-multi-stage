@@ -1,0 +1,38 @@
+########## STAGE-1 BUILDING THE IMAGE FOR ONLINE-SHOP APPLICATION ##########
+
+# Base Image for node.js online-shop application
+
+FROM node:18-alpine as build
+
+# Setting up the working directories
+
+WORKDIR /app
+
+# copying package files and installing dependencies
+
+COPY package*.json ./
+
+RUN npm install
+
+# Copy source code and building the application code
+
+COPY . .
+
+RUN npm run build
+
+########## STAGE-2 SERVING/RUNNING THE APPLICATION ##########
+
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY --from=build /app/dist /app/dist
+
+COPY package*.json ./
+
+RUN npm install --only-production
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]
+       
