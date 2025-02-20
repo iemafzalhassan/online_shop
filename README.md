@@ -44,12 +44,12 @@ docker compose up -d --build
 Once running, open your browser and go to:
 👉 http://localhost
 
-## 📦 Docker Configuration
+# 📦 Docker Configuration
 
-### **Dockerfile**
+### Dockerfile
 ```dockerfile
 # Stage 1: Build the React app
-"FROM node:18 AS build
+FROM node:18 AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
@@ -57,14 +57,11 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Serve the app using Nginx
-"FROM nginx:alpine
+FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"] "
-
-
-
+CMD ["nginx", "-g", "daemon off;"]
 
 docker-compose.yaml:-
 
@@ -78,9 +75,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
 
-
-
-nginx.conf:-
+nginx.conf:
 
 server {
     listen 80;
@@ -99,8 +94,7 @@ server {
 }
 
 
-
- 🔥 Phase One Hackathon Participation
+🔥 Phase One Hackathon Participation
 
 This project is part of my Phase One Hackathon, covering:
 
@@ -109,15 +103,10 @@ This project is part of my Phase One Hackathon, covering:
 📦 Docker (Containerization, Image Building, Compose, Networking)
 
 💡 Dockerized by: Talha Aziz
-
-
-
-✅ What I Added & Improved:-
+✅ What I Added & Improved:
 
     Included nginx.conf for proper Nginx configuration.
     Updated Dockerfile and docker-compose.yaml to reference nginx.conf.
     Updated vite.config.js for better compatibility with Docker.
     Added Docker Hub link for easy access to the pre-built image.
     Formatted everything properly for clarity.
-
-
