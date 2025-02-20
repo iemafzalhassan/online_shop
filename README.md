@@ -91,7 +91,7 @@ Welcome to the **Online Shop** project, this guide will help you set up and run 
   # Exposing port 3000 to allow external access to the application
   EXPOSE 3000
 
-  # Here, it starts a development server using npm's "dev" script
+  # Here, it starts a development server using npm's "start" script
   CMD ["npm", "run", "start"]
   ```
 
