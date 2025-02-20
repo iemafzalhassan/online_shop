@@ -404,3 +404,58 @@ footer .copyright-text:hover {
 .text-primary {
     color: var(--primary-color) !important;
 }
+
+/* Admin Page Specific Styles */
+.admin-form-container {
+    background-color: var(--background-elevated);
+    border: 1px solid var(--border-color);
+}
+
+.bg-elevated {
+    background-color: var(--background-elevated) !important;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.form-control {
+    background-color: var(--background-secondary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+.form-control:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 0.2rem rgba(138, 43, 226, 0.25);
+}
+
+.btn-outline-primary {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .admin-form-container {
+        padding: 1.5rem;
+    }
+}
