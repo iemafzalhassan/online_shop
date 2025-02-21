@@ -1,0 +1,10 @@
+Version: "3.8"
+services:
+ online-shop:
+    container_name: "online_shop_compose"
+    build:
+      context: .
+      dockerfile: "dockerfile_multistage"  # Specify the Dockerfile name if different "
+    ports:
+      - "5173:5173"  # Expose port 5173 to the host
+    restart:  "always"  # Ensure container restarts 
