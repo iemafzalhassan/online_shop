@@ -1,0 +1,30 @@
+#Stage1
+FROM node:20-slim AS builder
+
+#working directory for the app
+WORKDIR /app
+
+#copy dependencies
+COPY package.json .
+
+#Run the command to install the Lib to compile code 
+RUN npm install
+
+#copy rest of the application
+COPY . .
+
+
+#Stage 2 
+
+FROM gcr.io/distroless/nodejs20-debian12
+
+WORKDIR /app
+
+COPY --from=builder /app .
+
+
+#EXPOSE the port 
+EXPOSE 5173
+
+#Serve the app / Keep it running 
+CMD ["npm","run","dev"]                   
