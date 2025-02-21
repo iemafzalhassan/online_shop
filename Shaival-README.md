@@ -38,6 +38,22 @@ docker-compose down
 That’s it! The online shop is now containerized and running efficiently with Docker.
 This keeps it simple while adding more details about the `Dockerfile`. Let me know if you need any changes!
 ```
+### Commands Used:
+1. RUN npm install
+2. EXPOSE 
+3. sudo apt install docker
+4. systemctl status docker
+5. docker --version
+6. cat /etc/group
+7. newgrp Docker
+8. docker build
+9. docker run
+10. docker ps
+11. docker images
+12. docker ps -a
+13. docker-compose up -d --build
+14. docker down
+15. docker system prune (and many more....)
 
 ### Resources:
 1. Junoon Batch 8: https://www.trainwithshubham.com/s/courses/66c9a687df0d1e771d8b9fbb/take - To understand, learn about docker scout and implement it.
