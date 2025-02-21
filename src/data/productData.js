@@ -87,6 +87,8 @@ function generateDescription(category, brand, name) {
 }
 
 function getImageUrl(category, index) {
+    console.log(category);
+    console.log(index);
     const demoImages = {
         smartphones: [
             'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&h=500&fit=crop',
@@ -102,9 +104,9 @@ function getImageUrl(category, index) {
         ],
         accessories: [
             'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&h=500&fit=crop',
-            'https://images.unsplash.com/photo-1608164415250-7d9a3cd0d3f8?w=500&h=500&fit=crop',
-            'https://images.unsplash.com/photo-1625799406018-c558d83f5b51?w=500&h=500&fit=crop',
-            'https://images.unsplash.com/photo-1601524909162-ae8725290836?w=500&h=500&fit=crop'
+            'https://images.unsplash.com/photo-1706275400998-7fc21c8cd8ed?q=80&w=2080&fit=crop',
+            'https://images.unsplash.com/photo-1596207891316-23851be3cc20?q=80&w=1935&fit=crop',
+            'https://images.unsplash.com/photo-1601524909162-ae8725290836?w=500&h=500&fit=crop'   
         ],
         audio: [
             'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop',
@@ -126,8 +128,16 @@ function getImageUrl(category, index) {
         ]
     };
 
-    const images = demoImages[category.toLowerCase()] || demoImages.accessories;
-    return images[index % images.length];
+    const images = demoImages[category.toLowerCase()] || demoImages["accessories"];
+    const safeIndex = index % images.length;
+    console.log(`Fetching image for ${category}: ${images[safeIndex]}`);
+    return images[safeIndex];
+
+
+  //const images = demoImages[category.toLowerCase()] || demoImages.accessories;
+  //console.log(images[index % images.length]);
+  //return images[index % images.length];
+    
 }
 
 function generateProducts(count = 1000) {
