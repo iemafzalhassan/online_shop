@@ -7,6 +7,12 @@
 <p align="center">
 
 Hello Friends i am manish just check to push code online_shop_feature branch
+
+http://3.252.73.158:4173/  
+
+I successfully ran port 4173 on my EC2 instance.
+
+
 Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This repository contains a fully functional e-commerce application built to demonstrate foundational DevOps skills in three key areas:
 - **Git & GitHub**
 - **Linux**
