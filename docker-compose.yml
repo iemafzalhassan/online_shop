@@ -1,0 +1,17 @@
+---
+version: "3.9"   # docker-compose version
+services:         # services to run
+  web:             #we have a service called web because app is codebase we have 
+    build:           # build the image
+      context: .      # current directory
+      dockerfile: Dockerfile  # dockerfile to use
+    image: myreactappcompose:latest  # image name
+    container_name: myreactappcompose  # container name
+    ports:
+      - 8080:3000                      # port mapping host:container(dockerfile port)
+    healthcheck:              # healthcheck for the container       
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]  # test command
+      interval: 1m30s             # interval to run the test
+      timeout: 10s              # timeout for the test          
+      retries: 3                  # number of retries
+    

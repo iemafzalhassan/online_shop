@@ -1,0 +1,29 @@
+---
+name: docker-push-flow
+
+on:
+  push:
+    branches:
+      - prod
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Build Docker image
+        run: |
+          docker build -t khushalsarode/online_store:latest .
+          docker tag khushalsarode/online_store:latest khushalsarode/online_store:${{ github.sha }}
+
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker push khushalsarode/online_store:latest
+          docker push khushalsarode/online_store:${{ github.sha }}
