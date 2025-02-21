@@ -1,2 +1,0 @@
-This is my local file created
-This is a write commit from Remote.
