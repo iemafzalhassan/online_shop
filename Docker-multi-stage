@@ -1,0 +1,50 @@
+
+# STAGE-1 (Where we have a alpine image with linux distribution)
+
+# Base Image
+
+FROM node:18-alpine AS builder
+
+# Working directory
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+
+RUN npm install
+
+# Copy source code to container
+
+COPY . . 
+
+
+# Run the build command
+
+RUN npm run build
+
+# STAGE-2 (Where we will have just code and the code dependencies without linux distribution)
+
+FROM node:18-alpine
+
+# Create a non-root user
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
+
+WORKDIR /app
+# Copy the dependencies
+COPY --from=builder  /app/dist /app/dist
+
+# Change ownership of the working directory
+RUN chown -R appuser:appgroup /app
+
+# Switch to the non-root user
+USER appuser
+
+RUN npm install -g serve
+# Expose port 3000
+EXPOSE 3000
+
+# Command to start the server
+
+CMD ["serve", "-s", "dist", "-l", "3000"]
