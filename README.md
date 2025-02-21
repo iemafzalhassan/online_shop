@@ -6,6 +6,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 <p align="center">
 
+Hello Friends i am manish just check to push code online_shop_feature branch
 Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This repository contains a fully functional e-commerce application built to demonstrate foundational DevOps skills in three key areas:
 - **Git & GitHub**
 - **Linux**
