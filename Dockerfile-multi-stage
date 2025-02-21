@@ -1,0 +1,29 @@
+# Stage 1: Install dependencies using Alpine for minimal size
+FROM node:20-alpine AS builder
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json for efficient caching
+COPY package*.json ./
+
+# Install only production dependencies
+RUN npm ci --only=production
+
+# Copy the rest of the app source code
+COPY . .
+
+# Stage 2: Use smallest distroless image for runtime
+FROM gcr.io/distroless/nodejs20
+
+# Set working directory
+WORKDIR /app
+
+# Copy built app and node_modules from builder
+COPY --from=builder /app /app
+
+# Expose the port used by Vite
+EXPOSE 3000
+
+# Run the app
+CMD ["npm", "run", "dev"]
