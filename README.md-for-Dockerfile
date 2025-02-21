@@ -1,4 +1,4 @@
-EADME file more readable, you can use Markdown headings, subheadings, and other formatting options. Here's an improved version with headings and colored text using Markdown:
+
 
 markdown
 # 🚀 **Online Shop Project - Dockerfile**
@@ -7,7 +7,7 @@ markdown
 
 Welcome to the **Online Shop** project! This is a demo e-commerce application designed for **Hackathon Phase 1**. In this project, we will focus on learning best practices for:
 
-- **Git & GitHub**: Version control, branching strategies, and collaborative workflows.
+- ** Git & GitHub **: Version control, branching strategies, and collaborative workflows.
 - **Linux**: Command-line operations, system administration, and file management.
 - **Docker**: Principles of containerization and preparing code for deployment in a containerized environment.
 
