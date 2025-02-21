@@ -261,7 +261,7 @@ footer .social-links a:hover {
 }
 
 /* Override Bootstrap's default focus and active states */
-.btn:focus, 
+.btn:focus,
 .btn:active,
 .btn:focus-visible {
     box-shadow: 0 0 0 0.25rem var(--primary-glow) !important;

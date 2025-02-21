@@ -34,8 +34,8 @@ export default function Admin() {
 
     return (
         <Container>
-            <h1 className="text-primary mb-4">Admin Dashboard</h1>
-            
+            <h1 className="text-primary my-4">Admin Dashboard</h1>
+
             <div className="admin-form-container p-4 mb-5">
                 <h2 className="mb-4">Add New Product</h2>
                 <form onSubmit={handleSubmit}>
@@ -78,24 +78,35 @@ export default function Admin() {
             <Row xs={1} md={2} lg={3} className="g-4">
                 {products.map(product => (
                     <Col key={product.id}>
-                        <div className="product-card">
-                            <img
-                                src={product.imgUrl}
-                                className="product-image"
-                                alt={product.name}
-                            />
+                        <div className="product-card h-100">
+                            <div className="product-image-container" style={{ height: '200px', overflow: 'hidden' }}>
+                                <img
+                                    src={product.imgUrl}
+                                    className="product-image"
+                                    alt={product.name}
+                                    onError={(e) => {
+                                        e.target.parentElement.innerHTML = `
+                                            <div class="product-image-unavailable">
+                                                Image Unavailable
+                                            </div>
+                                        `;
+                                    }}
+                                />
+                            </div>
                             <div className="product-details">
-                                <h3 className="product-name">{product.name}</h3>
-                                <div className="product-price">{formatCurrency(product.price)}</div>
-                                <div className="d-flex gap-2 mt-3">
+                                <div className="product-info">
+                                    <h3 className="product-name">{product.name}</h3>
+                                    <p className="product-price">{formatCurrency(product.price)}</p>
+                                </div>
+                                <div className="d-flex gap-4">
                                     <Button
-                                        className="btn-outline flex-grow-1"
+                                        className="btn-outline-primary w-50"
                                         onClick={() => updateProduct(product.id)}
                                     >
                                         Update
                                     </Button>
                                     <Button
-                                        className="btn-outline btn-danger flex-grow-1"
+                                        className="btn-outline-danger w-50"
                                         onClick={() => deleteProduct(product.id)}
                                     >
                                         Delete
