@@ -1,4 +1,3 @@
-
 # Step 1: Use an official Node.js image as the base
 FROM node:22
 
