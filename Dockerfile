@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM node:20-alpine AS builder
+FROM node:20-bullseye-slim AS builder
 
 
 WORKDIR /app
@@ -24,9 +24,6 @@ COPY index.css ./
 # Build the application
 RUN npm run build
 
-
-# Remove unnecessary files after build
-RUN rm -rf node_modules src public index.html index.css vite.config.js package*.json
 
 
 
