@@ -1,200 +1,264 @@
-# Online Shop 🛍️ for Hackathon Phase 1
-[![Stars](https://img.shields.io/github/stars/iemafzalhassan/online_shop)](https://github.com/iemafzalhassan/online_shop)
-![Forks](https://img.shields.io/github/forks/iemafzalhassan/online_shop)
-![GitHub last commit](https://img.shields.io/github/last-commit/iemafzalhassan/easyshop?color=red)
-[![GitHub Profile](https://img.shields.io/badge/GitHub-iemafzalhassan-blue?logo=github&style=flat)](https://github.com/iemafzalhassan)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-<p align="center">
 
-Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This repository contains a fully functional e-commerce application built to demonstrate foundational DevOps skills in three key areas:
-- **Git & GitHub**
-- **Linux**
-- **Docker**
 
-In this phase, your focus is on understanding the provided developer code, reviewing how these core topics are implemented, and making any necessary enhancements. When you're ready, you'll submit your work via our designated Google Form.
+# 🛍️ Online Shop – Vite + React + Node + Docker 🐳
+This project is a **React.js** application bundled with **Vite** and containerized using **Docker**. It showcases an online shop built with modern web technologies, optimized for development and deployment.
 
 ---
 
-## Important Dates
+## 🚀 Features
 
-- **Hackathon Start Date:** 20th Feb, 9:00 AM
-- **Hackathon End Date:** 21st Feb, 9:00 AM
-- **Submission Deadline:** 24 hours after the repository link is shared
-
----
-
-## Table of Contents
-- [Important Dates](#important-dates)
-- [Overview](#overview)
-- [Guidelines & Resources](#guidelines--resources)
-- [Tasks](#tasks)
-- [Submission Instructions](#submission-instructions)
-- [Submission Details for Your Repo README](#submission-details-for-your-repo-readme)
-- [Evaluation Criteria](#evaluation-criteria)
-- [License](#license)
-- [Contact](#contact)
-
-
+- ⚡️ Fast development build with **Vite**
+- 🧱 Component-based architecture using **React**
+- 🐳 **Dockerized** for easy deployment
+- 🔥 Hot Module Replacement (HMR) for efficient development
+- 📦 Optimized production build
+- 💅 Styling with **Sass**
 
 ---
 
-## Overview
+## 📂 Project Structure
 
-The **Online Shop** project is a demo e-commerce application designed for Hackathon Phase 1. It serves as a platform to showcase best practices in code quality, development workflows, and system design with a focus on:
-
-- **Git & GitHub:** Effective version control, branching strategies, and collaborative workflows.
-- **Linux:** Command-line operations, system administration, and file management.
-- **Docker:** Principles of containerization and preparing code for deployment in a containerized environment.
-
-Your task is to familiarize yourself with the code, make enhancements if necessary, and ensure your final submission reflects your understanding of these topics.
-
----
-
-## Guidelines & Resources
-
-Before diving into the tasks, please review the following key resources:
-
-- [CONTRIBUTING.md](CONTRIBUTING.md): Guidelines for code contributions, commit messages, and overall coding standards.
-- [ROADMAP.md](ROADMAP.md): Insights into the project vision, future enhancements, and milestones.
-- **Repository Documentation:** Explore the repository to understand how the application is built. Pay special attention to the `src` directory where the main application logic resides, as well as configuration files such as `vite.config.js` and styling in `index.css`.
-
-These documents provide the context needed to understand the project requirements and the best practices expected for your contributions.
+```
+online-shop/
+├── node_modules/              # Installed dependencies
+├── public/                    # Public assets
+├── src/                       # Application source code
+│   ├── components/            # Reusable React components
+│   ├── pages/                 # Application pages
+│   ├── App.jsx                # Main App component
+│   └── main.jsx               # App entry point
+├── Dockerfile                 # Docker configuration
+├── Dockerfile-multi-stage     # Optimized multi-stage Dockerfile
+├── docker-compose.yml         # Docker Compose configuration
+├── package.json               # Project metadata & dependencies
+├── vite.config.js             # Vite configuration
+├── .dockerignore              # Docker ignore file
+└── README.md                  # Project documentation
+```
 
 ---
 
-## Tasks
+## ⚙️ Setup Instructions
 
-For this hackathon phase, your work will center around the following tasks:
+### 1️⃣ **Clone the Repository**
 
-### Git & GitHub
-
-- **Repository Management:** Fork and clone the repository, then create a new branch for your work. Ensure your commit history is clean and well-documented.
-- **Collaboration Practices:** Follow best practices for version control by making descriptive commits, creating pull requests, and engaging in code reviews.
-- **Workflow Optimization:** Identify any areas where the Git workflow can be improved and document your suggestions for future enhancements.
-
-### Linux
-
-- **Command Line Proficiency:** Review the code for examples of Linux command usage. Test and verify that file operations, system scripts, and environment configurations are functioning as expected.
-- **System Administration:** Examine how the application handles Linux-based operations such as permissions, file management, and process monitoring. If you see room for improvement, implement those changes and document them.
-- **Documentation:** Clearly document any Linux-related enhancements you make, explaining how they optimize the project’s performance or usability.
-
-### Docker
-
-- **Containerization Principles:** Even though a Dockerfile is not provided in this repository, consider how you would package and deploy this application using Docker. Reflect on the design decisions that would facilitate containerization.
-- **Conceptual Improvements:** Propose any modifications or improvements that could make future Docker integration smoother. Document your suggestions clearly in your pull request.
-- **Code Readiness:** Ensure the codebase is structured in a way that aligns with Docker best practices, preparing it for eventual containerized deployment on AWS EC2 / Azure VM / Google Compute Engine (Your Choice of Cloud).
-
----
-> [!IMPORTANT]
-> ## Submission Instructions
-> 
-> When you have completed your work, please follow these steps for submission:
->
-> 1. **Review & Test Your Work:**
->    
->    - Make sure all changes are committed and pushed to your GitHub repository (or branch). Test the application thoroughly to confirm that your enhancements do not break existing functionality.
->    
-> 2. **Prepare Your Submission:**
->    
->    -  Gather your full name, email address, and the URL to your GitHub repository (or the specific branch/commit that contains your work).
->    -  Make sure to add Demo video(which should be publically accessible) explaining your implementations for the project. This is the important aspect for evaluation. The Videos / Articles / Submissions should be submitted to the google form as well as shared on your LinkedIn/ twitter for extra points.
->    
-> 3. **Submit via Google Form:**
->    
->    - Complete the submission form here:
->    
->    [Submit Your Work](https://docs.google.com/forms/d/e/1FAIpQLSdtOttzC9M__5ysJ_prVT1MtmV0qh1_PXrI5aYfd3zQNCF-CA/viewform?usp=header)
->    
-> 4. **Timely Submission:**
->    
->    - Ensure that your submission is completed before the hackathon deadline. Late submissions will not be eligible for prizes.
->    
+```bash
+git clone https://github.com/amrita122/online_shop.git
+cd online_Shop
+```
 
 ---
 
-## Submission Details for Your Repo README
+### 2️⃣ **Run Locally (Without Docker)**
 
-When submitting your repository link, your README must include:
+1. **Install dependencies:**
 
-- **Project Title & Overview:**
-    
-    Clearly state the project name (e.g., "Online Shop – Hackathon Phase 1 Submission") and provide a brief overview of your solution, emphasizing how it addresses Git & GitHub, Linux, and Docker.
-    
-- **Task Descriptions & Implementations:**
-    
-  -  Describe the tasks you worked on. Detail how you managed your repository, the Linux commands or scripts you used, and any improvements or suggestions regarding Docker integration.
+   ```bash
+   npm install
+   ```
 
-> [!NOTE]
->
->  -  Provide video demo link (3-5 minutes only, not more than 5 minutes)
+2. **Run the development server:**
 
-- **Key Changes & Enhancements:**
-    
-    Highlight the major changes or enhancements you made, including any refactoring, feature additions, or optimizations, along with documentation updates.
-    
-- **Final Submission Statement:**
-    
-    Include a clear declaration that this repository (or branch) represents your final submission for Hackathon Phase 1.
-    
-- **Version or Branch Information:**
-    
-    Specify which branch or commit should be reviewed (e.g., "Final submission branch: `final-phase1`").
-    
+   ```bash
+   npm run dev
+   ```
 
-Make sure this information is visible in your repository's README so that evaluators can easily review your work.
+3. Open [http://localhost:5173](http://localhost:5173) or [http://3.250.66.213:3000](http://3.250.66.213:3000) in your browser.
 
 ---
 
-## Evaluation Criteria
+### 3️⃣ **Run Using Docker 🐳**
 
-Submissions will be evaluated based on the following criteria:
+1. **Build the Docker Image:**
 
-- **Adherence to Guidelines:**
-    
-    Your work should comply with the project’s coding standards, documentation, and contribution guidelines as described in this README and the [CONTRIBUTING.md](http://contributing.md/) file.
-    
-- **Git & GitHub Proficiency:**
-    
-    Evaluation of your version control practices, including branching strategy, commit quality, and pull request process.
-    
-- **Linux Competence:**
-    
-    Demonstrated ability to effectively use Linux for system administration tasks, scripting, and command-line operations within the project.
-    
-- **Docker Readiness:**
-    
-    Although a Dockerfile is not provided, your documentation and code structure should reflect an understanding of containerization best practices and readiness for future Docker integration.
-    
-- **Quality of Enhancements:**
-    
-    The significance and quality of your improvements, refactoring, and overall impact on the project’s functionality.
-    
-- **Documentation & Clarity:**
-    
-    Clear and concise documentation that explains your work, including details in your repository README about your tasks and changes.
-    
-- **Timeliness:**
-    
-    Your submission must be completed and submitted before the hackathon deadline.
-    
+   ```bash
+   docker build -t online-shop:latest .
+   ```
+
+2. **Run the Docker Container:**
+
+   ```bash
+   docker run -d -p 3000:5173 online-shop:latest
+   ```
+
+3. Open [http://localhost:5173](http://localhost:5173) or [http://3.250.66.213:3000](http://3.250.66.213:3000) in your browser.
 
 ---
 
-## License
+### 4️⃣ **Run Using Docker Compose 🐳**
 
-This project is licensed under the MIT License. See the [MIT](LICENSE) file for details.
+1. **Start the app using Docker Compose:**
 
----
+   ```bash
+   docker-compose up
+   ```
 
-## Contact
-
-For any questions or further information, please contact:
-
-- **Email:** [iemafzalhassan@gmail.com](mailto:iemafzalhassan@gmail.com) , [amitabhdevops2024@gmail.com](mailto:iemafzalhassan@gmail.com) , [deveshagent@gmail.com](mailto:deveshagent@gmail.com)
-- [Join Discord Server](https://discord.gg/4JtuMhMcjn)
+2. Open [http://localhost:3000](http://localhost:3000) or [http://3.250.66.213:3000](http://3.250.66.213:3000) in your browser.
 
 ---
 
-Good luck for the hackathon
+### 5️⃣ **Production Build**
 
-Happy Learning :)
+1. **Generate optimized production files:**
+
+   ```bash
+   npm run build
+   ```
+
+2. **Preview the build:**
+
+   ```bash
+   npm run preview
+   ```
+
+---
+
+## 📋 **Dockerfile Explanation**
+
+```dockerfile
+# Pull base image
+FROM node:20-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy app source code
+COPY . .
+
+# Install dependencies
+RUN npm install
+
+# Expose the port used by Vite
+EXPOSE 5173
+
+# Run the development server
+CMD ["npm", "run", "dev"]
+```
+
+```
+
+## 📋 **Docker Multi-Stage Build Explanation**
+
+```dockerfile
+# Stage 1: Install dependencies using slim for minimal size
+FROM node:20-slim AS builder
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json for efficient caching
+COPY package*.json ./
+
+# Install only production dependencies
+RUN npm ci --only=production
+
+# Copy the rest of the app source code
+COPY . .
+
+# Stage 2: Use smallest distroless image for runtime
+FROM gcr.io/distroless/nodejs20
+
+# Set working directory
+WORKDIR /app
+
+# Copy built app and node_modules from builder
+COPY --from=builder /app /app
+
+# Expose the port used by Vite
+EXPOSE 5173
+
+# Run the app
+CMD ["npm", "run", "dev"]
+```
+
+---
+
+## 📋 **Docker Compose File Explanation**
+
+```yaml
+# Use Docker Compose version 3.8
+version: '3.8'
+
+# Define services (containers) to run
+services:
+  # Define the 'app' service
+  app:
+    # Build configuration for the app service
+    build:
+      # Use the current directory as the build context
+      context: .
+      # Specify the Dockerfile to use for building the image
+      dockerfile: Dockerfile
+
+    # Map ports between the host and the container
+    ports:
+      # Map port 3000 on the host to port 5173 in the container
+      - "3000:5173"
+
+    # Set environment variables inside the container
+    environment:
+      # Set NODE_ENV to production for optimized builds
+      - NODE_ENV=production
+
+    # Configure volumes for code sharing and persistence
+    volumes:
+      # Mount the current directory to /app in the container for live code updates
+      - .:/app
+      # Ensure node_modules inside the container isn't overwritten by the host
+      - /app/node_modules
+
+    # Override the default command and run the app in development mode
+    command: ["npm", "run", "dev"]
+```
+
+---
+
+
+## ⚡ **Common Issues & Solutions**
+
+1. **Vite Running on Wrong Port?**
+   - By default, Vite uses **5173**. Ensure you're mapping ports correctly when running Docker:
+     ```bash
+     docker run -p 3000:5173 online-shop:latest
+     ```
+
+2. **Sass Deprecation Warnings?**
+   - The warning is from `sass-embedded`. To fix it:
+     ```bash
+     npm install sass --save-dev
+     ```
+
+3. **Vite Config Changes Require Re-Optimization?**
+   - Clear Vite cache:
+     ```bash
+     rm -rf node_modules/.vite
+     npm run dev
+     ```
+
+---
+
+---
+
+## 📤 **Submission Details**
+
+- **Full Name:** Amrita Kumari
+- **Email Address:** amitasuri493@gmail.com
+- **GitHub Repo:** [GitHub Repository Link](https://github.com/amrita122/online_shop.git)
+
+---
+
+## 📣 **Sharing for Extra Points 🚀**
+
+- **LinkedIn Post:** [My LinkedIn Share](https://www.linkedin.com/posts/amrita-kumari-504a39347_devops-docker-reactjs-activity-7298377010966315009-mVdv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFbUGpQB9RgHY_DDQ3qKYwkJ4r8liMNTNtE)
+
+---
+
+## 📑 **License**
+
+MIT License © Amrita Kumari
+
+---
+
+💡 *Made with 💖 using React, Vite, Node and Docker.*
+
+
