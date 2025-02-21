@@ -1,0 +1,46 @@
+
+
+# Stage 1 - Slim image with the linux distribution
+
+FROM node:18-slim AS builder
+
+# Working Directory
+
+WORKDIR /app
+
+# COPY package.json and package-lock.json 
+
+COPY package*.json ./
+
+
+# Install Dependencies
+
+RUN npm install
+
+# Copy the remaining files of the app code
+
+COPY . .
+
+RUN npm run build
+
+# Stage 2 - Distroless Image
+
+FROM gcr.io/distroless/nodejs18-debian12
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the build distroless
+COPY --from=builder /app/dist ./dist
+
+# Copy the node_modules to the final distroless image
+COPY --from=builder /app/node_modules ./node_modules
+
+# Expose Ports
+EXPOSE 5173
+
+# Start the application 
+CMD ["./node_modules/.bin/serve","-s","dist","-l","5173"]
+
+
+
