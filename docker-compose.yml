@@ -1,0 +1,18 @@
+# This is a Docker Compose file for Application: Online Shop
+
+# Docker Compose File Format(Ye thikse smjha nahi bohot conflicting info hai stack pe iski)
+
+version: "3.9"
+
+services:
+  web:
+    image: online-shop-mini
+    build: .
+    ports:
+       - "5173:5173" # Exposed/Default port
+    environment:
+       - NODE_ENV=production
+    # read_only: true # Koi unnecessary writes nah kare(Avoid unnecessary writes)
+    tmpfs:
+       - /tmp
+    restart: always  # If it crashes, to restart automatically hoga
