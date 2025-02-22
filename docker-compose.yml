@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  app:
+    image: prashantsri3/online-shop  
+    ports:
+      - "80:80"  # Map container port 80 to host port 80
+    restart: always  # Ensure the container restarts on failure
+    networks:
+      - online_shop_network  # Connect app to the network
+    volumes:
+      - nginx_static:/usr/share/nginx/html 
+
+
+
+
+
+
+networks:
+  online_shop_network:  # Define a custom network
+    driver: bridge
+
+volumes:
+  nginx_static:
+
