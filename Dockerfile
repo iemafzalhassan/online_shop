@@ -13,7 +13,7 @@ RUN npm install
 # Copy the rest of the application code into the working directory
 COPY . .
 
-# Building Application
+# Building App
 RUN npm run build
 
 
