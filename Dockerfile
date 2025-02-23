@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Building App
-RUN npm  build
+RUN npm run build
 
 
 
