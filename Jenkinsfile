@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "dev"}
+    agent any
 
     stages {
         stage('Code') {
@@ -44,10 +44,14 @@ pipeline {
             echo 'Pipeline execution completed.'
         }
         success {
-            echo 'Pipeline succeeded!'
+            mail to: 'su123pratap@gmail.com',
+            subject: "SUCCESS: ${currentBuild.fullDisplayName}",
+            body: "Test Complete Build passed."
         }
         failure {
-            echo 'Pipeline failed!'
+            mail to: 'su123pratap@gmail.com',
+            subject:"FAILURE: ${currentBuild.fullDisplayName}",
+            body: "Test Complete Build failed."
         }
     }
 }
