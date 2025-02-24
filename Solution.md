@@ -74,6 +74,6 @@ For this hackathon phase, your work will center around the following tasks:
 #### After make changes in the cloned repo I used the command <mark>git add Dockerfile & git commit -m "message" 
 
 ### Push to Fork
-#### Then I pushed my changes in the repo in my local by the following command <mark>git push origin Phase1-Hackathon
+#### Then I pushed my changes in the remote repo from my local by the following command <mark>git push origin Phase1-Hackathon
 
 ### In the final step I raised the <mark>Pull Request</mark> to merge with the parent repo.
