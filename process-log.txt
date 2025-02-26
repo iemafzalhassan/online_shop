@@ -1,0 +1,30 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         2  0.0  0.0      0     0 ?        S    00:54   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I<   00:54   0:00 [rcu_gp]
+root         4  0.0  0.0      0     0 ?        I<   00:54   0:00 [rcu_par_gp]
+root         6  0.0  0.0      0     0 ?        I<   00:54   0:00 [kworker/0:0H-ev]
+root         7  0.0  0.0      0     0 ?        I    00:54   0:00 [kworker/u30:0-x]
+root         8  0.0  0.0      0     0 ?        I<   00:54   0:00 [mm_percpu_wq]
+root         9  0.0  0.0      0     0 ?        S    00:54   0:00 [rcu_tasks_rude_]
+root        10  0.0  0.0      0     0 ?        S    00:54   0:00 [rcu_tasks_trace]
+root        11  0.0  0.0      0     0 ?        S    00:54   0:00 [ksoftirqd/0]
+[?1h=[?25l[H[2J(B[mtop - 02:08:29 up  1:14,  1 user,  load average: 0.00, 0.00, 0.00(B[m[39;49m(B[m[39;49m[K
+Tasks:(B[m[39;49m[1m  98 (B[m[39;49mtotal,(B[m[39;49m[1m   1 (B[m[39;49mrunning,(B[m[39;49m[1m  54 (B[m[39;49msleeping,(B[m[39;49m[1m   1 (B[m[39;49mstopped,(B[m[39;49m[1m   0 (B[m[39;49mzombie(B[m[39;49m(B[m[39;49m[K
+%Cpu(s):(B[m[39;49m[1m  0.0 (B[m[39;49mus,(B[m[39;49m[1m  0.0 (B[m[39;49msy,(B[m[39;49m[1m  0.0 (B[m[39;49mni,(B[m[39;49m[1m100.0 (B[m[39;49mid,(B[m[39;49m[1m  0.0 (B[m[39;49mwa,(B[m[39;49m[1m  0.0 (B[m[39;49mhi,(B[m[39;49m[1m  0.0 (B[m[39;49msi,(B[m[39;49m[1m  0.0 (B[m[39;49mst(B[m[39;49m(B[m[39;49m[K
+KiB Mem :(B[m[39;49m[1m   975524 (B[m[39;49mtotal,(B[m[39;49m[1m   307552 (B[m[39;49mfree,(B[m[39;49m[1m   138004 (B[m[39;49mused,(B[m[39;49m[1m   529968 (B[m[39;49mbuff/cache(B[m[39;49m(B[m[39;49m[K
+KiB Swap:(B[m[39;49m[1m        0 (B[m[39;49mtotal,(B[m[39;49m[1m        0 (B[m[39;49mfree,(B[m[39;49m[1m        0 (B[m[39;49mused.(B[m[39;49m[1m   695728 (B[m[39;49mavail Mem (B[m[39;49m(B[m[39;49m[K
+[K
+[7m  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND                                                                                                                                      (B[m[39;49m[K
+(B[m    1 root      20   0   41708   5476   3852 S  0.0  0.6   0:00.81 systemd                                                                                                                                      (B[m[39;49m[K
+(B[m    2 root      20   0       0      0      0 S  0.0  0.0   0:00.00 kthreadd                                                                                                                                     (B[m[39;49m[K
+(B[m    3 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 rcu_gp                                                                                                                                       (B[m[39;49m[K
+(B[m    4 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 rcu_par_gp                                                                                                                                   (B[m[39;49m[K
+(B[m    6 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 kworker/0:0H-ev                                                                                                                              (B[m[39;49m[K
+(B[m    7 root      20   0       0      0      0 I  0.0  0.0   0:00.19 kworker/u30:0-x                                                                                                                              (B[m[39;49m[K
+(B[m    8 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 mm_percpu_wq                                                                                                                                 (B[m[39;49m[K
+(B[m    9 root      20   0       0      0      0 S  0.0  0.0   0:00.00 rcu_tasks_rude_                                                                                                                              (B[m[39;49m[K
+(B[m   10 root      20   0       0      0      0 S  0.0  0.0   0:00.00 rcu_tasks_trace                                                                                                                              (B[m[39;49m[K
+(B[m   11 root      20   0       0      0      0 S  0.0  0.0   0:00.46 ksoftirqd/0                                                                                                                                  (B[m[39;49m[K
+(B[m   12 root      20   0       0      0      0 I  0.0  0.0   0:00.68 rcu_sched                                                                                                                                    (B[m[39;49m[K
+(B[m   13 root      rt   0       0      0      0 S  0.0  0.0   0:00.02 migration/0                                                                                                                                  (B[m[39;49m[K
+(B[m   15 root      20   0       0      0      0 S  0.0  0.0   0:00.00 cpuhp/0                                                                                                                                      (B[m[39;49m[K

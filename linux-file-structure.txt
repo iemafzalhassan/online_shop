@@ -1,0 +1,29 @@
+.
+├── CONTRIBUTING.md
+├── eslint.config.js
+├── index.css
+├── index.html
+├── LICENSE
+├── linux-file-structure.txt
+├── package.json
+├── package-lock.json
+├── public
+│   ├── imgs
+│   └── OS.svg
+├── README.md
+├── ROADMAP.md
+├── src
+│   ├── App.jsx
+│   ├── bootstrap-overrides.scss
+│   ├── components
+│   ├── context
+│   ├── data
+│   ├── hooks
+│   ├── index.css
+│   ├── main.jsx
+│   ├── pages
+│   ├── services
+│   └── utilities
+└── vite.config.js
+
+10 directories, 16 files
