@@ -1,0 +1,20 @@
+# Alpine is chosen for its lightweight nature, which helps reduce the image size
+FROM node:18-alpine
+
+# Setting the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install dependencies specified in package.json
+RUN npm install
+
+# Copy the rest of the application code into the working directory
+COPY . .
+
+# Exposing port 3000 to allow external access to the application
+EXPOSE 3000
+
+# Here, it starts a development server using npm's "dev" script
+CMD ["npm", "run", "start"]

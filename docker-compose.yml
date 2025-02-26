@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000" 
+    volumes:
+      - .:/app # Mount the current directory to /app in the container for development
+      - /app/node_modules # Prevent overwriting node_modules in the container
+    environment:
+      NODE_ENV: development # Set environment variable
+    command: npm run start 
+
+
