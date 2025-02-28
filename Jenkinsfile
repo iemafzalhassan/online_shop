@@ -10,7 +10,7 @@ pipeline{
             steps{
                 
                 script{
-                    git url("https://github.com/myasir14/online_shop.git", "hackathon/online_shop")
+                    clone("https://github.com/myasir14/online_shop.git", "hackathon/online_shop")
                 }
             }
         }
