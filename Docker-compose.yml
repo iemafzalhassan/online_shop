@@ -1,0 +1,17 @@
+services:
+  two-tier flask app:
+    image: yasir261/online-shop-nginx
+    container_name: online-shop-nginx
+    ports:
+      - "3000:3000"
+    networks:
+      -twotier
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+networks:
+  twotier:
+    driver: bridge
