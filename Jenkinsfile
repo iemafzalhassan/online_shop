@@ -1,11 +1,16 @@
 @Library("Shared") _
 pipeline{
+    
     agent {label "dev"};
+    
     stages{
+        
         stage('Code clone'){
+            
             steps{
+                
                 script{
-                    clone ("https://github.com/myasir14/online_shop.git", "hackathon/online_shop")
+                    clone("https://github.com/myasir14/online_shop.git", "hackathon/online_shop")
                 }
             }
         }
