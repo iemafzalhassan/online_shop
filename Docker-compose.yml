@@ -6,7 +6,6 @@ services:
       - "3000:3000"
     networks:
       -twotier
-    restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
       interval: 1m
@@ -14,4 +13,3 @@ services:
       retries: 3
 networks:
   twotier:
-    driver: bridge
