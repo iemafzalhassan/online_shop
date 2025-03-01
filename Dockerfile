@@ -1,24 +1,13 @@
-# Getting Base Image for NodeJS
-
-FROM node:18
-
-# making a working directory for puttin code and req. files
-
+# Stage 1 - Development
+FROM node:18 AS builder
 WORKDIR /app
-
-
-# Copy  everything from the source to the container
-
+COPY package*.json ./
+RUN npm install
 COPY . .
 
-# Install packages
-
-RUN npm install
-
-# Expose the port
-
+# Stage 2 - Production
+FROM node:18-alpine
+WORKDIR /app
+COPY --from=builder /app .
 EXPOSE 5173
-
-# Serve the application
-
 CMD ["npm", "run", "dev"]
