@@ -197,8 +197,7 @@ For any questions or further information, please contact:
 - [Join Discord Server](https://discord.gg/4JtuMhMcjn)
 
 ---
-
-Good luck for the hackathon
+Task completed 
 
 Happy Learning :)
 Priyanka Varshney
