@@ -1,0 +1,25 @@
+kind: Deployment
+apiVersion: apps/v1
+
+metadata:
+  name: online-shop-deployment
+  namespace: online-shop-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: online-shop
+
+
+  template:
+    metadata:
+      labels:
+        app: online-shop 
+    spec:
+      containers:
+        - name : online-shop
+          image: varpriya/online-shop:latest
+          ports:
+           - containerPort: 5173
+
+    
