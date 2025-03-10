@@ -10,16 +10,13 @@ spec:
     matchLabels:
       app: online-shop
 
-
   template:
     metadata:
       labels:
-        app: online-shop 
+        app: online-shop
     spec:
       containers:
-        - name : online-shop
-          image: varpriya/online-shop:latest
+        - name: online-shop
+          image: varpriya/online-shop-image:latest
           ports:
-           - containerPort: 5173
-
-    
+            - containerPort: 5173

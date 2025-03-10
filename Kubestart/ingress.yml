@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: online-shop-ingress
+  namespace: online-shop-ns
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /shop
+            backend:
+              service:
+                name: online-shop-svc
+                port:
+                  number: 5173
+          - path: /apache
+            pathType: Prefix
+            backend:
+              service:
+                name: apache-service
+                port:
+                  number: 80
