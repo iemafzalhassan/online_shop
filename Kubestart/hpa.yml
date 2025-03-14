@@ -1,0 +1,21 @@
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2
+
+metadata:
+  name: online-shop-hpa
+  namespace: online-shop-ns
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    apiVersion: v1
+    name: online-shop-deployment
+  minReplicas: 1
+  maxReplicas: 5
+
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu 
+        target:
+          type: Utilization
+          averageUtilization: 2
