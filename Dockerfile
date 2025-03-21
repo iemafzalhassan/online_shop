@@ -15,10 +15,10 @@ COPY . .
 FROM node:lts-alpine AS production
 
 # Create app directory again
-WORKDIR /app/phase1_hackathon
+WORKDIR /app/hackathon-phase1
 
 # Copy the files from the build-stage to the production stage
-COPY --from=build-stage /app /app/phase1_hackathon 
+COPY --from=build-stage /app /app/hackathon-phase1 
 
 # Expose the port for running application
 EXPOSE 5173

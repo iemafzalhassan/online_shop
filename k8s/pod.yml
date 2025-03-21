@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: online-shop-pod
+  namespace: online-shop-ns
+  labels:
+    app: online-shop
+spec:
+  containers:
+  - name: online-shop
+    image: shiv2bhargava/online-shops
+    ports:
+    - containerPort: 5173
+
