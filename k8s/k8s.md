@@ -1,5 +1,9 @@
 # To deploy the application through Kubernetives 
 
+## Prerequisites
+1. **Kubernetes Cluster**: A running cluster (e.g., Minikube, EKS, GKE, or AKS).
+2. **kubectl**: The Kubernetes CLI [installed](https://kubernetes.io/docs/tasks/tools/)
+
 ## Deployment Steps
 
 ### 1. Create the Namespace
