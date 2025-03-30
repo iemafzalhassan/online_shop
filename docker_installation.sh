@@ -1,22 +1,23 @@
 #!/bin/bash
+<<helptext
+This script is created to automate the installation process
+helptext
 
-# Docker Installation
-function docker_installation() {
-    if [ "$EUID" -ne 0 ]; then
-        echo "Please run as root or use sudo"
-        exit 1
+function docker_installation(){
+    ## Define error code
+    E_NOTROOT=87 # Non-root exit error.
+
+    ## check if is sudoer
+    if ! $(sudo -l &> /dev/null); then
+    echo 'Error: root privileges are needed to run this script'
+    exit $E_NOTROOT
     fi
 
-    # Updating Packages and Installing Dependicies
-    sudo apt-get update
-    sudo apt-get install -y \
-        apt-transport-https \
-        ca-certificates \
-        curl \
-        gnupg \
-        lsb-release
+# updating the packages and installing dependencies
+sudo apt-get update
+sudo apt-get install -y
 
-    # Downloading Docker
+# Downloading Docker
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
     echo \
@@ -29,18 +30,24 @@ function docker_installation() {
     echo "Docker installation completed successfully"
 }
 
-function docker_compose_installation() {
-    if [ "$EUID" -ne 0 ]; then
-        echo "Please run as root or use sudo"
-        exit 1
+function docker_compose_installation(){
+  ## Define error code
+    E_NOTROOT=87 # Non-root exit error.
+
+    ## check if is sudoer
+    if ! $(sudo -l &> /dev/null); then
+    echo 'Error: root privileges are needed to run this script'
+    exit $E_NOTROOT
     fi
 
     # Downloading Docker Compose
+        # Downloading Docker Compose
     sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     sudo chmod +x /usr/local/bin/docker-compose
     docker-compose --version
 
     echo "Docker Compose installation completed successfully"
+
 }
 
 docker_installation

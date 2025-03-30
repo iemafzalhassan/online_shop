@@ -1,23 +1,27 @@
-version: "3.8"
+version: '3.8'  # Specifies the Docker Compose version
 
 services:
-
-  online_shop:
+  online-shop-app:  # Defines a service named "online-shop-app"
     build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: online_shop
+      context: .  # Uses the current directory as the build context
+      dockerfile: Dockerfile  # Specifies the Dockerfile to use for building the image
+    container_name: online_app  # Assigns a custom container name
+    
     ports:
-      - "3000:5173"
-    restart: always
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
-      interval: 60s
-      timeout: 10s
-      retries: 5
-    networks:
-      - online_shop
+      - "3000:5173"  # Maps port 5173 inside the container to port 3000 on the host
+    
+    restart: always  # Ensures the container restarts automatically if it stops
 
+    healthcheck:  # Defines a health check for the service
+      test: ["cmd", "curl", "-f", "http://localhost:3000/"]  # Checks if the app is reachable
+      interval: 60s  # Runs the health check every 60 seconds
+      timeout: 10s  # Defines a timeout of 10 seconds for the check
+      retries: 5  # Retries up to 5 times before considering the container unhealthy
+
+    networks:
+      - online_shop  # Connects the service to the "online_shop" network
+
+# Defines the network configuration
 networks:
   online_shop:
-    driver: bridge
+    driver: bridge  # Uses a bridge network for isolated communication
