@@ -113,3 +113,38 @@ All this while ensuring:
 Good luck for the hackathon
 
 Happy Learning :)
+
+## #################################################################################################
+
+
+## steps to deploying react application via Docker
+sudo apt-get update
+sudo apt-get install docker.io
+docker --version
+sudo usermod -aG docker ubuntu
+newgrp docker
+docker ps
+mkdir testrepo
+cd testrepo
+testrepo$ git clone https://github.com/iemafzalhassan/online_shop.git
+cd online_shop
+vim Dockerfile
+---------------------------------------------------------
+Sending build context to Docker daemon  991.7kB
+Step 1/6 : FROM node:18-alpine
+
+Step 2/6 : WORKDIR /app
+
+Step 3/6 : COPY . .
+
+Step 4/6 : RUN npm install && npm run build
+
+Step 5/6 : EXPOSE 3000
+
+Step 6/6 : CMD ["npm","run","dev"]
+----------------------------------------------------------
+docker images
+vim vite.config.js
+vim Dockerfile
+docker build -t test-latest .
+docker run -d -p 3000:3000 test-latest
