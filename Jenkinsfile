@@ -1,4 +1,4 @@
-v.pipeline{
+pipeline{
     agent any;     // it means it run any server
     stages{
         stage("Git Clone"){
