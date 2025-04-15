@@ -1,4 +1,4 @@
-pipeline{
+v.pipeline{
     agent any;     // it means it run any server
     stages{
         stage("Git Clone"){
@@ -23,9 +23,9 @@ pipeline{
             withCredentials([usernamePassword(credentialsId:"Dockerhubcreds",
             usernameVariable: "Dockerhubuser" ,
             passwordVariable: "DockerHubPass")]) {
-            sh "docker login -u ${Dockerhubuser} -p ${DockerHubPass}"
-            sh "docker image tag easyshop ${Dockerhubuser}/online-shops"
-            sh "docker push ${Dockerhubuser}/online-shops:latest"
+            sh "docker login -u ${env.Dockerhubuser} -p ${env.DockerHubPass}"
+            sh "docker image tag easyshop ${env.Dockerhubuser}/online-shops"
+            sh "docker push ${env.Dockerhubuser}/online-shops:latest"
             }
             }
         }
