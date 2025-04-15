@@ -24,7 +24,7 @@ pipeline{
             usernameVariable: "Dockerhubuser" ,
             passwordVariable: "DockerHubPass")]) {
             sh "docker login -u ${env.Dockerhubuser} -p ${env.DockerHubPass}"
-            sh "docker image tag easyshop ${env.Dockerhubuser}/easyshop-jenkins"
+            sh "docker image tag easyshop-jenkins ${env.Dockerhubuser}/easyshop-jenkins"
             sh "docker push ${env.Dockerhubuser}/easyshop-jenkins"
             }
             }
