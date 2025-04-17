@@ -33,7 +33,7 @@ pipeline{
             steps{
                 script{
                     // Run Trivy to scan the Docker image
-                    def trivyOutput = sh(script: "trivy image ${env.Dockerhubuser}/easyshop-jenkins:latest", returnStdout: true).trim()
+                    def trivyOutput = sh(script: "trivy image shiv2bhargava/easyshop-jenkins:latest", returnStdout: true).trim()
 
                     // Display Trivy scan results
                     println trivyOutput
