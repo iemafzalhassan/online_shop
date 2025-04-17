@@ -29,5 +29,28 @@ pipeline{
             }
             }
         }
+         stage('Scan Docker Image') {
+            steps {
+                script {
+                    // Run Trivy to scan the Docker image
+                    def trivyOutput = sh(script: "trivy image ${env.Dockerhubuser}/easyshop-jenkins:latest", returnStdout: true).trim()
+
+                    // Display Trivy scan results
+                    println trivyOutput
+
+                    // Check if vulnerabilities were found
+                    if (trivyOutput.contains("Total: 0")) {
+                        echo "No vulnerabilities found in the Docker image."
+                    } else {
+                        echo "Vulnerabilities found in the Docker image."
+                        // You can take further actions here based on your requirements
+                        // For example, failing the build if vulnerabilities are found
+                        // error "Vulnerabilities found in the Docker image."
+                    }
+                }
+            }
+        }
+            
+        }
     }
 }
