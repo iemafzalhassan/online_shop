@@ -31,7 +31,7 @@ pipeline{
         }
          stage('Scan Docker Image') {
             steps {
-                scripts{
+                script{
                     // Run Trivy to scan the Docker image
                     def trivyOutput = sh(script: "trivy image ${env.Dockerhubuser}/easyshop-jenkins:latest", returnStdout: true).trim()
 
