@@ -14,7 +14,7 @@ pipeline{
         }
         stage("run"){
         steps{
-            sh "docker run -d easyshop-jenkins:latest"
+            sh "docker run -d -p 5173:5173 easyshop-jenkins:latest"
          }
             
         }
