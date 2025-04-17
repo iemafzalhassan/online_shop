@@ -43,9 +43,7 @@ pipeline{
                         echo "No vulnerabilities found in the Docker image."
                     } else {
                         echo "Vulnerabilities found in the Docker image."
-                        // You can take further actions here based on your requirements
-                        // For example, failing the build if vulnerabilities are found
-                        // error "Vulnerabilities found in the Docker image."
+                       
                     }
                 }
             }
