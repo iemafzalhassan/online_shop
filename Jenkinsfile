@@ -1,6 +1,10 @@
 pipeline{
     agent any;     // it means it run any server
-    
+    environment {
+         withCredentials([usernamePassword(credentialsId:"Dockerhubcreds",
+            usernameVariable: "Dockerhubuser" ,
+            passwordVariable: "DockerHubPass")])
+    }
     stages{
         stage("Git Clone"){
             steps{
@@ -21,20 +25,17 @@ pipeline{
         }
         stage("push to docker hub"){
             steps{
-            withCredentials([usernamePassword(credentialsId:"Dockerhubcreds",
-            usernameVariable: "Dockerhubuser" ,
-            passwordVariable: "DockerHubPass")]) {
-            sh "docker login -u ${env.Dockerhubuser} -p ${env.DockerHubPass}"
+            sh "docker login -u ${Dockerhubuser} -p ${DockerHubPass}"
             sh "docker image tag easyshop-jenkins ${env.Dockerhubuser}/easyshop-jenkins"
-            sh "docker push ${env.Dockerhubuser}/easyshop-jenkins"
+            sh "docker push ${Dockerhubuser}/easyshop-jenkins"
             }
-            }
+            
         }
          stage('Scan Docker Image') {
             steps{
                 script{
                     // Run Trivy to scan the Docker image
-                    def trivyOutput = sh(script: "trivy image shiv2bhargava/easyshop-jenkins:latest", returnStdout: true).trim()
+                    def trivyOutput = sh(script: "trivy image ${Dockerhubuser}/easyshop-jenkins:latest", returnStdout: true).trim()
 
                     // Display Trivy scan results
                     println trivyOutput
