@@ -34,8 +34,7 @@ pipeline{
                 script{
                     // Run Trivy to scan the Docker image
                     def trivyOutput = sh(script: "trivy image shiv2bhargava/easyshop-jenkins:latest", returnStdout: true).trim()
-
-                    // Display Trivy scan results
+ // Display Trivy scan results
                     println trivyOutput
                     if (trivyOutput.contains("Total: 0")) {
                         echo "No vulnerabilities found in the Docker image."
