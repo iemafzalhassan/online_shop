@@ -1,22 +1,22 @@
-version: "3.8"
-
+ 
 services:
 
   online_shop:
     build:
       context: .
+
     container_name: online_shop
     ports:
-      - "5173:5173"
-    restart: always
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5173/"]
-      interval: 60s
-      timeout: 10s
-      retries: 5
+      - "5173"
     networks:
-      - online_shop
+      - my-net
 
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+     - "80:80"
+    networks:
+      - my-net
 networks:
-  online_shop:
-    driver: bridge
+  - my-net
