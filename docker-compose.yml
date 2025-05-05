@@ -1,5 +1,4 @@
- 
-services:
+ services:
 
   online_shop:
     build:
