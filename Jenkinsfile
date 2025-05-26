@@ -11,7 +11,7 @@ pipeline {
         stage ("build") {
             steps {
                 echo "building..."  
-                sh "docker build -t online_shop."
+                sh "docker build -t online_shop ."
             }
         }
         stage ("test") {
