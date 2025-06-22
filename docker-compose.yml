@@ -1,14 +1,13 @@
-version: "3.8"
+version: '3.8'
 
 services:
-
   online_shop:
+    container_name: my-app
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: online_shop
+      dockerfile: Dockerfile-multi
     ports:
-      - "3000:5173"
+      - "3000:3000"
     restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
@@ -21,3 +20,4 @@ services:
 networks:
   online_shop:
     driver: bridge
+
