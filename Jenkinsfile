@@ -1,10 +1,35 @@
 pipeline {
     agent any
-
+ 
+    environment{
+        SONAR_HOME= tool "Sonar"
+    }
     stages {
         stage("CODE") {
             steps {
                 git url: "https://github.com/suyash700/online_shop.git", branch: "project"
+            }
+        }
+        
+        stage("SONARQUBE QUALITY ANALYSIS") {
+            steps {
+               withSonarQubeEnv("Sonar"){
+                   sh "$SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=online-app -Dsonar.projectKey=online-app"
+               }
+            }
+        }
+        
+        stage("SONARQUBE QUALITY Gate Scan") {
+            steps {
+               timeout(time: 2 , unit: "MINUTES"){
+                 waitForQualityGate abortPipeline: false
+               }
+            }
+        }
+        
+         stage("TRIVY FS SCAN") {
+            steps {
+               sh "trivy fs --format table -o trivy-fs-report.html ."
             }
         }
 
