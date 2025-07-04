@@ -1,53 +1,68 @@
-# 🛍️ Online Shop – Dockerized CI/CD with Jenkins
+🛍️ Online Shop – DevSecOps-Enabled CI/CD with Jenkins
+This project demonstrates how to build a secure and automated CI/CD pipeline using Jenkins, GitHub Webhooks, Docker, Docker Hub, SonarQube, and Trivy for a Vite-based frontend (or fullstack) app.
 
-This project demonstrates how to containerize a Vite-based frontend (or fullstack app) and automate the CI/CD process using Jenkins, GitHub Webhooks, and Docker Hub.
+🚀 Features
+✅ Multi-stage Dockerfile for clean, production-ready images
+✅ GitHub Webhook to auto-trigger Jenkins builds
+✅ Jenkins pipeline: build → scan → test → push → deploy
+✅ SonarQube integration for code quality & vulnerability scanning
+✅ Trivy integration for filesystem & Docker image vulnerability scanning
+✅ Docker Hub to store production-ready images
+✅ Docker Compose for seamless local/production deployment
 
----
-
-## 🚀 Features
-
-- ✅ Multi-stage Dockerfile for clean, production-ready images  
-- ✅ GitHub webhook integration for auto-triggering builds  
-- ✅ Jenkins pipeline for build → test → push → deploy  
-- ✅ Docker Hub integration for storing built images  
-- ✅ Docker Compose for local & production deployment  
-
----
-
-## 📁 Project Structure
+📁 Project Structure
 .
-├── Dockerfile-multi
+├── Dockerfile
 ├── docker-compose.yml
 ├── Jenkinsfile
+├── sonar-project.properties
 ├── src/
-│ └── (your app code)
+│   └── (your app code)
 └── README.md
 
+🧪 #Security Steps (DevSecOps)#
 
-Jenkinsfile
+🔎 SonarQube (Static Analysis)
 
-pipeline {...}
+Detect code smells, bugs, security hotspots (e.g., XSS, SQLi)
 
-🌐 Step 3: Setup GitHub Webhook
-Go to your GitHub repo → Settings → Webhooks
+Automatically fails pipeline if quality gate fails
 
-Click “Add Webhook”
+![Screenshot 2025-07-04 232210](https://github.com/user-attachments/assets/d7c2e9c1-6cac-4285-9a95-d9396b751f00)
 
-Payload URL: http://<your-server-ip>:8080/github-webhook/
+🛡️ Trivy FileSystem Scan
+
+Scans source code, config files for secrets, misconfig, known CVEs
+
+🐳 Trivy Docker Image Scan
+
+Scans Docker image layers for vulnerabilities (CVEs)
+
+🧾 Reports
+
+Trivy & SonarQube results archived in Jenkins HTML Reports
+
+Slack/email notifications can be added
+
+ Jenkinsfile (CI/CD + DevSecOps)
+
+pipeline{..}
+
+
+
+🌐 Step-by-Step Setup
+1️⃣ GitHub Webhook
+Go to GitHub → Repo → Settings → Webhooks
+
+Payload URL: http://<your-jenkins-ip>:8080/github-webhook/
 
 Content type: application/json
 
-Event: Just the push event
+Event: Push event only
 
 
-
-
-🔐 Step 4: Add Docker Hub Credentials in Jenkins
-Go to Jenkins → Manage Jenkins → Credentials
-
-Click Global → Add Credentials
-
-Add:
+2️⃣ Add SonarQube & DockerHub Credentials in Jenkins
+Go to Jenkins → Manage Jenkins → Credentials → Global → Add Credentials:
 
 Type: Username with password
 
@@ -56,59 +71,39 @@ ID: dockerhubId
 Scope: Global
 
 
-![Screenshot 2025-07-04 123103](https://github.com/user-attachments/assets/8d406d7d-baa4-4edf-8a17-7f60b6fcce1a)
+
+3️⃣ Docker Compose File (docker-compose.yml)
 
 
 
-🐳 Step 5: Docker Compose
 
-version: '3.8'
+![Screenshot 2025-07-04 232149](https://github.com/user-attachments/assets/9b462210-5350-4b53-aff9-23c741f3c5f5)
 
-services:
-  online_shop:
-    container_name: my-app
-    image: suyashdahitule/online-app:latest
-    ports:
-      - "5173:5173"
-    restart: always
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5173/"]
-      interval: 60s
-      timeout: 10s
-      retries: 5
-    networks:
-      - online_shop
+✅ Final DevSecOps CI/CD Flow
+Code is pushed to GitHub
 
-networks:
-  online_shop:
-    driver: bridge
-
-![Screenshot 2025-07-04 125847](https://github.com/user-attachments/assets/8ab32636-fddb-4cd2-ac0a-6199444b5dbc)
-
-
-✅ Final CI/CD Flow
-Pushed code to the project branch on GitHub
-
-GitHub Webhook triggers Jenkins
+Webhook triggers Jenkins
 
 Jenkins:
 
-Clones the repo
+Pulls code
 
-Builds the Docker image
+Runs SonarQube for static code security checks
 
-Pushes it to Docker Hub
+Runs Trivy to scan filesystem
 
-Deploys it with Docker Compose
+Builds Docker image
 
-App is live on:
-http://<your-server-ip>:5173
+Runs Trivy image scan
+
+Pushes image to DockerHub
+
+Deploys via Docker Compose
+
+HTML reports are generated & archived
 
 
-![Screenshot 2025-07-04 125538](https://github.com/user-attachments/assets/998c6a9d-154f-486a-96ff-17083f641371)
-
+![Screenshot 2025-07-04 232008](https://github.com/user-attachments/assets/4062df32-6795-4dac-ab6c-9f78c0f9f982)
 
 🙌 Author
 Made with ❤️ by Suyash Dahitule
-
-
