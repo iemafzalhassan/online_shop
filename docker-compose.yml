@@ -3,7 +3,7 @@ version: '3.8'
 services:
   online_shop:
     container_name: my-app
-    image: suyashdahitule/online-app:tagname
+    image: suyashdahitule/online-app:latest
     ports:
       - "3000:3000"
     restart: always
