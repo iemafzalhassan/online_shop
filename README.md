@@ -1,115 +1,114 @@
-# Online Shop 🛍️ for Hackathon Phase 1
+# 🛍️ Online Shop – Dockerized CI/CD with Jenkins
 
-[![Stars](https://img.shields.io/github/stars/iemafzalhassan/online_shop)](https://github.com/iemafzalhassan/online_shop)
-![Forks](https://img.shields.io/github/forks/iemafzalhassan/online_shop)
-![GitHub last commit](https://img.shields.io/github/last-commit/iemafzalhassan/easyshop?color=red)
-[![GitHub Profile](https://img.shields.io/badge/GitHub-iemafzalhassan-blue?logo=github&style=flat)](https://github.com/iemafzalhassan)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-<p align="center">
-
-Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This repository contains a fully functional e-commerce application built to demonstrate foundational DevOps skills in three key areas:
-
-- **Git & GitHub**
-- **Linux**
-- **Docker**
-
-In this phase, your focus is on understanding the provided developer code, reviewing how these core topics are implemented, and making any necessary enhancements. When you're ready, you'll submit your work via our designated Google Form.
+This project demonstrates how to containerize a Vite-based frontend (or fullstack app) and automate the CI/CD process using Jenkins, GitHub Webhooks, and Docker Hub.
 
 ---
 
-### Project Details
+## 🚀 Features
 
-### Content
-
-- [**Situation**](#situation)
-- [**Task**](#task)
-- [**Action**](#action)
-- [**Result**](#result--resume)
-
-## Getting Started
-
-- Video Demonstration
-
-  [Video Demonstration](https://www.dropbox.com/scl/fi/06xq03rkx56hiak1080bo/videoDemo.mp4?rlkey=dje3ntpcd9zc3rzz1a1canhch&st=1vsn8k90&dl=0)
-
-1. Home Page
-![Home Page](public/homePage.png)
-1. Admin Page
-![Admin Page](public/adminPage.png)
-
-## Guidelines & Resources
-
-Before diving into the tasks, please review the following key resources:
-
-- [CONTRIBUTING.md](CONTRIBUTING.md): Guidelines for code contributions, commit messages, and overall coding standards.
-- [COMMANDS.md](): Command used by me throught the project from Configuration to Deployment. `Except Git Commands`
-- [ROADMAP.md](ROADMAP.md): Insights into the project vision, future enhancements, and milestones.
-- **Repository Documentation:** Explore the repository to understand how the application is built. Pay special attention to the `src` directory where the main application logic resides, as well as configuration files such as `vite.config.js` and styling in `index.css`.
-
-These documents provide the context needed to understand the project requirements and the best practices expected for your contributions.
+- ✅ Multi-stage Dockerfile for clean, production-ready images  
+- ✅ GitHub webhook integration for auto-triggering builds  
+- ✅ Jenkins pipeline for build → test → push → deploy  
+- ✅ Docker Hub integration for storing built images  
+- ✅ Docker Compose for local & production deployment  
 
 ---
 
-### Situation
+## 📁 Project Structure
+.
+├── Dockerfile-multi
+├── docker-compose.yml
+├── Jenkinsfile
+├── src/
+│ └── (your app code)
+└── README.md
 
-As part of the **Train With Shubham Hackathon Phase 1**, I was given the charge of deploying an Online Shopping Portal to the internet. The main goal was to ensure that the website was easily accessible, reliable, and scalable so that it could handle user traffic efficiently. Achiving this using DevOps automation tools to develop the deployment process, reducing manual effort, and improving overall system performance. Involved setting up the necessary infrastructure, automating deployments, and ensuring the application could run smoothly in a real time.
 
----
+Jenkinsfile
 
-### Task
+pipeline {...}
 
-- Develop the Required Infrastructre for Online Shopping Portal
-- Clonning Necessary Code and Artifacts ensurig Secrutiy and Accessbility
-- Strategize a `Deployment Plan` for brining the Applicaion to the Internet.
+🌐 Step 3: Setup GitHub Webhook
+Go to your GitHub repo → Settings → Webhooks
 
-All this while ensuring:
+Click “Add Webhook”
 
-- Gathering Necessary Resource for building the project.
-- Implementing Automation Scripts.
-- Using tools like `Docker` to build real world application.
-- Grasp a good Hands-On on DevOps tools.
-- Helping and Learning through Community!
-- Strong Cloud and DevOps Infrastructure.
+Payload URL: http://<your-server-ip>:8080/github-webhook/
 
-> Note: Remembering the Requirements
+Content type: application/json
 
----
+Event: Just the push event
 
-### Action
 
-> I did this...
 
-- Understood the [ROADMAP.md](ROADMAP.md) and [CONTRIBUTING.md](CONTRIBUTING.md) for build up the project.
-- Gathering the resources needed to fulfill the [`Task`](#task).
-- Build a [`Docker Installation Script`](docker_installation.sh) automation script for installing and using Docker.
-  > Running Script explained in [`COMMANDS.md File`]()!
-- Setting up this Git Repository and Adding and Commiting Files
-- Build a Dockerfile for the Online Shopping Portal Application
-- Implemented Multi-Stage Docker Build which reduced the size of Image by `1GB` and increased deployment speed by `50%` improving efficiency and faster deployment
-- Build a [`.dockerignore`](.dockerignore) file for ignoring the `Files and Directory` which are unecessary.
-- Using .dockerignore help reduce the docker image size and improving its deployment speed.
-- Built a `Docker Compose` file
-- - Lead to faster implementation of Application
-- - Performing Regular `Health Checks`.
-- - Custom Network Configuration
-- Implemented `Docker Scout` for Checking `Vulnerabilties` of Application. [`Docker Scout Report`](image_report.md)
-- Used `Amazon EC2` to bring the Application to Internet
 
-> Shown in Video Demonstration
+🔐 Step 4: Add Docker Hub Credentials in Jenkins
+Go to Jenkins → Manage Jenkins → Credentials
 
----
+Click Global → Add Credentials
 
-### Result / Resume
+Add:
 
-- Successfully deployed the `Online Shopping Portal` on the internet using DevOps automation tools.
-- Improved `deployment speed by 50% `and reduced `Docker image size by 1GB` using multi-stage builds.
-- Ensured security and efficiency by implementing `Docker Scout` for `vulnerability analysis`.
-- Automated the setup process with `Docker Installation Scripts` and `Docker Compose` for easy deployment.
-- Deployed the application on `Amazon EC2`, making it accessible and scalable for real users.
+Type: Username with password
 
----
+ID: dockerhubId
 
-Good luck for the hackathon
+Scope: Global
 
-Happy Learning :)
+
+![Screenshot 2025-07-04 123103](https://github.com/user-attachments/assets/8d406d7d-baa4-4edf-8a17-7f60b6fcce1a)
+
+
+
+🐳 Step 5: Docker Compose
+
+version: '3.8'
+
+services:
+  online_shop:
+    container_name: my-app
+    image: suyashdahitule/online-app:latest
+    ports:
+      - "5173:5173"
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5173/"]
+      interval: 60s
+      timeout: 10s
+      retries: 5
+    networks:
+      - online_shop
+
+networks:
+  online_shop:
+    driver: bridge
+
+![Screenshot 2025-07-04 125847](https://github.com/user-attachments/assets/8ab32636-fddb-4cd2-ac0a-6199444b5dbc)
+
+
+✅ Final CI/CD Flow
+Pushed code to the project branch on GitHub
+
+GitHub Webhook triggers Jenkins
+
+Jenkins:
+
+Clones the repo
+
+Builds the Docker image
+
+Pushes it to Docker Hub
+
+Deploys it with Docker Compose
+
+App is live on:
+http://<your-server-ip>:5173
+
+
+![Screenshot 2025-07-04 125538](https://github.com/user-attachments/assets/998c6a9d-154f-486a-96ff-17083f641371)
+
+
+🙌 Author
+Made with ❤️ by Suyash Dahitule
+
+
