@@ -1,115 +1,109 @@
-# Online Shop 🛍️ for Hackathon Phase 1
+🛍️ Online Shop – DevSecOps-Enabled CI/CD with Jenkins
+This project demonstrates how to build a secure and automated CI/CD pipeline using Jenkins, GitHub Webhooks, Docker, Docker Hub, SonarQube, and Trivy for a Vite-based frontend (or fullstack) app.
 
-[![Stars](https://img.shields.io/github/stars/iemafzalhassan/online_shop)](https://github.com/iemafzalhassan/online_shop)
-![Forks](https://img.shields.io/github/forks/iemafzalhassan/online_shop)
-![GitHub last commit](https://img.shields.io/github/last-commit/iemafzalhassan/easyshop?color=red)
-[![GitHub Profile](https://img.shields.io/badge/GitHub-iemafzalhassan-blue?logo=github&style=flat)](https://github.com/iemafzalhassan)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+🚀 Features
+✅ Multi-stage Dockerfile for clean, production-ready images
+✅ GitHub Webhook to auto-trigger Jenkins builds
+✅ Jenkins pipeline: build → scan → test → push → deploy
+✅ SonarQube integration for code quality & vulnerability scanning
+✅ Trivy integration for filesystem & Docker image vulnerability scanning
+✅ Docker Hub to store production-ready images
+✅ Docker Compose for seamless local/production deployment
 
-<p align="center">
+📁 Project Structure
+.
+├── Dockerfile
+├── docker-compose.yml
+├── Jenkinsfile
+├── sonar-project.properties
+├── src/
+│   └── (your app code)
+└── README.md
 
-Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This repository contains a fully functional e-commerce application built to demonstrate foundational DevOps skills in three key areas:
+🧪 #Security Steps (DevSecOps)#
 
-- **Git & GitHub**
-- **Linux**
-- **Docker**
+🔎 SonarQube (Static Analysis)
 
-In this phase, your focus is on understanding the provided developer code, reviewing how these core topics are implemented, and making any necessary enhancements. When you're ready, you'll submit your work via our designated Google Form.
+Detect code smells, bugs, security hotspots (e.g., XSS, SQLi)
 
----
+Automatically fails pipeline if quality gate fails
 
-### Project Details
+![Screenshot 2025-07-04 232210](https://github.com/user-attachments/assets/d7c2e9c1-6cac-4285-9a95-d9396b751f00)
 
-### Content
+🛡️ Trivy FileSystem Scan
 
-- [**Situation**](#situation)
-- [**Task**](#task)
-- [**Action**](#action)
-- [**Result**](#result--resume)
+Scans source code, config files for secrets, misconfig, known CVEs
 
-## Getting Started
+🐳 Trivy Docker Image Scan
 
-- Video Demonstration
+Scans Docker image layers for vulnerabilities (CVEs)
 
-  [Video Demonstration](https://www.dropbox.com/scl/fi/06xq03rkx56hiak1080bo/videoDemo.mp4?rlkey=dje3ntpcd9zc3rzz1a1canhch&st=1vsn8k90&dl=0)
+🧾 Reports
 
-1. Home Page
-![Home Page](public/homePage.png)
-1. Admin Page
-![Admin Page](public/adminPage.png)
+Trivy & SonarQube results archived in Jenkins HTML Reports
 
-## Guidelines & Resources
+Slack/email notifications can be added
 
-Before diving into the tasks, please review the following key resources:
+ Jenkinsfile (CI/CD + DevSecOps)
 
-- [CONTRIBUTING.md](CONTRIBUTING.md): Guidelines for code contributions, commit messages, and overall coding standards.
-- [COMMANDS.md](): Command used by me throught the project from Configuration to Deployment. `Except Git Commands`
-- [ROADMAP.md](ROADMAP.md): Insights into the project vision, future enhancements, and milestones.
-- **Repository Documentation:** Explore the repository to understand how the application is built. Pay special attention to the `src` directory where the main application logic resides, as well as configuration files such as `vite.config.js` and styling in `index.css`.
+pipeline{..}
 
-These documents provide the context needed to understand the project requirements and the best practices expected for your contributions.
 
----
 
-### Situation
+🌐 Step-by-Step Setup
+1️⃣ GitHub Webhook
+Go to GitHub → Repo → Settings → Webhooks
 
-As part of the **Train With Shubham Hackathon Phase 1**, I was given the charge of deploying an Online Shopping Portal to the internet. The main goal was to ensure that the website was easily accessible, reliable, and scalable so that it could handle user traffic efficiently. Achiving this using DevOps automation tools to develop the deployment process, reducing manual effort, and improving overall system performance. Involved setting up the necessary infrastructure, automating deployments, and ensuring the application could run smoothly in a real time.
+Payload URL: http://<your-jenkins-ip>:8080/github-webhook/
 
----
+Content type: application/json
 
-### Task
+Event: Push event only
 
-- Develop the Required Infrastructre for Online Shopping Portal
-- Clonning Necessary Code and Artifacts ensurig Secrutiy and Accessbility
-- Strategize a `Deployment Plan` for brining the Applicaion to the Internet.
 
-All this while ensuring:
+2️⃣ Add SonarQube & DockerHub Credentials in Jenkins
+Go to Jenkins → Manage Jenkins → Credentials → Global → Add Credentials:
 
-- Gathering Necessary Resource for building the project.
-- Implementing Automation Scripts.
-- Using tools like `Docker` to build real world application.
-- Grasp a good Hands-On on DevOps tools.
-- Helping and Learning through Community!
-- Strong Cloud and DevOps Infrastructure.
+Type: Username with password
 
-> Note: Remembering the Requirements
+ID: dockerhubId
 
----
+Scope: Global
 
-### Action
 
-> I did this...
 
-- Understood the [ROADMAP.md](ROADMAP.md) and [CONTRIBUTING.md](CONTRIBUTING.md) for build up the project.
-- Gathering the resources needed to fulfill the [`Task`](#task).
-- Build a [`Docker Installation Script`](docker_installation.sh) automation script for installing and using Docker.
-  > Running Script explained in [`COMMANDS.md File`]()!
-- Setting up this Git Repository and Adding and Commiting Files
-- Build a Dockerfile for the Online Shopping Portal Application
-- Implemented Multi-Stage Docker Build which reduced the size of Image by `1GB` and increased deployment speed by `50%` improving efficiency and faster deployment
-- Build a [`.dockerignore`](.dockerignore) file for ignoring the `Files and Directory` which are unecessary.
-- Using .dockerignore help reduce the docker image size and improving its deployment speed.
-- Built a `Docker Compose` file
-- - Lead to faster implementation of Application
-- - Performing Regular `Health Checks`.
-- - Custom Network Configuration
-- Implemented `Docker Scout` for Checking `Vulnerabilties` of Application. [`Docker Scout Report`](image_report.md)
-- Used `Amazon EC2` to bring the Application to Internet
+3️⃣ Docker Compose File (docker-compose.yml)
 
-> Shown in Video Demonstration
 
----
 
-### Result / Resume
 
-- Successfully deployed the `Online Shopping Portal` on the internet using DevOps automation tools.
-- Improved `deployment speed by 50% `and reduced `Docker image size by 1GB` using multi-stage builds.
-- Ensured security and efficiency by implementing `Docker Scout` for `vulnerability analysis`.
-- Automated the setup process with `Docker Installation Scripts` and `Docker Compose` for easy deployment.
-- Deployed the application on `Amazon EC2`, making it accessible and scalable for real users.
+![Screenshot 2025-07-04 232149](https://github.com/user-attachments/assets/9b462210-5350-4b53-aff9-23c741f3c5f5)
 
----
+✅ Final DevSecOps CI/CD Flow
+Code is pushed to GitHub
 
-Good luck for the hackathon
+Webhook triggers Jenkins
 
-Happy Learning :)
+Jenkins:
+
+Pulls code
+
+Runs SonarQube for static code security checks
+
+Runs Trivy to scan filesystem
+
+Builds Docker image
+
+Runs Trivy image scan
+
+Pushes image to DockerHub
+
+Deploys via Docker Compose
+
+HTML reports are generated & archived
+
+
+![Screenshot 2025-07-04 232008](https://github.com/user-attachments/assets/4062df32-6795-4dac-ab6c-9f78c0f9f982)
+
+🙌 Author
+Made with ❤️ by Suyash Dahitule

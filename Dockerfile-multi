@@ -1,0 +1,31 @@
+# ---------- BUILD STAGE ----------
+FROM node:20-alpine as build
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy source code
+COPY . .
+
+# Build 
+RUN npm run build
+
+# ---------- PRODUCTION STAGE ----------
+FROM gcr.io/distroless/nodejs20-debian12
+
+WORKDIR /app
+
+# Copy the built output and node_modules
+COPY --from=build /app /app
+
+# Expose 
+EXPOSE 3000
+
+# CMD
+CMD ["node_modules/.bin/serve", "-s", "dist", "-l", "3000"]
+

@@ -1,17 +1,17 @@
-version: "3.8"
+version: '3.8'
 
 services:
-
   online_shop:
+    container_name: my-app
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: online_shop
+      dockerfile: Dockerfile-multi
+    image: suyashdahitule/online-app:latest
     ports:
-      - "3000:5173"
+      - "5173:5173"
     restart: always
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      test: ["CMD", "curl", "-f", "http://localhost:5173/"]
       interval: 60s
       timeout: 10s
       retries: 5
