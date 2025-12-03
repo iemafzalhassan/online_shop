@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: online-shop
-  namespace: online-shop-prod
+  namespace: online-shop
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: online-shop
@@ -15,10 +15,10 @@ spec:
     spec:
       containers:
       - name: online-shop
-        image: online_shop:latest
+        image: shaheen8954/online_shop:latest
         imagePullPolicy: Never
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         envFrom:
         - configMapRef:
             name: online-shop-config

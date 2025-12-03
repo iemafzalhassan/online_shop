@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: online-shop
-  namespace: online-shop-prod
+  namespace: online-shop
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
@@ -13,7 +13,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: online-shop.iemafzalhassan.tech
+  - host: localhost
     http:
       paths:
       - path: /

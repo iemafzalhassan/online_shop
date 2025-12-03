@@ -18,4 +18,3 @@ nodes:
     protocol: TCP
     listenAddress: "0.0.0.0"
 - role: worker
-- role: worker
