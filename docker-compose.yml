@@ -8,10 +8,10 @@ services:
       dockerfile: Dockerfile
     container_name: online_shop
     ports:
-      - "3000:5173"
+      - "3000:80"
     restart: always
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      test: ["CMD", "curl", "-f", "http://localhost:80:/"]
       interval: 60s
       timeout: 10s
       retries: 5
