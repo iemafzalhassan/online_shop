@@ -1,4 +1,4 @@
-import { sampleProducts } from '../data/sampleProducts.js';
+import { sampleProducts } from '../data/demoProducts.js';
 
 const DB_NAME = 'shopDB';
 const STORE_NAME = 'products';
